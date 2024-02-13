@@ -1,8 +1,8 @@
 ---
 layout: about
-title: about
+title: Welcome
 permalink: /
-subtitle: Université Libre de Bruxelles. Address. Contacts. Moto. Etc.
+subtitle: Université Libre de Bruxelles.
 
 profile:
   align: right
@@ -10,7 +10,7 @@ profile:
   image_circular: false # crops the image to make it circular
   more_info: >
     <p>LISA - Laboratories of Image, Signal processing and Acoustic Image Research Unit</p>
-    <p>Av. F.D. Roosevelt 50, CP 165/56 - 1050 Bruxelles</p>
+    <p>Av. F.D. Roosevelt 50, CP 165/56 - 1050 Bruxelles - Belgium</p>
 
 news: true # includes a list of news items
 latest_posts: true # includes a list of the newest posts

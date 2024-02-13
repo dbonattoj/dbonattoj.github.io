@@ -4,9 +4,17 @@ permalink: /about/
 title: about
 nav: true
 nav_order: 1
+
+profile:
+  align: right
+  image: prof_pic.jpg
+  image_circular: false # crops the image to make it circular
+  more_info: >
+    <p>LISA - Laboratories of Image, Signal processing and Acoustic Image Research Unit</p>
+    <p>Av. F.D. Roosevelt 50, CP 165/56 - 1050 Bruxelles - Belgium</p>
 ---
 
-Welcome to my thrilling journey into the world of immersive content creation! Let's talk about view synthesis — it's like having a magic wand for photos, allowing you to create new perspectives and views of a scene from different angles. This technology is a game-changer for virtual reality, gaming, and immersive experiences, adding depth and realism to visuals.
+Welcome to my deeper about page about the world of immersive content creation! Let's talk about view synthesis — it's like having a magic wand for photos, allowing you to create new perspectives and views of a scene from different angles. This technology is a game-changer for virtual reality, gaming, and immersive experiences, adding depth and realism to visuals.
 
 I'm on a mission to push the boundaries of real-time 3D computing. Armed with a master's degree in computational intelligence software and robotics engineering from Université Libre de Bruxelles, I'm currently finishing my Ph.D. jointly at the French and Dutch wings of the Free University of Brussels.
 
