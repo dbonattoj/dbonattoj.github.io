@@ -25,3 +25,5 @@ In view synthesis, I've pioneered the **Reference View Synthesizer (RVS)**, riva
 Beyond, my ventures include a real-time point cloud viewer, Gaussian processes optimization, deep learning for view synthesis, robotic bench creation, and expertise in web technologies.
 
 For more details, please refer to my [About]({{ site.baseurl | prepend: site.url }}/about/) page. Stay tuned for more innovations shaping the future of immersive technologies!
+
+Please find a more comprehensive list of my papers in Google Scholar.
