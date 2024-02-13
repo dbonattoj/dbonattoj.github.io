@@ -19,8 +19,19 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
 
-Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+Welcome to my thrilling journey into the world of immersive content creation! Let's talk about view synthesis — it's like having a magic wand for photos, allowing you to create new perspectives and views of a scene from different angles. This technology is a game-changer for virtual reality, gaming, and immersive experiences, adding depth and realism to visuals.
 
-Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
+I'm on a mission to push the boundaries of real-time 3D computing. Armed with a master's degree in computational intelligence software and robotics engineering from Université Libre de Bruxelles, I'm currently finishing my Ph.D. jointly at the French and Dutch wings of the Free University of Brussels.
 
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+My contributions have already made a significant impact in academic circles and industrial applications, especially within the Moving Picture Experts Group (MPEG) community, where three of my software solutions are extensively used. Additionally, my work has played a crucial role in the HoviTron European project, where my advanced view synthesizer plays a pivotal role and is integrated within the CREAL headset technology. This headset uniquely addresses the eye accommodation challenge, eliminating the necessity for eye tracking or artificial blurring around the object of interest. The headset is used to pilot a robotic arm through the network, showcasing the industrial applications of my technology.
+
+In the realm of view synthesis, I've achieved a milestone with the creation of a real-time view synthesis software, the Reference View Synthesizer (RVS) that rivals the quality of NeRF. This groundbreaking software, while maintaining a fairly low GPU footprint, tens of megabytes of memory and only 5% of GPU compute usage, offering photorealistic results in real-time and reshaping the landscape of immersive content creation.
+
+Another notable accomplishments includes the development of a high-precision depth estimation software: Reference Depth Estimation software (RDE), addressing both the demands of high-quality rendering and the computational challenges involved in generating detailed depth maps efficiently. High quality depth maps are a prerequisite for high quality view synthesis.
+
+
+Let's not forget my exploration into plenoptic cameras, especially the plenoptic 2.0 camera. I've developed innovative solutions for extracting subaperture views and pattern-free intrinsics parameters estimation, providing users with diverse and dynamic perspectives that redefine their interaction with digital content. These cameras allow us to play with micro-baselines, perfectly paired with the RVS's ability to synthesize novel views in millimetric to medium baselines.
+
+Other explorations include the development of a real-time point cloud viewer employing splatting algorithms, exploration of Gaussian processes optimization, delving into deep learning for view synthesis, construction of robotic benches for acquiring sub-mm precision images, and proficiency in web technologies like React and native-React. The technical stack involved encompasses familiar platforms such as Linux, Windows, Docker, PostgreSQL, and more.
+
+As I keep evolving and refining these technological wonders, my journey is leaving an indelible mark on the immersive content creation scene. Stay tuned for more exciting developments as I explore new horizons and continue to advance the cutting edge of 3D computing. Cheers to the future of immersive technologies!
