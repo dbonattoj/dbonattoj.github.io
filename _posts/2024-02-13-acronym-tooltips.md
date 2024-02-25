@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Nicer way of formatting acronyms in LaTeX papers
-date: 2024-25-02 19:00:00
+date: 2024-02-25 19:00:00
 description: Papers just miss this kind of interactivity.
 tags: formatting latex
 categories: publications
