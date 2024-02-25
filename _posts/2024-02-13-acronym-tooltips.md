@@ -66,24 +66,24 @@ acronym,nomain,shortcuts,toc,nogroupskip]{glossaries}
 \newcommand*{\acfirstformat}[1]{\textcolor{myViolet}{{#1}}}
 \newcommand*{\acplfirstformat}[1]{\textcolor{myViolet}{{#1}}}
 \newacronymstyle{myacro}
-{%
+{ %
   \GlsUseAcrEntryDispStyle{long-short}%
 }%
-{%
+{ %
   \GlsUseAcrStyleDefs{long-short}%
-  \renewcommand*{\genacrfullformat}[1]{%
+  \renewcommand*{\genacrfullformat}[1]{ %
    \glossfirstformat{\glsentrylong{##1}}\space
    (\acfirstformat{\glsentryshort{##1}})%
   }%
-  \renewcommand*{\Genacrfullformat}[2]{%
+  \renewcommand*{\Genacrfullformat}[2]{ %
    \glossfirstformat{\Glsentrylong{##1}}\space
    (\glsentryshort{##1})%
   }%
-  \renewcommand*{\genplacrfullformat}[2]{%
+  \renewcommand*{\genplacrfullformat}[2]{ %
    \glossfirstformat{\glsentrylongpl{##1}}\space
    (\acplfirstformat{\glsentryshort{##1}})%
   }%
-  \renewcommand*{\Genplacrfullformat}[2]{%
+  \renewcommand*{\Genplacrfullformat}[2]{ %
    \glossfirstformat{\Glsentrylongpl{##1}}\space
    (\glsentryshortpl{##1})%
   }%
@@ -92,37 +92,37 @@ acronym,nomain,shortcuts,toc,nogroupskip]{glossaries}
 \setacronymstyle{myacro}
 
 % use for normal acronyms, gives them a PDF tooltip popup
-\newcommand*{\tip}[1]{%  define our acronym command,  make it short since we use it a lot, use * for so that it is only a 'short' command
-    \ifglsused{#1}{% if we used it already, then put pdftooltip
+\newcommand*{\tip}[1]{ %  define our acronym command,  make it short since we use it a lot, use * for so that it is only a 'short' command
+    \ifglsused{#1}{ % if we used it already, then put pdftooltip
       {\pdftooltip{\accolor{\glsentryshort{#1}}}{\glsentrydesc{#1}}}%
-    }{%
+    }{ %
       \gls{#1}% otherwise put the normal gls
     }%
 }%
 
 % Capital first letter
 \newcommand*{\Tip}[1]{
-    \ifglsused{#1}{%
+    \ifglsused{#1}{ %
       {\pdftooltip{\accolor{\Glsentryshort{#1}}}{\glsentrydesc{#1}}}%
-    }{%
+    }{ %
       \Gls{#1}%
     }%
 }%
 
 % Plural acronyms
-\newcommand*{\tips}[1]{%
-    \ifglsused{#1}{%
+\newcommand*{\tips}[1]{ %
+    \ifglsused{#1}{ %
       {\pdftooltip{\accolor{\glsentryshortpl{#1}}}{\glsentrydesc{#1}}}%
-    }{%
+    }{ %
       \glspl{#1}%
     }%
 }%
 
 % Capital letter and plural
-\newcommand*{\Tips}[1]{%
-    \ifglsused{#1}{%
+\newcommand*{\Tips}[1]{ %
+    \ifglsused{#1}{ %
       {\pdftooltip{\accolor{\Glsentryshortpl{#1}}}{\glsentrydesc{#1}}}%
-    }{%
+    }{ %
       \Glspl{#1}%
     }%
 }%
