@@ -6,7 +6,7 @@ subtitle: Université Libre de Bruxelles.
 
 profile:
   align: right
-  image: prof_pic.png
+  image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
     <p>LISA - Laboratories of Image, Signal processing and Acoustic Image Research Unit</p>
