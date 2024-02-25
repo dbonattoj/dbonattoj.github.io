@@ -43,7 +43,16 @@
       "startDate": "2016-10-01",
       "endDate": "2024-03-07",
       "score": "10",
-      "courses": ["Virtual reality", "Parallel programming", "Mathematics for engineers", "Computer Vision", "Object oriented programming", "Python", "Java", "Kotlin"]
+      "courses": [
+        "Virtual reality",
+        "Parallel programming",
+        "Mathematics for engineers",
+        "Computer Vision",
+        "Object oriented programming",
+        "Python",
+        "Java",
+        "Kotlin"
+      ]
     }
   ],
   "publications": [
@@ -74,14 +83,7 @@
       "name": "Programming",
       "level": "Master",
       "icon": "fa-solid fa-hashtag",
-      "keywords": [
-        "Artificial intelligence",
-        "Object oriented",
-        "Python",
-        "C++",
-        "Java",
-        "Web"
-      ]
+      "keywords": ["Artificial intelligence", "Object oriented", "Python", "C++", "Java", "Web"]
     }
   ],
   "languages": [
@@ -105,18 +107,12 @@
     {
       "name": "Programming",
       "icon": "fa-solid fa-tag",
-      "keywords": [
-        "Good practices"
-      ]
+      "keywords": ["Good practices"]
     },
     {
       "name": "Artificial Intelligence",
       "icon": "fa-solid fa-tag",
-      "keywords": [
-        "Deep learning",
-        "LLM",
-        "Theoretical"
-      ]
+      "keywords": ["Deep learning", "LLM", "Theoretical"]
     }
   ],
   "references": [
