@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Nicer way of formatting acronyms in LaTeX papers
-date: 2024-02-25 19:00:00
+date: 2024-25-02 19:00:00
 description: Papers just miss this kind of interactivity.
 tags: formatting latex
 categories: publications
@@ -9,26 +9,29 @@ categories: publications
 
 For my manuscript, I was not happy with the handling of acronyms, in particular, when I read paper in other fields than mine, often it is cumbersome to find some acronym I overlooked.
 
-To improve that, discovered the `acronym` package, but, it does not do exactly what I want, it merely expands acronyms at their first usage and provides the generation of a table of acronyms, which is fine for printed material, even if it requires to go back and forth between the table and the text, but as I digest mainly electronic material, I thought I can do better.
+In the world of academic manuscripts, grappling with acronyms can be a real headache, especially when diving into papers from different fields. I recently found myself facing this issue, and the standard solutions weren't quite cutting it.
 
-Finally, I found someone else that struggled before me with something similar of what I wanted in [stackexchange](https://tex.stackexchange.com/questions/199084/tooltip-with-glossary-items). I promplty modified it and used it. The result is perfect, now, when the acronym is shown for the first time, it is expanded, as usual, and I can have a table of acronyms, but, in pdf files, when I see an acronym that I don’t know, I can over it with the mouse, and a small tooltip appears with the full definition of it !
+To tackle this issue, I explored the `glossaries` package, hoping it would be the solution I needed. However, it fell short of my expectations. While it did expand acronyms at their initial usage and offered a table generation feature, it was more tailored for printed material. Having to navigate between the table and the text wasn't ideal, especially for someone like me who primarily engages with electronic materials. I was convinced there was room for improvement.
 
-Now I think every research papers should include this utility, and this blogpost is to encourage researchers to do so.
+Fortunately, after some digging, I stumbled upon a gem on [Stack Exchange](https://tex.stackexchange.com/questions/199084/tooltip-with-glossary-items). Inspired by someone else's struggle, I tweaked the solution to fit my needs. The outcome? Perfect. Now, when I encounter an unfamiliar acronym in a PDF, a simple hover with the mouse reveals a tooltip with the full definition. Game-changer!
 
-It is super easy, in the **main text file header**, just add:
+I believe every research paper could benefit from this nifty utility, and this post is my call to action for fellow researchers to hop on the bandwagon.
+
+Implementation is a breeze – just add the following line to your **main text file header**:
+
 ```Latex
 \input{acronyms}
 ```
 
-And when you need to use an acronym, let’s say Reference View Synthesizer (RVS), you just need to write:
+When you're ready to use an acronym, like Reference View Synthesizer (RVS), simply write:
 
 ```Latex
 Visual comparison between \tip{rvs} (4 and 8 input views) on zoomed details of [...]
 ```
 
-If you need to have the acronym in plural form, you can use `\tips`, and if you need a capital letter `\Tip{s}` is working as well.
+For plurals, try \tips, and for capital letters, go for \Tip{s}. Easy, right?
 
-Now, you can have an `acronyms.tex` file that you copy paste between all your papers which contains the acronyms you find useful in your field and at the same time all the cool code that allows LaTeX to properly display them.
+Now, create an `acronyms.tex` file, a versatile copy-paste companion for all your papers. It not only houses the acronyms relevant to your field but also contains the nifty LaTeX code for seamless display.
 
 ```Latex
 \usepackage[printonlyused]{acronym}
@@ -129,4 +132,4 @@ acronym,nomain,shortcuts,toc,nogroupskip]{glossaries}
 [...]
 ```
 
-
+Let's empower every research paper with this tool – simple, effective, and a game-changer for both writers and readers alike! 🚀
