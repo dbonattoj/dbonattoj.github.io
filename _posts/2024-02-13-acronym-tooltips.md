@@ -20,115 +20,115 @@ I believe every research paper could benefit from this nifty utility, and this p
 Implementation is a breeze – just add the following line to your **main text file header**:
 
 ```Latex
-\input{acronyms}
+\input\{acronyms\}
 ```
 
 When you're ready to use an acronym, like Reference View Synthesizer (RVS), simply write:
 
 ```Latex
-Visual comparison between \tip{rvs} (4 and 8 input views) on zoomed details of [...]
+Visual comparison between \tip\{rvs\} (4 and 8 input views) on zoomed details of [...]
 ```
 
-For plurals, try \tips, and for capital letters, go for \Tip{s}. Easy, right?
+For plurals, try \tips, and for capital letters, go for \Tip\{s\}. Easy, right?
 
 Now, create an `acronyms.tex` file, a versatile copy-paste companion for all your papers. It not only houses the acronyms relevant to your field but also contains the nifty LaTeX code for seamless display.
 
 ```Latex
-\usepackage[printonlyused]{acronym}
-\usepackage[draft, author={}]{pdfcomment}
+\usepackage[printonlyused]\{acronym\}
+\usepackage[draft, author=\{\}]\{pdfcomment\}
 
 \usepackage[hyperfirst=false,%sort=none,
-acronym,nomain,shortcuts,toc,nogroupskip]{glossaries}
+acronym,nomain,shortcuts,toc,nogroupskip]\{glossaries\}
 % https://tex.stackexchange.com/questions/199084/tooltip-with-glossary-items
 
-\usepackage{xcolor} % used for colored acronyms
+\usepackage\{xcolor\} % used for colored acronyms
 
-\renewcommand{\acs}[1]{\pdftooltip{\acrshort*{#1}}{\glsentrylong{#1}}}
-\renewcommand{\acsp}[1]{\pdftooltip{\acrshortpl*{#1}}{\glsentrylongpl{#1}}}
+\renewcommand\{\acs\}[1]\{\pdftooltip\{\acrshort*\{#1\}\}\{\glsentrylong\{#1\}\}\}
+\renewcommand\{\acsp\}[1]\{\pdftooltip\{\acrshortpl*\{#1\}\}\{\glsentrylongpl\{#1\}\}\}
 
 \glsdisablehyper % disable hyperlinks on all acronyms
 
 % Change list of acronyms name:
-%\renewcommand*{\acronymname}{List of Abbreviations}
+%\renewcommand*\{\acronymname\}\{List of Abbreviations\}
 
 % Funky colors:
-%\definecolor{myBlue}{RGB}{73, 142, 41}
-%\definecolor{myViolet}{RGB}{17, 138, 178}
+%\definecolor\{myBlue\}\{RGB\}\{73, 142, 41\}
+%\definecolor\{myViolet\}\{RGB\}\{17, 138, 178\}
 % Black:
-\definecolor{myBlue}{RGB}{0, 0, 0}
-\definecolor{myViolet}{RGB}{0, 0, 0}
+\definecolor\{myBlue\}\{RGB\}\{0, 0, 0\}
+\definecolor\{myViolet\}\{RGB\}\{0, 0, 0\}
 
-\newcommand{\accolor}[1]{\textcolor{myBlue}{#1}}
+\newcommand\{\accolor\}[1]\{\textcolor\{myBlue\}\{#1\}\}
 % use to make first definition special format:
-\newcommand*{\glossfirstformat}[1]{\accolor{#1}}
+\newcommand*\{\glossfirstformat\}[1]\{\accolor\{#1\}\}
 
 %https://tex.stackexchange.com/questions/232707/modify-appearance-of-first-acronym
-\newcommand*{\acfirstformat}[1]{\textcolor{myViolet}{{#1}}}
-\newcommand*{\acplfirstformat}[1]{\textcolor{myViolet}{{#1}}}
-\newacronymstyle{myacro}
-{ %
-  \GlsUseAcrEntryDispStyle{long-short}%
-}%
-{ %
-  \GlsUseAcrStyleDefs{long-short}%
-  \renewcommand*{\genacrfullformat}[1]{ %
-   \glossfirstformat{\glsentrylong{##1}}\space
-   (\acfirstformat{\glsentryshort{##1}})%
-  }%
-  \renewcommand*{\Genacrfullformat}[2]{ %
-   \glossfirstformat{\Glsentrylong{##1}}\space
-   (\glsentryshort{##1})%
-  }%
-  \renewcommand*{\genplacrfullformat}[2]{ %
-   \glossfirstformat{\glsentrylongpl{##1}}\space
-   (\acplfirstformat{\glsentryshort{##1}})%
-  }%
-  \renewcommand*{\Genplacrfullformat}[2]{ %
-   \glossfirstformat{\Glsentrylongpl{##1}}\space
-   (\glsentryshortpl{##1})%
-  }%
-}
+\newcommand*\{\acfirstformat\}[1]\{\textcolor\{myViolet\}\{\{#1\}\}\}
+\newcommand*\{\acplfirstformat\}[1]\{\textcolor\{myViolet\}\{\{#1\}\}\}
+\newacronymstyle\{myacro\}
+\{%
+  \GlsUseAcrEntryDispStyle\{long-short\}%
+\}%
+\{%
+  \GlsUseAcrStyleDefs\{long-short\}%
+  \renewcommand*\{\genacrfullformat\}[1]\{%
+   \glossfirstformat\{\glsentrylong\{##1\}\}\space
+   (\acfirstformat\{\glsentryshort\{##1\}\})%
+  \}%
+  \renewcommand*\{\Genacrfullformat\}[2]\{%
+   \glossfirstformat\{\Glsentrylong\{##1\}\}\space
+   (\glsentryshort\{##1\})%
+  \}%
+  \renewcommand*\{\genplacrfullformat\}[2]\{%
+   \glossfirstformat\{\glsentrylongpl\{##1\}\}\space
+   (\acplfirstformat\{\glsentryshort\{##1\}\})%
+  \}%
+  \renewcommand*\{\Genplacrfullformat\}[2]\{%
+   \glossfirstformat\{\Glsentrylongpl\{##1\}\}\space
+   (\glsentryshortpl\{##1\})%
+  \}%
+\}
 
-\setacronymstyle{myacro}
+\setacronymstyle\{myacro\}
 
 % use for normal acronyms, gives them a PDF tooltip popup
-\newcommand*{\tip}[1]{ %  define our acronym command,  make it short since we use it a lot, use * for so that it is only a 'short' command
-    \ifglsused{#1}{ % if we used it already, then put pdftooltip
-      {\pdftooltip{\accolor{\glsentryshort{#1}}}{\glsentrydesc{#1}}}%
-    }{ %
-      \gls{#1}% otherwise put the normal gls
-    }%
-}%
+\newcommand*\{\tip\}[1]\{%  define our acronym command,  make it short since we use it a lot, use * for so that it is only a 'short' command
+    \ifglsused\{#1\}\{% if we used it already, then put pdftooltip
+      \{\pdftooltip\{\accolor\{\glsentryshort\{#1\}\}\}\{\glsentrydesc\{#1\}\}\}%
+    \}\{%
+      \gls\{#1\}% otherwise put the normal gls
+    \}%
+\}%
 
 % Capital first letter
-\newcommand*{\Tip}[1]{
-    \ifglsused{#1}{ %
-      {\pdftooltip{\accolor{\Glsentryshort{#1}}}{\glsentrydesc{#1}}}%
-    }{ %
-      \Gls{#1}%
-    }%
-}%
+\newcommand*\{\Tip\}[1]\{
+    \ifglsused\{#1\}\{%
+      \{\pdftooltip\{\accolor\{\Glsentryshort\{#1\}\}\}\{\glsentrydesc\{#1\}\}\}%
+    \}\{%
+      \Gls\{#1\}%
+    \}%
+\}%
 
 % Plural acronyms
-\newcommand*{\tips}[1]{ %
-    \ifglsused{#1}{ %
-      {\pdftooltip{\accolor{\glsentryshortpl{#1}}}{\glsentrydesc{#1}}}%
-    }{ %
-      \glspl{#1}%
-    }%
-}%
+\newcommand*\{\tips\}[1]\{%
+    \ifglsused\{#1\}\{%
+      \{\pdftooltip\{\accolor\{\glsentryshortpl\{#1\}\}\}\{\glsentrydesc\{#1\}\}\}%
+    \}\{%
+      \glspl\{#1\}%
+    \}%
+\}%
 
 % Capital letter and plural
-\newcommand*{\Tips}[1]{ %
-    \ifglsused{#1}{ %
-      {\pdftooltip{\accolor{\Glsentryshortpl{#1}}}{\glsentrydesc{#1}}}%
-    }{ %
-      \Glspl{#1}%
-    }%
-}%
+\newcommand*\{\Tips\}[1]\{%
+    \ifglsused\{#1\}\{%
+      \{\pdftooltip\{\accolor\{\Glsentryshortpl\{#1\}\}\}\{\glsentrydesc\{#1\}\}\}%
+    \}\{%
+      \Glspl\{#1\}%
+    \}%
+\}%
 
-\newacronym{mla}{MLA}{micro-lens array}
-\newacronym{rvs}{RVS}{Reference View Synthesizer}
+\newacronym\{mla\}\{MLA\}\{micro-lens array\}
+\newacronym\{rvs\}\{RVS\}\{Reference View Synthesizer\}
 [...]
 ```
 
