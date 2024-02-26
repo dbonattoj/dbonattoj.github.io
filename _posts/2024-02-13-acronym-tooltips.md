@@ -9,7 +9,7 @@ categories: publications
 
 In the world of academic manuscripts, grappling with acronyms can be a real headache, especially when diving into papers from different fields. I recently found myself facing this issue, and the standard solutions weren't quite cutting it.
 
-To tackle this issue, I explored the `glossaries` package, hoping it would be the solution I needed. However, it fell short of my expectations. While it did expand acronyms at their initial usage and offered a table generation feature, it was more tailored for printed material. Having to navigate between the table and the text wasn't ideal, especially for someone like me who primarily engages with electronic materials. I was convinced there was room for improvement.
+To tackle this issue, I explored the [`glossaries`](https://fr.overleaf.com/learn/latex/Glossaries) package, hoping it would be the solution I needed. However, it fell short of my expectations. While it did expand acronyms at their initial usage and offered a table generation feature, it was more tailored for printed material. Having to navigate between the table and the text wasn't ideal, especially for someone like me who primarily engages with electronic materials. I was convinced there was room for improvement.
 
 Fortunately, after some digging, I stumbled upon a gem on [Stack Exchange](https://tex.stackexchange.com/questions/199084/tooltip-with-glossary-items). Inspired by someone else's struggle, I tweaked the solution to fit my needs. The outcome? Perfect. Now, when I encounter an unfamiliar acronym in a PDF, a simple hover with the mouse reveals a tooltip with the full definition. Game-changer!
 
