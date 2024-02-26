@@ -31,6 +31,8 @@ Visual comparison between \tip{rvs} (4 and 8 input views) on zoomed details of [
 {% endraw %}
 {% endhighlight %}
 
+{% include figure.liquid path="assets/img/posts/tooltip.jpg" class="img-fluid rounded z-depth-1" %}
+
 For plurals, try \tips, and for capital letters, go for \Tip\{s\}. Easy, right?
 
 Now, create an `acronyms.tex` file, a versatile copy-paste companion for all your papers. It not only houses the acronyms relevant to your field but also contains the nifty LaTeX code for seamless display.
