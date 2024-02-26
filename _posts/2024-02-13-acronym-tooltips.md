@@ -17,15 +17,18 @@ I believe every research paper could benefit from this nifty utility, and this p
 
 Implementation is a breeze – just add the following line to your **main text file header**:
 
-```Latex
+{% highlight latex %}
+{% raw %}
 \input\{acronyms\}
-```
+{% endraw %}
+{% endhighlight %}
 
 When you're ready to use an acronym, like Reference View Synthesizer (RVS), simply write:
 
-```Latex
+{% highlight latex %}
 Visual comparison between \tip\{rvs\} (4 and 8 input views) on zoomed details of [...]
-```
+{% raw %}
+{% endhighlight %}
 
 For plurals, try \tips, and for capital letters, go for \Tip\{s\}. Easy, right?
 
