@@ -1,6 +1,6 @@
 ---
 layout: post
-title: From Print to Pixel: Transforming Acronym Usage in Academic Writing
+title: From Print to Pixel - Transforming Acronym Usage in Academic Writing
 date: 2024-02-25 19:00:00
 description: Papers just miss this kind of interactivity.
 tags: formatting latex
