@@ -31,7 +31,7 @@ For plurals, try \tips, and for capital letters, go for \Tip\{s\}. Easy, right?
 
 Now, create an `acronyms.tex` file, a versatile copy-paste companion for all your papers. It not only houses the acronyms relevant to your field but also contains the nifty LaTeX code for seamless display.
 
-```Latex
+{% highlight latex %}
 {% raw %}
 \usepackage[printonlyused]{acronym}
 \usepackage[draft, author={}]{pdfcomment}
@@ -123,6 +123,6 @@ acronym,nomain,shortcuts,toc,nogroupskip]{glossaries}
     }%
 }%
 {% endraw %}
-```
+{% endhighlight %}
 
 Let's empower every research paper with this tool – simple, effective, and a game-changer for both writers and readers alike! 🚀
