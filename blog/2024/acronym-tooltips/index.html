@@ -58,7 +58,8 @@ acronym,nomain,shortcuts,toc,nogroupskip]<span class="p">{</span>glossaries<span
 <span class="k">\setacronymstyle</span><span class="p">{</span>myacro<span class="p">}</span>
 
 <span class="c">% use for normal acronyms, gives them a PDF tooltip popup</span>
-<span class="k">\newcommand*</span><span class="p">{</span><span class="k">\tip</span><span class="p">}</span>[1]<span class="p">{</span><span class="c">%  define our acronym command,  make it short since we use it a lot, use * for so that it is only a 'short' command</span>
+<span class="k">\newcommand*</span><span class="p">{</span><span class="k">\tip</span><span class="p">}</span>[1]<span class="p">{</span><span class="c">%  define our acronym command,  make it short since we use it a lot,</span>
+                      <span class="c">%  use * for so that it is only a 'short' command</span>
     <span class="k">\ifglsused</span><span class="p">{</span>#1<span class="p">}{</span><span class="c">% if we used it already, then put pdftooltip</span>
       <span class="p">{</span><span class="k">\pdftooltip</span><span class="p">{</span><span class="k">\accolor</span><span class="p">{</span><span class="k">\mybold</span><span class="p">{</span><span class="k">\glsentryshort</span><span class="p">{</span>#1<span class="p">}}}}{</span><span class="k">\glsentrydesc</span><span class="p">{</span>#1<span class="p">}}}</span><span class="c">%</span>
     <span class="p">}{</span><span class="c">%</span>
@@ -91,8 +92,9 @@ acronym,nomain,shortcuts,toc,nogroupskip]<span class="p">{</span>glossaries<span
     <span class="p">}</span><span class="c">%</span>
 <span class="p">}</span><span class="c">%</span>
 
-<span class="c">% Forced short version in capital and without capital, for example to use in figure captions, where we do not want to define</span>
-<span class="c">% the term if it appears for the first time there, but we still want the tooltip.</span>
+<span class="c">% Forced short version in capital and without capital, for example to use in figure captions,</span>
+<span class="c">% where we do not want to define the term if it appears for the first time there,</span>
+<span class="c">% but we still want the tooltip.</span>
 <span class="k">\newcommand*</span><span class="p">{</span><span class="k">\Tipshort</span><span class="p">}</span>[1]<span class="p">{</span><span class="c">%</span>
     <span class="k">\ifglsused</span><span class="p">{</span>#1<span class="p">}{</span><span class="c">%</span>
       <span class="p">{</span><span class="k">\pdftooltip</span><span class="p">{</span><span class="k">\accolor</span><span class="p">{</span><span class="k">\mybold</span><span class="p">{</span><span class="k">\Glsentryshort</span><span class="p">{</span>#1<span class="p">}}}}{</span><span class="k">\glsentrydesc</span><span class="p">{</span>#1<span class="p">}}}</span><span class="c">%</span>
