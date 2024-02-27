@@ -35,7 +35,7 @@ RUN cd build && cmake --build . -j "$(nproc)" --target install
 
 # Changing version of OpenCV in external package
 
-RUN sed -i 's/package(OpenCV 4\.2 REQUIRED)/package(OpenCV 4.5 REQUIRED)/g' CMakeFile.txt
+RUN sed -i 's/find_package(OpenCV 4\.2 REQUIRED)/find_package(OpenCV 4.5 REQUIRED)/g' CMakeFile.txt
 
 [...]
 
