@@ -15,10 +15,13 @@ In this blog post, I share my go-to command – a straightforward sed line – m
 
 {% highlight Dockerfile %}
 {% raw %}
-RUN wget -O opencv.zip https://github.com/opencv/opencv/archive/refs/tags/4.5.5.zip && unzip opencv.zip && \
-    wget -O opencv_contrib.zip https://github.com/opencv/opencv_contrib/archive/refs/tags/4.5.5.zip  && unzip opencv_contrib.zip
+RUN wget -O opencv.zip https://github.com/opencv/opencv/archive/refs/tags/4.5.5.zip && \
+    unzip opencv.zip && \
+    wget -O opencv_contrib.zip https://github.com/opencv/opencv_contrib/archive/refs/tags/4.5.5.zip && \
+    unzip opencv_contrib.zip
 
-RUN mkdir -p build && cd build && cmake -DOPENCV_EXTRA_MODULES_PATH=../opencv_contrib-4.5.5/modules ../opencv-4.5.5
+RUN mkdir -p build && cd build && \
+    cmake -DOPENCV_EXTRA_MODULES_PATH=../opencv_contrib-4.5.5/modules ../opencv-4.5.5
 
 RUN cd build && cmake -Bbuild . -DCMAKE_BUILD_TYPE=Release \
                     -DBUILD_TESTS=OFF \
