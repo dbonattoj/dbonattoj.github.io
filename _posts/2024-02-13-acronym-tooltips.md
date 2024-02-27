@@ -55,20 +55,23 @@ acronym,nomain,shortcuts,toc,nogroupskip]{glossaries}
 % Change list of acronyms name:
 %\renewcommand*{\acronymname}{List of Abbreviations}
 
-% Funky colors:
-%\definecolor{myBlue}{RGB}{73, 142, 41}
-%\definecolor{myViolet}{RGB}{17, 138, 178}
-% Black
-\definecolor{myBlue}{RGB}{0, 0, 0}
-\definecolor{myViolet}{RGB}{0, 0, 0}
+% Acronyms in colors
+%\definecolor{color1}{RGB}{73, 142, 41}  % greenish
+%\definecolor{color2}{RGB}{17, 138, 178} % blue
+%\definecolor{color3}{RGB}{73, 142, 41}  % greenish
+% Acronyms in black
+\definecolor{color1}{RGB}{0, 0, 0} % black
+\definecolor{color2}{RGB}{0, 0, 0} % black
+\definecolor{color3}{gray}{0.30}   % gray
+\newcommand{\mygray}[1]{\textcolor{color3}{#1}}
+\newcommand{\mybold}[1]{\textbf{\mygray{#1}}}
 
-\newcommand{\accolor}[1]{\textcolor{myBlue}{#1}}
-% use to make first definition special format
-\newcommand*{\glossfirstformat}[1]{\accolor{#1}} 
+\newcommand{\accolor}[1]{\textcolor{color1}{#1}}
+\newcommand*{\glossfirstformat}[1]{\accolor{#1}} % use to make first definition special format
 
 %https://tex.stackexchange.com/questions/232707/modify-appearance-of-first-acronym
-\newcommand*{\acfirstformat}[1]{\textcolor{myViolet}{{#1}}}
-\newcommand*{\acplfirstformat}[1]{\textcolor{myViolet}{{#1}}}
+\newcommand*{\acfirstformat}[1]{\textcolor{color2}{\textbf{#1}}}
+\newcommand*{\acplfirstformat}[1]{\textcolor{color2}{\textbf{#1}}}
 \newacronymstyle{myacro}
 {%
   \GlsUseAcrEntryDispStyle{long-short}%
@@ -98,34 +101,52 @@ acronym,nomain,shortcuts,toc,nogroupskip]{glossaries}
 % use for normal acronyms, gives them a PDF tooltip popup
 \newcommand*{\tip}[1]{%  define our acronym command,  make it short since we use it a lot, use * for so that it is only a 'short' command
     \ifglsused{#1}{% if we used it already, then put pdftooltip
-      {\pdftooltip{\accolor{\glsentryshort{#1}}}{\glsentrydesc{#1}}}%
+      {\pdftooltip{\accolor{\mybold{\glsentryshort{#1}}}}{\glsentrydesc{#1}}}%
     }{%
-      \gls{#1}% otherwise put the normal gls
+      {\gls{#1}}% otherwise put the normal gls
     }%
 }%
 
 \newcommand*{\Tip}[1]{%
     \ifglsused{#1}{%
-      {\pdftooltip{\accolor{\Glsentryshort{#1}}}{\glsentrydesc{#1}}}%
+      {\pdftooltip{\accolor{\mybold{\Glsentryshort{#1}}}}{\glsentrydesc{#1}}}%
     }{%
-      \Gls{#1}%
+      {\Gls{#1}}%
     }%
 }%
 
 % use for plural acronyms
 \newcommand*{\tips}[1]{%
     \ifglsused{#1}{%
-      {\pdftooltip{\accolor{\glsentryshortpl{#1}}}{\glsentrydesc{#1}}}%
+      {\pdftooltip{\accolor{\mybold{\glsentryshortpl{#1}}}}{\glsentrydesc{#1}}}%
     }{%
-      \glspl{#1}%
+      {\glspl{#1}}%
     }%
 }%
 
 \newcommand*{\Tips}[1]{%
     \ifglsused{#1}{%
-      {\pdftooltip{\accolor{\Glsentryshortpl{#1}}}{\glsentrydesc{#1}}}%
+      {\pdftooltip{\accolor{\mybold{\Glsentryshortpl{#1}}}}{\glsentrydesc{#1}}}%
     }{%
-      \Glspl{#1}%
+      {\Glspl{#1}}%
+    }%
+}%
+
+% Forced short version in capital and without capital, for example to use in figure captions, where we do not want to define
+% the term if it appears for the first time there, but we still want the tooltip.
+\newcommand*{\Tipshort}[1]{%
+    \ifglsused{#1}{%
+      {\pdftooltip{\accolor{\mybold{\Glsentryshort{#1}}}}{\glsentrydesc{#1}}}%
+    }{%
+      \mybold{\acs{#1}}%
+    }%
+}%
+
+\newcommand*{\tipshort}[1]{%
+    \ifglsused{#1}{%
+      {\pdftooltip{\accolor{\mybold{\glsentryshort{#1}}}}{\glsentrydesc{#1}}}%
+    }{%
+      \mybold{\acs{#1}}%
     }%
 }%
 {% endraw %}
