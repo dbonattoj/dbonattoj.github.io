@@ -18,7 +18,7 @@
 
 <span class="c"># Changing version of OpenCV in external package</span>
 
-<span class="k">RUN </span><span class="nb">sed</span> <span class="nt">-i</span> <span class="s1">'s/package(OpenCV 4\.2 REQUIRED)/package(OpenCV 4.5 REQUIRED)/g'</span> CMakeFile.txt
+<span class="k">RUN </span><span class="nb">sed</span> <span class="nt">-i</span> <span class="s1">'s/find_package(OpenCV 4\.2 REQUIRED)/find_package(OpenCV 4.5 REQUIRED)/g'</span> CMakeFile.txt
 
 [...]
 
