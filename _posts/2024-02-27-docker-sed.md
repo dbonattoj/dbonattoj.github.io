@@ -16,32 +16,36 @@ In this blog post, I share my go-to command – a straightforward sed line – m
 {% highlight Dockerfile %}
 {% raw %}
 RUN wget -O opencv.zip https://github.com/opencv/opencv/archive/refs/tags/4.5.5.zip && \
-    unzip opencv.zip && \
-    wget -O opencv_contrib.zip https://github.com/opencv/opencv_contrib/archive/refs/tags/4.5.5.zip && \
-    unzip opencv_contrib.zip
+ unzip opencv.zip && \
+ wget -O opencv_contrib.zip https://github.com/opencv/opencv_contrib/archive/refs/tags/4.5.5.zip && \
+ unzip opencv_contrib.zip
 
 RUN mkdir -p build && cd build && \
-    cmake -DOPENCV_EXTRA_MODULES_PATH=../opencv_contrib-4.5.5/modules ../opencv-4.5.5
+ cmake -DOPENCV_EXTRA_MODULES_PATH=../opencv_contrib-4.5.5/modules ../opencv-4.5.5
 
 RUN cd build && cmake -Bbuild . -DCMAKE_BUILD_TYPE=Release \
-                    -DBUILD_TESTS=OFF \
-                    -DBUILD_PERF_TESTS=OFF \
-                    -DBUILD_EXAMPLES=OFF \
-                    -DBUILD_opencv_apps=OFF
+ -DBUILD_TESTS=OFF \
+ -DBUILD_PERF_TESTS=OFF \
+ -DBUILD_EXAMPLES=OFF \
+ -DBUILD_opencv_apps=OFF
 
 RUN cd build && cmake --build . -j "$(nproc)" --target install
 
 # [...git clone of another repository...]
 
 # Changing version of OpenCV in external package
-RUN sed -i 's/find_package(OpenCV 4\.2 REQUIRED)/find_package(OpenCV 4.5 REQUIRED)/g' CMakeFile.txt
+
+RUN sed -i 's/package(OpenCV 4\.2 REQUIRED)/package(OpenCV 4.5 REQUIRED)/g' CMakeFile.txt
 
 [...]
+
 # Removing the use of pip in anaconda environment file
+
 RUN sed -i '/pip:/d' environment.yml
 RUN sed -i '/- module_name/d' environment.yml
 
 # [...continue making...]
+
 {% endraw %}
 {% endhighlight %}
 
