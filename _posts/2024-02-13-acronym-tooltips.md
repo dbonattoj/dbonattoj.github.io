@@ -99,7 +99,8 @@ acronym,nomain,shortcuts,toc,nogroupskip]{glossaries}
 \setacronymstyle{myacro}
 
 % use for normal acronyms, gives them a PDF tooltip popup
-\newcommand*{\tip}[1]{%  define our acronym command,  make it short since we use it a lot, use * for so that it is only a 'short' command
+\newcommand*{\tip}[1]{%  define our acronym command,  make it short since we use it a lot,
+                      %  use * for so that it is only a 'short' command
     \ifglsused{#1}{% if we used it already, then put pdftooltip
       {\pdftooltip{\accolor{\mybold{\glsentryshort{#1}}}}{\glsentrydesc{#1}}}%
     }{%
@@ -132,8 +133,9 @@ acronym,nomain,shortcuts,toc,nogroupskip]{glossaries}
     }%
 }%
 
-% Forced short version in capital and without capital, for example to use in figure captions, where we do not want to define
-% the term if it appears for the first time there, but we still want the tooltip.
+% Forced short version in capital and without capital, for example to use in figure captions,
+% where we do not want to define the term if it appears for the first time there,
+% but we still want the tooltip.
 \newcommand*{\Tipshort}[1]{%
     \ifglsused{#1}{%
       {\pdftooltip{\accolor{\mybold{\Glsentryshort{#1}}}}{\glsentrydesc{#1}}}%
