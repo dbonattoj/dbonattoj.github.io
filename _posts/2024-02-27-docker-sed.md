@@ -2,8 +2,8 @@
 layout: post
 title: Docker Dependency Magic - Unleashing sed to Tailor Your Packages
 date: 2024-02-27 16:24:00
-description: Papers just miss this kind of interactivity.
-tags: formatting latex
+description: Tuning other's packaged code to our fits
+tags: code docker
 categories: publications
 ---
 
