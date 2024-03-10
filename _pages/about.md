@@ -18,7 +18,7 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
 
-Welcome to my journey in immersive content creation! Armed with a master's in computational intelligence and robotics engineering, I'm pushing real-time 3D computing boundaries with a joint Ph.D. between the Free University of Brussels and the Vrije Universiteit Brussel. My impactful contributions in the **MPEG** community and the **HoviTron** project showcase the fusion of academia and industry.
+Welcome to my journey in immersive content creation! Armed with a master's in computational intelligence and robotics engineering, I've earned a Ph.D. by pushing the real-time 3D computing boundaries through a collaborative effort between the Free University of Brussels and the Vrije Universiteit Brussel. My impactful contributions in the **MPEG** community and the **HoviTron** project showcase the fusion of academia and industry.
 
 In view synthesis, I've pioneered the **Reference View Synthesizer (RVS)**, rivaling NeRF's quality with minimal GPU usage. Another milestone is the **Reference Depth Estimation software (RDE)**, ensuring high-quality rendering. I've explored **plenoptic cameras**, especially the plenoptic 2.0, for dynamic perspectives.
 
