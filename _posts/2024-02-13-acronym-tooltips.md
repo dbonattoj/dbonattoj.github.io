@@ -53,7 +53,7 @@ acronym,nomain,shortcuts,toc,nogroupskip]{glossaries}
 \glsdisablehyper % disable hyperlinks on all acronyms
 
 % Change list of acronyms name:
-%\renewcommand\*{\acronymname}{List of Abbreviations}
+%\renewcommand*{\acronymname}{List of Abbreviations}
 
 % Acronyms in colors
 %\definecolor{color1}{RGB}{73, 142, 41} % greenish
@@ -108,7 +108,7 @@ acronym,nomain,shortcuts,toc,nogroupskip]{glossaries}
 }%
 }%
 
-\newcommand\*{\Tip}[1]{%
+\newcommand*{\Tip}[1]{%
 \ifglsused{#1}{%
 {\pdftooltip{\accolor{\mybold{\Glsentryshort{#1}}}}{\glsentrydesc{#1}}}%
 }{%
@@ -117,7 +117,7 @@ acronym,nomain,shortcuts,toc,nogroupskip]{glossaries}
 }%
 
 % use for plural acronyms
-\newcommand\*{\tips}[1]{%
+\newcommand*{\tips}[1]{%
 \ifglsused{#1}{%
 {\pdftooltip{\accolor{\mybold{\glsentryshortpl{#1}}}}{\glsentrydesc{#1}}}%
 }{%
@@ -125,7 +125,7 @@ acronym,nomain,shortcuts,toc,nogroupskip]{glossaries}
 }%
 }%
 
-\newcommand\*{\Tips}[1]{%
+\newcommand*{\Tips}[1]{%
 \ifglsused{#1}{%
 {\pdftooltip{\accolor{\mybold{\Glsentryshortpl{#1}}}}{\glsentrydesc{#1}}}%
 }{%
@@ -136,7 +136,7 @@ acronym,nomain,shortcuts,toc,nogroupskip]{glossaries}
 % Forced short version in capital and without capital, for example to use in figure captions,
 % where we do not want to define the term if it appears for the first time there,
 % but we still want the tooltip.
-\newcommand\*{\Tipshort}[1]{%
+\newcomman*{\Tipshort}[1]{%
 \ifglsused{#1}{%
 {\pdftooltip{\accolor{\mybold{\Glsentryshort{#1}}}}{\glsentrydesc{#1}}}%
 }{%
@@ -144,7 +144,7 @@ acronym,nomain,shortcuts,toc,nogroupskip]{glossaries}
 }%
 }%
 
-\newcommand\*{\tipshort}[1]{%
+\newcommand*{\tipshort}[1]{%
     \ifglsused{#1}{%
       {\pdftooltip{\accolor{\mybold{\glsentryshort{#1}}}}{\glsentrydesc{#1}}}%
     }{%
