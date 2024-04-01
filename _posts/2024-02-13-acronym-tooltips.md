@@ -156,6 +156,6 @@ Now, create an `acronyms.tex` file, a versatile copy-paste companion for all you
 {% endraw %}
 {% endhighlight %}
 
-Here is an [Overleaf link](https://www.overleaf.com/read/ftdtbqcrfgrd#11682c) with a working example.
+Here is an [Overleaf link](https://www.overleaf.com/read/ftdtbqcrfgrd#11682c) with a **downloadable working example**.
 
 Let's empower every research paper with this tool – simple, effective, and a game-changer for both writers and readers alike! 🚀
