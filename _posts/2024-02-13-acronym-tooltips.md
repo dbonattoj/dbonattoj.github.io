@@ -27,7 +27,7 @@ When you're ready to use an acronym, like Reference View Synthesizer (RVS), simp
 
 {% highlight latex %}
 {% raw %}
-Visual comparison between \tip{rvs} (4 and 8 input views) on zoomed details of [...]
+Visual comparison between \tip{rvs} (4 and 8 input views) on zoomed details of [...] \tip{rvs} [...]
 {% endraw %}
 {% endhighlight %}
 
@@ -43,7 +43,7 @@ Now, create an `acronyms.tex` file, a versatile copy-paste companion for all you
 \usepackage[draft, author={}]{pdfcomment}
 
 \usepackage[hyperfirst=false,%sort=none,
-acronym,nomain,shortcuts,toc,nogroupskip]{glossaries}
+  acronym,nomain,shortcuts,toc,nogroupskip]{glossaries}
 % https://tex.stackexchange.com/questions/199084/tooltip-with-glossary-items
 \usepackage{xcolor} % used for colored acronyms
 
@@ -67,91 +67,95 @@ acronym,nomain,shortcuts,toc,nogroupskip]{glossaries}
 \newcommand{\mybold}[1]{\textbf{\mygray{#1}}}
 
 \newcommand{\accolor}[1]{\textcolor{color1}{#1}}
-\newcommand\*{\glossfirstformat}[1]{\accolor{#1}} % use to make first definition special format
+\newcommand*{\glossfirstformat}[1]{\accolor{#1}} % use to make first definition special format
 
 %https://tex.stackexchange.com/questions/232707/modify-appearance-of-first-acronym
 \newcommand*{\acfirstformat}[1]{\textcolor{color2}{\textbf{#1}}}
 \newcommand*{\acplfirstformat}[1]{\textcolor{color2}{\textbf{#1}}}
 \newacronymstyle{myacro}
 {%
-\GlsUseAcrEntryDispStyle{long-short}%
+  \GlsUseAcrEntryDispStyle{long-short}%
 }%
 {%
-\GlsUseAcrStyleDefs{long-short}%
-\renewcommand*{\genacrfullformat}[1]{%
-\glossfirstformat{\glsentrylong{##1}}\space
-(\acfirstformat{\glsentryshort{##1}})%
-}%
-\renewcommand*{\Genacrfullformat}[2]{%
-\glossfirstformat{\Glsentrylong{##1}}\space
-(\glsentryshort{##1})%
-}%
-\renewcommand*{\genplacrfullformat}[2]{%
-\glossfirstformat{\glsentrylongpl{##1}}\space
-(\acplfirstformat{\glsentryshort{##1}})%
-}%
-\renewcommand*{\Genplacrfullformat}[2]{%
-\glossfirstformat{\Glsentrylongpl{##1}}\space
-(\glsentryshortpl{##1})%
-}%
+  \GlsUseAcrStyleDefs{long-short}%
+  \renewcommand*{\genacrfullformat}[1]{%
+    \glossfirstformat{\glsentrylong{##1}}\space
+    (\acfirstformat{\glsentryshort{##1}})%
+  }%
+  \renewcommand*{\Genacrfullformat}[2]{%
+    \glossfirstformat{\Glsentrylong{##1}}\space
+    (\glsentryshort{##1})%
+  }%
+  \renewcommand*{\genplacrfullformat}[2]{%
+    \glossfirstformat{\glsentrylongpl{##1}}\space
+    (\acplfirstformat{\glsentryshort{##1}})%
+  }%
+  \renewcommand*{\Genplacrfullformat}[2]{%
+    \glossfirstformat{\Glsentrylongpl{##1}}\space
+    (\glsentryshortpl{##1})%
+  }%
 }
 
 \setacronymstyle{myacro}
 
 % use for normal acronyms, gives them a PDF tooltip popup
 \newcommand*{\tip}[1]{% define our acronym command, make it short since we use it a lot,
-% use * for so that it is only a 'short' command
-\ifglsused{#1}{% if we used it already, then put pdftooltip
-{\pdftooltip{\accolor{\mybold{\glsentryshort{#1}}}}{\glsentrydesc{#1}}}%
-}{%
-{\gls{#1}}% otherwise put the normal gls
-}%
+  % use * for so that it is only a 'short' command
+  \ifglsused{#1}{% if we used it already, then put pdftooltip
+    {\pdftooltip{\accolor{\mybold{\glsentryshort{#1}}}}{\glsentrydesc{#1}}}%
+  }{%
+    {\gls{#1}}% otherwise put the normal gls
+  }%
 }%
 
 \newcommand*{\Tip}[1]{%
-\ifglsused{#1}{%
-{\pdftooltip{\accolor{\mybold{\Glsentryshort{#1}}}}{\glsentrydesc{#1}}}%
-}{%
-{\Gls{#1}}%
-}%
+  \ifglsused{#1}{%
+    {\pdftooltip{\accolor{\mybold{\Glsentryshort{#1}}}}{\glsentrydesc{#1}}}%
+  }{%
+    {\Gls{#1}}%
+  }%
 }%
 
 % use for plural acronyms
 \newcommand*{\tips}[1]{%
-\ifglsused{#1}{%
-{\pdftooltip{\accolor{\mybold{\glsentryshortpl{#1}}}}{\glsentrydesc{#1}}}%
-}{%
-{\glspl{#1}}%
-}%
+  \ifglsused{#1}{%
+    {\pdftooltip{\accolor{\mybold{\glsentryshortpl{#1}}}}{\glsentrydesc{#1}}}%
+  }{%
+    {\glspl{#1}}%
+  }%
 }%
 
 \newcommand*{\Tips}[1]{%
-\ifglsused{#1}{%
-{\pdftooltip{\accolor{\mybold{\Glsentryshortpl{#1}}}}{\glsentrydesc{#1}}}%
-}{%
-{\Glspl{#1}}%
-}%
+  \ifglsused{#1}{%
+    {\pdftooltip{\accolor{\mybold{\Glsentryshortpl{#1}}}}{\glsentrydesc{#1}}}%
+  }{%
+    {\Glspl{#1}}%
+  }%
 }%
 
 % Forced short version in capital and without capital, for example to use in figure captions,
 % where we do not want to define the term if it appears for the first time there,
 % but we still want the tooltip.
-\newcomman*{\Tipshort}[1]{%
-\ifglsused{#1}{%
-{\pdftooltip{\accolor{\mybold{\Glsentryshort{#1}}}}{\glsentrydesc{#1}}}%
-}{%
-\mybold{\acs{#1}}%
-}%
+\newcommand*{\Tipshort}[1]{%
+  \ifglsused{#1}{%
+    {\pdftooltip{\accolor{\mybold{\Glsentryshort{#1}}}}{\glsentrydesc{#1}}}%
+  }{%
+    \mybold{\acs{#1}}%
+  }%
 }%
 
 \newcommand*{\tipshort}[1]{%
-    \ifglsused{#1}{%
-      {\pdftooltip{\accolor{\mybold{\glsentryshort{#1}}}}{\glsentrydesc{#1}}}%
-    }{%
-      \mybold{\acs{#1}}%
-    }%
+  \ifglsused{#1}{%
+    {\pdftooltip{\accolor{\mybold{\glsentryshort{#1}}}}{\glsentrydesc{#1}}}%
+  }{%
+    \mybold{\acs{#1}}%
+  }%
 }%
+
+\newacronym{rvs}{RVS}{Reference View Synthesizer}
 {% endraw %}
 {% endhighlight %}
+
+Here is an [Overleaf link](https://www.overleaf.com/read/ftdtbqcrfgrd#11682c) with a working example.
 
 Let's empower every research paper with this tool – simple, effective, and a game-changer for both writers and readers alike! 🚀
