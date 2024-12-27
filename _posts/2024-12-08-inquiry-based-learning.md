@@ -1,0 +1,61 @@
+---
+layout: post
+title: Inquiry-Based Learning - Navigating the Path to Deep Understanding in Class
+date: 2024-12-08 21:18:00
+description: This article delves into the transformative Moore Method, a teaching approach that challenges students to independently discover mathematical truths. Through a modified version of the method, which emphasizes student-driven inquiry and problem-solving, the article explores how it fosters deep mastery while presenting significant challenges. It also examines the effectiveness, limitations, and lessons learned from applying this method in the classroom, alongside reflections on the role of high-quality teaching materials and the evolving student mindset.
+tags: Education
+categories: education
+---
+
+The Moore method, introduced in 1911 at the University of Pennsylvania, is widely regarded as a rigorous and demanding approach to learning advanced mathematics.
+
+Under this method, students are provided with a list of definitions and tasked with independently proving and presenting theorems based solely on these foundational concepts. While this approach fosters a profound understanding of the material, it progresses slowly. Students build the subject matter incrementally, proof by proof, which often results in covering less material compared to traditional classes.
+
+The method is notable for its ability to cultivate deep mastery. However, the process is exceptionally challenging. Proving theorems is inherently difficult, especially for students with no prior exposure to the subject. Progress feels painstakingly slow, advancing step by step, with the sense that completion is perpetually out of reach. Unsurprisingly, this method was widely disliked by students, yet it consistently produced exceptional mathematicians.
+
+One of the method’s strictest requirements was that students could not have prior familiarity with the material. All understanding had to be earned through their own efforts, ensuring a genuine engagement with the subject.
+
+Despite its effectiveness, the extreme rigor and difficulty of the Moore method made it an approach that many students found unbearable.
+
+It’s not certain that the Moore method is the best way to train mathematicians. Often, being stuck on a proof for days can be counterproductive. A small glimpse at the key steps of a proof can provide the clarity needed to move forward, particularly when the solution relies on an unconventional or intricate trick. Discovering such a trick independently is highly unlikely without spending countless hours working on the problem and similar ones. However, being introduced to the trick, understanding it, and integrating it into one’s problem-solving toolbox can be profoundly empowering. For it to truly become part of one's expertise, the trick must be understood in context, analyzed for its effectiveness, and practiced repeatedly until mastered.
+
+I believe that a balanced approach—combining independent problem-solving with guided hints or insights when needed—may be the fastest path to master ones craft.
+
+However, the challenge lies in discerning when reading the proof is helpful and when it is detrimental. A student learning new material often cannot differentiate between a genuine trick and a solution that simply requires perseverance. Reading a solution prematurely risks undermining the learning process, reducing a valuable insight to a mere trick without understanding the effort behind it, and the student will use the trick without fully understanding it, creating gaps in its understanding and mental models. Conversely, when encountering a legitimate trick, the student may lack the tools to grasp its significance fully.
+
+In this context, the role of the teacher becomes critical. A knowledgeable teacher can distinguish between instances where independent problem-solving is essential and moments when a hint or demonstration of a trick is warranted. By carefully guiding students through exercises and proofs—alternating between asking them to work independently and providing well-timed hints—teachers can ensure students build both resilience and a deep understanding of the material.
+
+In recent years, I’ve observed a resurgence of the Moore method, adapted and rebranded under the name "inquiry-based learning." This modern variation often uses textbooks as the medium, incorporating modifications that make the approach more accessible. Unlike the original Moore method, these books provide more than just definitions and axioms; they guide students in developing problem-solving strategies. For example, an exercise might present a partially completed proof with missing steps for the student to fill in. These gaps are carefully aligned with concepts recently introduced, ensuring that students build intuition, develop strategies, and even acquire specific techniques before tackling more complex theorems.
+
+I’ve particularly appreciated this approach in Lebesgue Integration on Euclidean Space by Frank Jones [1], which covers measure theory in a spectacular way, providing an enormous amount of intuition, even though the subject is traditionally very dry, and Topology Through Inquiry by Francis Su [2] (Francis Su is an amazing teacher, and his video lectures on real analysis are an excellent resource [3]). However, one significant limitation of these texts is their assumption of a baseline level of knowledge. While prerequisites are inevitable, mathematics can be approached in countless ways, and few readers have mastered all the foundational material a given author might consider essential.
+
+I specifically recall getting stuck on a routine exercise involving dyadic sets in the measure theory text. While I understood the motivation for introducing such sets and the measure being constructed, handling these unfamiliar entities tripped me up with technicalities, delaying my progress on the core subject. These stumbling blocks can hinder the effectiveness of inquiry-based methods. Missing prerequisites or the absence of a teacher to provide guidance can discourage students from continuing.
+
+Addressing this challenge comprehensively would require an inquiry-based book that begins from absolute zero, covering all prerequisites in the same style. However, this approach would likely result in a massive volume, daunting for beginners, as their progress would be painfully slow compared to the thickness of the volume, and tedious for more advanced readers due to its slow initial pace. Balancing accessibility and depth in an inquiry-based framework remains a significant challenge for educators and authors alike.
+
+These principles guide my current teaching approach. In a university setting, the challenge lies in balancing two conflicting expectations: fostering competent, skilled students with deep understanding while simultaneously covering a vast quantity of material. Designing an inquiry-based, interactive class often clashes with institutional expectations, as the focus on deep mastery can slow the pace of covering content.
+
+I’ve had the opportunity to work with students from diverse academic backgrounds, all of whom were ultimately required to master the same material. This diversity made it impossible to assume extensive prior knowledge, prompting me to experiment with these ideas in my teaching. I began my lessons with minimal background knowledge, guiding students step by step toward the core concepts. This approach was notably slow at first, as I invested time in defining foundational concepts and leading students through carefully crafted questions on the more challenging parts.
+
+The idea is that straightforward foundational material can usually be understood with clear explanations and requires little practice. However, more intricate concepts benefit from guided inquiry. Instead of providing solutions outright, I posed a series of logically connected questions designed to lead students to the solution. It was very interesting, this approach mirrors the spirit of inquiry-based learning: students feel as though they are constructing the material themselves. Many were amazed to realize how the theory seemed to emerge naturally from their own discoveries.
+
+Guiding this process is a nuanced skill. Students often propose ideas in class, and I must quickly evaluate their suggestions, explaining why they work or don’t. More often, I frame questions that enable them to critique and refine their own ideas, without giving the solution. This dynamic, interactive process keeps them engaged and allow a deeper understanding of the material.
+
+Although this process begins slowly, it accelerates as the material progresses. I observed students naturally handling increasingly complex problems and gaining expertise in the subject. Their mindset shifted from "I need to study this course for my credits" to "I’m a theory builder." To my surprise, we ultimately covered more material than expected. Despite the growing complexity of the topics, their intrinsic motivation to understand and their newly developed problem-solving reflexes allowed them to tackle in-class challenges and construct theories as if they were the discoverers of the subject for the first time.
+
+As the lessons advanced, students began asking more insightful questions, particularly on challenging topics. At one point, they even identified the boundaries of the current state-of-the-art. It was an amazing moment. The realization that there is still much to explore, combined with their confidence in proposing and investigating potential solutions, was both empowering for them and inspiring for me as an educator.
+
+This journey is still in its early stages, and there is much left to explore. I found that the most challenging aspect wasn’t delivering lectures or guiding students but creating high-quality materials that allow them to follow the ideas in a fast-paced and engaging way.
+
+The slides were designed so that every question presented was addressed during class, with those questions being pivotal to understanding the material. At the same time, the subsequent slides needed to align with the solutions proposed by the students. This implies two things: first, anticipating the directions students might take during discussions to ensure that the slides reflected the mental models they developed, in particular with beautiful schematic summarizing the in-class discussion; second, subtly guiding them toward the solution presented in the slides. 
+
+Dismissing incorrect ideas was relatively straightforward, as I could typically craft a counterexample and pose it to the class (sometimes even turning it into a vote on whether the idea holds and why). However, when students presented strong alternative solutions that didn’t align exactly with the slides, the discussions became particularly enriching, especially when mapping their ideas to the intended solution.
+
+After each session, I revised the slides to incorporate these discussions and add any missing visualizations or mental models we created together on the blackboard. While I don’t expect students to revisit the slides—the core ideas should already be clear from class—they serve as a valuable resource for future learners, offering improved clarity and representation of key concepts.
+
+Creating this type of material is incredibly time-consuming. Fortunately, I’ve discovered other educators worldwide who produce similar high-quality slides on related topics. Their work has been an invaluable source of inspiration, whether they consciously follow the principles I describe here or simply intuit that this approach enhances teaching. Regardless, these resources contribute to exceptional material available online, and I hope promotes a new generation of students who truly master the material and develop a genuine passion for the presented material, and overall for learning.
+
+References: 
+1. Topology Through Inquiry, Michael Starbird and Francis Su, AMS, 2019.
+2. Francis Su's video lectures on real analysis: [YouTube Playlist](https://www.youtube.com/watch?v=sqEyWLGvvdw&list=PL0E754696F72137EC).
+3. Lebesgue Integration on Euclidean Space, Frank Jones, Jones & Bartlett Learning, 2000.
