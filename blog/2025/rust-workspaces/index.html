@@ -1,34 +1,34 @@
 <!DOCTYPE html> <html lang="en"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> Rust Workspaces | Daniele Bonatto </title> <meta name="author" content="Daniele Bonatto"> <meta name="description" content="An exploration of organizing Rust projects using workspaces, with a practical guide for structuring and managing dependencies."> <meta name="keywords" content="jekyll, jekyll-theme, academic-website, portfolio-website"> <link rel="stylesheet" href="/assets/css/bootstrap.min.css?a4b3f509e79c54a512b890d73235ef04"> <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/css/mdb.min.css" integrity="sha256-jpjYvU3G3N6nrrBwXJoVEYI/0zw8htfFnhT9ljN3JJw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="/assets/css/academicons.min.css?f0b7046b84e425c55f3463ac249818f5"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%E2%9A%9B%EF%B8%8F&lt;/text&gt;&lt;/svg&gt;"> <link rel="stylesheet" href="/assets/css/main.css?d41d8cd98f00b204e9800998ecf8427e"> <link rel="canonical" href="https://dbonattoj.github.io/blog/2025/rust-workspaces/"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark"> <script src="/assets/js/theme.js?0afe9f0ae161375728f7bcc5eb5b4ab4"></script> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="https://dbonattoj.github.io/"> <span class="font-weight-bold">Daniele </span> Bonatto </a> <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse text-right" id="navbarNav"> <ul class="navbar-nav ml-auto flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">Welcome </a> </li> <li class="nav-item "> <a class="nav-link" href="/about/">about </a> </li> <li class="nav-item "> <a class="nav-link" href="/blog/">blog </a> </li> <li class="nav-item "> <a class="nav-link" href="/publications/">publications </a> </li> <li class="nav-item "> <a class="nav-link" href="/projects/">projects </a> </li> <li class="toggle-container"> <button id="light-toggle" title="Change theme"> <i class="fa-solid fa-moon"></i> <i class="fa-solid fa-sun"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="post"> <header class="post-header"> <h1 class="post-title">Rust Workspaces</h1> <p class="post-meta"> January 02, 2025 </p> <p class="post-tags"> <a href="/blog/2025"> <i class="fa-solid fa-calendar fa-sm"></i> 2025 </a>   ·   <a href="/blog/tag/rust"> <i class="fa-solid fa-hashtag fa-sm"></i> rust</a>     ·   <a href="/blog/category/programming"> <i class="fa-solid fa-tag fa-sm"></i> programming</a>   </p> </header> <article class="post-content"> <div id="markdown-content"> <p>While working on a Rust project involving multiple libraries and applications, I explored Rust workspaces to manage interconnected components. I found the process somewhat unintuitive and poorly documented, especially when it came to importing libraries into applications. To streamline future efforts, I’ve summarized the steps I followed here.</p> <h3 id="why-use-workspaces">Why Use Workspaces?</h3> <p>For small projects, a single binary or library is sufficient, created with a simple command like:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cargo new app <span class="nt">--bin</span>  
-</code></pre></div></div> <p>However, for larger projects involving multiple libraries and applications that need to interact with each other, Rust workspaces provide a convenient way to organize the structure.</p> <h3 id="workspace-structure">Workspace Structure</h3> <p>Here’s an example structure I used for my project:</p> <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">.</span>  
-<span class="err">├──</span> <span class="nt">Cargo</span><span class="nc">.lock</span>  
-<span class="err">├──</span> <span class="nt">Cargo</span><span class="nc">.toml</span>  
-<span class="err">├──</span> <span class="nt">app</span><span class="o">/</span>  
-<span class="err">│</span>   <span class="err">├──</span> <span class="nt">app1</span><span class="o">/</span>  
-<span class="err">│</span>   <span class="err">│</span>   <span class="err">├──</span> <span class="nt">Cargo</span><span class="nc">.lock</span>  
-<span class="err">│</span>   <span class="err">│</span>   <span class="err">├──</span> <span class="nt">Cargo</span><span class="nc">.toml</span>  
-<span class="err">│</span>   <span class="err">│</span>   <span class="err">└──</span> <span class="nt">src</span><span class="o">/</span>  
-<span class="err">│</span>   <span class="err">│</span>       <span class="err">└──</span> <span class="nt">main</span><span class="nc">.rs</span>  
-<span class="err">│</span>   <span class="err">├──</span> <span class="nt">app2</span><span class="o">/</span>  
-<span class="err">│</span>   <span class="err">│</span>   <span class="err">├──</span> <span class="nt">Cargo</span><span class="nc">.lock</span>  
-<span class="err">│</span>   <span class="err">│</span>   <span class="err">├──</span> <span class="nt">Cargo</span><span class="nc">.toml</span>  
-<span class="err">│</span>   <span class="err">│</span>   <span class="err">└──</span> <span class="nt">src</span><span class="o">/</span>  
-<span class="err">│</span>       <span class="err">└──</span> <span class="nt">main</span><span class="nc">.rs</span>  
-<span class="err">├──</span> <span class="nt">lib</span><span class="o">/</span>  
-<span class="err">│</span>   <span class="err">├──</span> <span class="nt">lib1</span><span class="o">/</span>  
-<span class="err">│</span>   <span class="err">│</span>   <span class="err">├──</span> <span class="nt">Cargo</span><span class="nc">.lock</span>  
-<span class="err">│</span>   <span class="err">│</span>   <span class="err">├──</span> <span class="nt">Cargo</span><span class="nc">.toml</span>  
-<span class="err">│</span>   <span class="err">│</span>   <span class="err">└──</span> <span class="nt">src</span><span class="o">/</span>  
-<span class="err">│</span>   <span class="err">│</span>       <span class="err">└──</span> <span class="nt">lib</span><span class="nc">.rs</span>  
-<span class="err">│</span>   <span class="err">├──</span> <span class="nt">lib2</span><span class="o">/</span>  
-<span class="err">│</span>   <span class="err">│</span>   <span class="err">├──</span> <span class="nt">Cargo</span><span class="nc">.lock</span>  
-<span class="err">│</span>   <span class="err">│</span>   <span class="err">├──</span> <span class="nt">Cargo</span><span class="nc">.toml</span>  
-<span class="err">│</span>   <span class="err">│</span>   <span class="err">└──</span> <span class="nt">src</span><span class="o">/</span>  
-<span class="err">│</span>       <span class="err">└──</span> <span class="nt">lib</span><span class="nc">.rs</span>  
-<span class="err">└──</span> <span class="nt">tests</span><span class="o">/</span>  
-    <span class="err">├──</span> <span class="nt">some-integration-tests</span><span class="nc">.rs</span>  
-    <span class="err">└──</span> <span class="nt">multi-file-test</span><span class="o">/</span>  
-        <span class="err">├──</span> <span class="nt">main</span><span class="nc">.rs</span>  
-        <span class="err">└──</span> <span class="nt">test_module</span><span class="nc">.rs</span>  
+</code></pre></div></div> <p>However, for larger projects involving multiple libraries and applications that need to interact with each other, Rust workspaces provide a convenient way to organize the structure.</p> <h3 id="workspace-structure">Workspace Structure</h3> <p>Here’s an example structure I used for my project:</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.  
+├── Cargo.lock  
+├── Cargo.toml  
+├── app/  
+│   ├── app1/  
+│   │   ├── Cargo.lock  
+│   │   ├── Cargo.toml  
+│   │   └── src/  
+│   │       └── main.rs  
+│   ├── app2/  
+│   │   ├── Cargo.lock  
+│   │   ├── Cargo.toml  
+│   │   └── src/  
+│       └── main.rs  
+├── lib/  
+│   ├── lib1/  
+│   │   ├── Cargo.lock  
+│   │   ├── Cargo.toml  
+│   │   └── src/  
+│   │       └── lib.rs  
+│   ├── lib2/  
+│   │   ├── Cargo.lock  
+│   │   ├── Cargo.toml  
+│   │   └── src/  
+│       └── lib.rs  
+└── tests/  
+    ├── some-integration-tests.rs  
+    └── multi-file-test/  
+        ├── main.rs  
+        └── test_module.rs  
 </code></pre></div></div> <h3 id="setting-up-a-workspace">Setting Up a Workspace</h3> <ol> <li> <p><strong>Create the Workspace Root</strong></p> <p>Start with an empty directory containing a <code class="language-plaintext highlighter-rouge">Cargo.toml</code> file:</p> <div class="language-toml highlighter-rouge"> <div class="highlight"><pre class="highlight"><code><span class="nn">[workspace]</span>  
 <span class="py">members</span> <span class="p">=</span> <span class="p">[]</span>  
 </code></pre></div> </div> <p>It would be nice to have a <code class="language-plaintext highlighter-rouge">cargo new --workspace workspaceName</code> command, but apparently, it is <a href="https://github.com/rust-lang/cargo/issues/8365" rel="external nofollow noopener" target="_blank">not implemented</a>.</p> </li> <li> <p><strong>Create Applications and Libraries</strong></p> <p>In the same folder, run the following commands to create your applications and libraries:</p> <div class="language-bash highlighter-rouge"> <div class="highlight"><pre class="highlight"><code>cargo new app/app1 <span class="nt">--vcs</span> none <span class="nt">--bin</span>  
