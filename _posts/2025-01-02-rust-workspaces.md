@@ -20,7 +20,7 @@ However, for larger projects involving multiple libraries and applications that 
 ### Workspace Structure  
 
 Here’s an example structure I used for my project:  
-```css
+```
 .  
 ├── Cargo.lock  
 ├── Cargo.toml  
