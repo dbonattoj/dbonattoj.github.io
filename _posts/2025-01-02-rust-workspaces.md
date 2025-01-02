@@ -34,7 +34,7 @@ Here’s an example structure I used for my project:
 │   │   ├── Cargo.lock  
 │   │   ├── Cargo.toml  
 │   │   └── src/  
-│       └── main.rs  
+│           └── main.rs  
 ├── lib/  
 │   ├── lib1/  
 │   │   ├── Cargo.lock  
@@ -45,7 +45,7 @@ Here’s an example structure I used for my project:
 │   │   ├── Cargo.lock  
 │   │   ├── Cargo.toml  
 │   │   └── src/  
-│       └── lib.rs  
+│           └── lib.rs  
 └── tests/  
     ├── some-integration-tests.rs  
     └── multi-file-test/  
