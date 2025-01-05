@@ -1,7 +1,7 @@
 ---
 layout: post
 title: A Tribute to Ramanujan's Genius
-date: 2025-01-05 02:30:22
+date: 2025-01-05 02:30:23
 description: A tribute to Srinivasa Ramanujan, one of history's greatest mathematicians.
 tags: readings
 categories: mathematics
