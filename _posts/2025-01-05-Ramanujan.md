@@ -4,7 +4,7 @@ title: A Tribute to Ramanujan's Genius
 date: 2025-01-05 02:30:22
 description: A tribute to Srinivasa Ramanujan, one of history's greatest mathematicians.
 tags: readings
-categories: readings
+categories: mathematics
 ---
 
 **Srinivasa Ramanujan (1887–1920) is one of the greatest mathematicians in history.**
@@ -15,6 +15,6 @@ A year ago, I came across this [detailed biography of Ramanujan](https://creativ
 
 One particularly fascinating episode from the article describes Ramanujan’s first interaction with Cambridge mathematicians G. H. Hardy and J. E. Littlewood with pages filled with wild and fantastic theorems, all without proofs!
 
-Reading about Ramanujan's life is both inspiring and humbling, a reminder of the power of relentless perseverance. From his early struggles to his remarkable collaboration with Hardy at Cambridge, Ramanujan's journey is a testament to the enduring impact of intellectual curiosity and creativity.
+Reading about Ramanujan's life is both inspiring and humbling, a reminder of the power of relentless perseverance. From his early struggles to his remarkable collaboration at Cambridge, Ramanujan's journey is a testament to the enduring impact of intellectual curiosity and creativity.
 
-To ensure I never lose access to this treasure, I’ve saved a [PDF]({{ site.baseurl }}{% link /assets/pdf/The-mathematical-creativity-of-Ramanujan-1-1-1.pdf %}) of the article. If you're as fascinated by Ramanujan's genius as I am, take a moment to explore this tribute to his legacy.
+To ensure I never lose access to this treasure, I’ve saved a [pdf]({{ site.baseurl }}{% link /assets/pdf/The-mathematical-creativity-of-Ramanujan-1-1-1.pdf %}) of the article. If you're as fascinated by Ramanujan's genius as I am, take a moment to explore this tribute to his legacy. You will not regret it.
