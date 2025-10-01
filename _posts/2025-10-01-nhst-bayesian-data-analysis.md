@@ -27,12 +27,12 @@ It sounds neat and tidy, but the interpretation is tricky. A p-value is *not* th
 
 Choosing the "right" test is harder than it looks. Imagine the design space:
 
-* Sample size $S$
-* Parametric vs. non-parametric assumptions $PNP$
-* Distribution families and their parameters $F_p$
-* Single or multiple hypotheses $H$
-* Dependence structures $D$
-* And countless other details $O$
+* Sample size $$S$$
+* Parametric vs. non-parametric assumptions $$PNP$$
+* Distribution families and their parameters $$F_p$$
+* Single or multiple hypotheses $$H$$
+* Dependence structures $$D$$
+* And countless other details $$O$$
 
 This space
 
@@ -65,21 +65,22 @@ Worse, academic publishing often reinforces rigidity. Papers sometimes get rejec
 Bayesian data analysis takes a different route. Instead of navigating the infinite map of pre-built tests, you **build a model**. You write down your assumptions explicitly (priors, likelihoods), combine them with your data, and then compute the posterior distribution. From there, you can answer the questions that actually matter: how likely is a parameter to fall in a certain range? What is the probability that one hypothesis is more supported than another?
 
 Mathematically:
+
 $$
 p(\theta \mid X) \propto p(X \mid \theta) \, p(\theta)
 $$
 
-* $p(\theta)$: your prior, the assumptions you bring.
-* $p(X \mid \theta)$: the likelihood, describing how data arise under the model
-* $p(\theta \mid X)$: the posterior, what you learn after seeing the data
+* $$p(\theta)$$: your prior, the assumptions you bring.
+* $$p(X \mid \theta)$$: the likelihood, describing how data arise under the model
+* $$p(\theta \mid X)$$: the posterior, what you learn after seeing the data
 
 From the posterior, you can compute directly:
 
-* $\Pr(\theta > 0 \mid X)$, the probability an effect is positive
+* $$\Pr(\theta > 0 \mid X)$$, the probability an effect is positive
 * Credible intervals for parameters
 * Predictions for future data
 
-In this view, inference is not about finding the right test in $\Omega$. It’s about writing down a plausible model and letting Bayes’ theorem do the work. The model *is* the test.
+In this view, inference is not about finding the right test in $$\Omega$$. It’s about writing down a plausible model and letting Bayes’ theorem do the work. The model *is* the test.
 
 This approach is more flexible. It’s essentially **test-free**. The model is the test. If you can specify it, you can run it. Instead of memorizing dozens of special-purpose procedures, you work in one unified framework. The quality of the results depends on the quality of the model - but at least the assumptions are visible, not hidden.
 
@@ -99,28 +100,36 @@ In some sense, ML lets the data find its own place in (\mathcal{S}), but without
 
 Do we still need to learn Bayesian Data Analysis, you might ask? My answer is yes - there is still value. If you don’t have enough data to apply machine learning, Bayesian analysis remains one of the most powerful ways to obtain a satisfying result. But even if you never directly apply it because you *do* have enough data, many of the methods that improved deep learning in recent years can be understood as essentially Bayesian ideas in disguise.
 
-Take **fine-tuning** for example: starting from a pre-trained model is nothing more than using a strong prior $p(\theta)$, and then updating it with new data $X_{\text{new}}$ via Bayes’ rule,
+Take **fine-tuning** for example: starting from a pre-trained model is nothing more than using a strong prior $$p(\theta)$$, and then updating it with new data $$X_{\text{new}}$$ via Bayes’ rule,
+
 $$
 p(\theta \mid X_{\text{new}}) \propto p(X_{\text{new}} \mid \theta), p(\theta).
 $$
+
 What practitioners call "adapting weights to a new dataset" is simply posterior updating.
 
 Or consider **dropout**: at training time, we randomly mask neurons, which in a Bayesian interpretation corresponds to integrating over a distribution of thinned networks. This can be formalized as an approximation to Bayesian model averaging,
+
 $$
 p(y \mid x, X) \approx \tfrac{1}{T} \sum_{t=1}^T p(y \mid x, \theta_t),
 $$
-where each $\theta_t$ is a sampled subnetwork under dropout.
 
-**Style transfer** can also be read through a Bayesian lens, though here the interpretation is more metaphorical than standard. The process of generating an image $I$ that balances fidelity to a content image $I_c$ with similarity to the distribution of a style image $I_s$ looks like a posterior tradeoff:
+where each $$\theta_t$$ is a sampled subnetwork under dropout.
+
+**Style transfer** can also be read through a Bayesian lens, though here the interpretation is more metaphorical than standard. The process of generating an image $$I$$ that balances fidelity to a content image $$I_c$$ with similarity to the distribution of a style image $$I_s$$ looks like a posterior tradeoff:
+
 $$
 p(I \mid I_c, I_s) \propto p(I_c \mid I)^{\alpha} , p(I \mid I_s)^{\beta},
 $$
-where the exponents $\alpha$ and $\beta$ act like prior strengths. In practice, ML papers frame this as an optimization of loss functions, not as Bayesian inference. Still, the analogy is useful: what looks like a balancing of competing objectives can often be reframed as a Bayesian updating problem.
+
+where the exponents $$\alpha$$ and $$\beta$$ act like prior strengths. In practice, ML papers frame this as an optimization of loss functions, not as Bayesian inference. Still, the analogy is useful: what looks like a balancing of competing objectives can often be reframed as a Bayesian updating problem.
 
 Even **regularization** in its most basic form has a Bayesian interpretation. For instance, L2 regularization (weight decay) corresponds to placing a Gaussian prior on the parameters,
+
 $$
 p(\theta) \propto \exp!\left(-\tfrac{\lambda}{2} |\theta|^2\right).
 $$
+
 Training with a penalty is just MAP (maximum a posteriori) estimation.
 
 So, even in a world dominated by machine learning, Bayesian analysis has enduring value: it provides a language and framework that helps us see the hidden logic behind many of the tools we already use.
