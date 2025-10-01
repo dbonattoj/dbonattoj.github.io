@@ -76,7 +76,7 @@ $$
 
 From the posterior, you can compute directly:
 
-* $$\Pr(\theta > 0 \mid X)$$, the probability an effect is positive
+* $$\Pr(\theta > 0 \mid X)$$, the probability that an effect is positive
 * Credible intervals for parameters
 * Predictions for future data
 
@@ -96,7 +96,7 @@ Some might ask: why not just use machine learning (ML) instead? After all, ML al
 
 Bayesian analysis sits in a different niche: smaller datasets, richer models, and a need for interpretable uncertainty. Instead of black-box predictions, you get probabilities and insights grounded in your domain knowledge.
 
-In some sense, ML lets the data find its own place in (\mathcal{S}), but without making explicit which assumptions are being chosen. Bayesian modeling, by contrast, forces you to declare your assumptions and gives you transparent probabilities rather than opaque predictions.
+In some sense, ML lets the data find its own place in $$\Omega$$, but without making explicit which assumptions are being chosen. Bayesian modeling, by contrast, forces you to declare your assumptions and gives you transparent probabilities rather than opaque predictions.
 
 Do we still need to learn Bayesian Data Analysis, you might ask? My answer is yes - there is still value. If you don’t have enough data to apply machine learning, Bayesian analysis remains one of the most powerful ways to obtain a satisfying result. But even if you never directly apply it because you *do* have enough data, many of the methods that improved deep learning in recent years can be understood as essentially Bayesian ideas in disguise.
 
