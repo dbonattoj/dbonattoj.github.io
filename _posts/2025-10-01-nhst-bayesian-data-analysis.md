@@ -130,7 +130,7 @@ $$
 p(\theta) \propto \exp\left(-\tfrac{\lambda}{2} |\theta|^2\right).
 $$
 
-Training with a penalty is just MAP (maximum a posteriori) estimation.
+Training with a penalty is just maximum a posteriori (MAP) estimation.
 
 So, even in a world dominated by machine learning, Bayesian analysis has enduring value: it provides a language and framework that helps us see the hidden logic behind many of the tools we already use.
 
