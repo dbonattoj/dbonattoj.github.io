@@ -127,7 +127,7 @@ where the exponents $$\alpha$$ and $$\beta$$ act like prior strengths. In practi
 Even **regularization** in its most basic form has a Bayesian interpretation. For instance, L2 regularization (weight decay) corresponds to placing a Gaussian prior on the parameters,
 
 $$
-p(\theta) \propto \exp!\left(-\tfrac{\lambda}{2} |\theta|^2\right).
+p(\theta) \propto \exp\left(-\tfrac{\lambda}{2} |\theta|^2\right).
 $$
 
 Training with a penalty is just MAP (maximum a posteriori) estimation.
