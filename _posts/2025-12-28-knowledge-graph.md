@@ -7,13 +7,13 @@ tags: teaching
 categories: teaching
 ---
 
-I have the chance to teach several courses: computer graphics, CUDA programming, and machine learning. One of the main difficulties I constantly run into is that the content of these courses does not form a linear sequence. It forms a graph of knowledge.
+I have the chance to teach several courses: computer graphics, CUDA programming, and machine learning. One of the main difficulties I constantly run into is that the content of these courses does not form a linear sequence. Instead, it forms a graph of knowledge.
 
 This is especially true for machine learning. The field evolves quickly, new ideas appear constantly, and many concepts depend on each other in non-trivial ways. There is no obvious "Chapter 1 → Chapter 2 → Chapter 3" path that feels natural or complete. CUDA programming is no different: it assumes parallel thinking long before students have fully developed it. Computer graphics is no better, as it requires understanding the full pipeline that produces an image on a computer before knowing how and why each part works.
 
 And yet, teaching happens in time. Slides advance one after the other, and lectures unfold sequentially. Teaching is linear by necessity. This tension, between a graph of concepts and a linear presentation, is at the core of how I think about teaching. The question, then, is not *whether* we impose a linear order, but *how*.
 
-Modern technical education often assumes that knowledge can be cleanly reduced to outlines, tables of contents, and dependency trees. If the structure is correct, the thinking will follow, or so the assumption goes. That idea is not new. It can be traced back at least to Petrus Ramus, who believed that all knowledge should be reduced to orderly diagrams and linear schematics. His influence is still visible today: chapters, subsections, bullet points, and curricula that promise clarity through structure alone.
+Modern technical education often assumes that knowledge can be cleanly reduced to outlines, tables of contents, and dependency trees. If the structure is correct, the thinking will follow, or so the assumption goes. This idea is not new. It can be traced back at least to Petrus Ramus, who believed that all knowledge should be reduced to orderly diagrams and linear schematics. His influence is still visible today: chapters, subsections, bullet points, and curricula that promise clarity through structure alone.
 
 But there has always been another tradition. Ramon Llull, and others like him, understood that humans do not learn primarily by traversing diagrams. They learn through **stories, images, and meaning**, even when the underlying structure is complex.
 
@@ -43,7 +43,7 @@ Once concepts have been understood through a linear narrative, it becomes much e
 
 ## Why Books Often Feel Hard to Follow
 
-If students want pure reference material, they can easily pick a book, many excellent ones are freely available. Books often present knowledge closer to its graph structure, supported by a table of contents. In machine learning, I often see three common patterns, usually mixed together.
+If students want pure reference material, they can easily pick a book; many excellent ones are freely available. Books often present knowledge closer to its graph structure, supported by a table of contents. In machine learning, I often see three recurring patterns, usually mixed together.
 
 The first is the **grand overview**: a long introductory chapter that covers the entire field in a hand-wavy way, followed by chapters that zoom into details while silently assuming the introduction is now fully internalized. The reader is expected to rework those initial concepts in the context of later chapters, a task that is difficult and often one students are reluctant to undertake.
 
@@ -55,7 +55,7 @@ None of these approaches are wrong. But they require significant effort from the
 
 ## My Teaching Goal
 
-I know that reference material exists, and I want students to be able to use it. My focus, however, is different. I aim to give core insights: the ideas that make everything else click once students encounter it again in a book or a paper. I want them to build mental images, intuitions, and internal structure.
+I know that reference material exists, and I want students to be able to use it effectively. My focus, however, is different. I aim to provide core insights: the ideas that make everything else click once students encounter it again in a book or a paper. I want them to build mental images, intuitions, and internal structure.
 
 That is why I teach more like a story than like a table of contents. If students walk away with the right insights, then when they later read material that is denser, drier, and more complete (as reference material often must be), it suddenly becomes clear. The formulas stop being symbols on a page and start representing something meaningful.
 
@@ -63,7 +63,7 @@ This does ask something of the students: they need to reorganize the material fo
 
 My purpose as a teacher is to teach, not to throw a book at students and ask them to recite parts of it. Teaching, to me, is not about transmitting a perfectly ordered diagram of knowledge. It is about guiding students toward understanding. Otherwise, what would be the point of universities, if one could simply read enough books?
 
-What teaching means for me is giving core insights that come from experience and long engagement with the material, insights that are not readily accessible in the books. Not because they are absent from books, but because they are often buried beneath layers of formalism.
+I find my time, and theirs, best spent when I give core insights that come from experience and long engagement with the material, insights that are not readily accessible in the books. Not because they are absent from books, but because they are often buried beneath layers of formalism.
 
 One important difference today, compared to even a few years ago, is that students are no longer alone when trying to reconstruct structure. In the age of large language models (LLMs), students can actively interrogate the material: asking questions about slides, requesting alternative explanations, generating plots to explore how equations behave, or testing "what happens if" variations that would have been tedious to do by hand. Used properly, these tools can help compensate for the lack of an explicit table of contents by supporting exploration and sense-making.
 
@@ -73,9 +73,9 @@ But this only works if students practice the right skills. Asking good questions
 
 Finally, I put a lot of effort into figures. Many of the subjects I teach rely on abstract mathematics and symbolic reasoning, and visual representations help anchor these abstractions. They connect formulas to geometry, computation to space, and algorithms to intuition.
 
-This is not aesthetic embellishment. It is a deliberate pedagogical choice, closer to Llull's illustrated reasoning than to Ramus's bare schematics. Equations are essential, but without mental images they remain fragile. Visuals help students own the concepts, not just manipulate them.
+This is not aesthetic embellishment. It is a deliberate pedagogical choice, closer to Llull's illustrated reasoning than to Ramus's bare schematics. Equations are essential, but without mental images they remain fragile. Visuals help students truly own the concepts, not just manipulate them.
 
-This emphasis on visual and conceptual thinking is not new. It echoes ideas found in works such as Engel's book on programming mathematics, which is being [updated recently to python](https://coe.psu.ac.th/ad/explore/), where programming is presented not merely as implementation, but as a way of thinking mathematically, externalizing structure, testing intuition, and refining insight through concrete experimentation. Writing code, drawing figures, and manipulating equations are all ways of thinking, not just producing results.
+This emphasis on visual and conceptual thinking is not new. It echoes ideas found in works such as Engel's book on programming mathematics, recently being [updated to python](https://coe.psu.ac.th/ad/explore/), where programming is presented not merely as implementation, but as a way of thinking mathematically, externalizing structure, testing intuition, and refining insight through concrete experimentation. Writing code, drawing figures, and manipulating equations are all ways of thinking, not just producing results.
 
 In that sense, building mental images and insights is a craft. It can be practiced, refined, and taught, even if it cannot be fully reduced to a checklist or syllabus.
 
