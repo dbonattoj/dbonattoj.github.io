@@ -99,9 +99,9 @@ In that sense, the linear narrative of a course is a temporary scaffold. Mastery
 
 ## My Teaching Goal
 
-I know that reference material exists, and I want students to be able to use it effectively. My focus, however, is different. I aim to provide core insights: the ideas that make everything else click once students encounter it again in a book or a paper. I want them to build mental images, intuitions, and internal structure.
+I know that reference material exists, and I want students to be able to use it effectively. My focus, however, is different. I aim to provide core insights: the main ideas that make everything else click once students encounter it again in a book or a paper. I want them to build mental images, intuitions, and internal structure.
 
-That is why I teach more like a story than like a table of contents. If students walk away with the right insights, then when they later read material that is denser, drier, and more complete (as reference material often must be), it suddenly becomes clear. The formulas stop being symbols on a page and start representing something meaningful, it's the beginning of their internal graph.
+That is why I teach more like a story than like a table of contents. If students walk away with the right insights, then when they later read material that is denser, drier, and more complete (as reference material often must be), it suddenly becomes clear. The formulas stop being symbols on a page and start representing something meaningful. Those well-interconnected core insights form the beginning of their internal graph, which they can expand with other lectures and references.
 
 This does ask something of the students: they need to reorganize the material for themselves, even if I try to make that as easy as possible. But that effort is not a drawback, it is the point.
 
