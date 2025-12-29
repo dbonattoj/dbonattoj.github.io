@@ -82,6 +82,7 @@ Over time, I have seen several students independently adopt tools like Obsidian,
    class="img-fluid rounded z-depth-1" 
    width="50%" 
    caption='Figure 1. Example of obsidian graph of 5900 curated notes. Credits <a href="https://www.reddit.com/r/ObsidianMD/comments/1iaqa5d/my_adhd_digital_brain_obsidian_graph_after_15/">reddit</a>.' 
+   style="text-align: center;"
 %}
 
 These graphs do not mirror the underlying structure of the material. They are the student's own graph: partial, uneven, sometimes messy, and constantly evolving. And that is precisely the point.
