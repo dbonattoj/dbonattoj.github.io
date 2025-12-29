@@ -73,6 +73,27 @@ Despite the presence of slides, I try to teach as if the lecture were an explora
 
 This is also why the content of a “chapter” is not always fully determined in advance. From time to time, I add verbal or blackboard explorations in response to students' questions. What must be explored is known; how that exploration unfolds depends on the students, the questions that arise, and the conceptual obstacles encountered along the way. As long as the object has been genuinely explored, the chapter has done its job.
 
+## Reconstructing a Graph, Not the Graph
+
+Over time, I have seen several students independently adopt tools like Obsidian, often using its knowledge graph view to organize their notes. What matters to me is not the tool itself, but what it reveals about how understanding evolves.
+
+{% include figure.liquid 
+   path="assets/img/posts/obsidian.png" 
+   class="img-fluid rounded z-depth-1" 
+   width="50%" 
+   caption='Figure 1. Example of obsidian graph of 5900 curated notes. Credits <a href="https://www.reddit.com/r/ObsidianMD/comments/1iaqa5d/my_adhd_digital_brain_obsidian_graph_after_15/">reddit</a>.' 
+%}
+
+These graphs do not mirror the underlying structure of the material. They are the student's own graph: partial, uneven, sometimes messy, and constantly evolving. And that is precisely the point.
+
+A beginner typically experiences a subject linearly. Concepts arrive one after another, and understanding is local: "this follows that". As learning progresses, that linear view slowly breaks down. Ideas begin to connect across lectures, across chapters, and sometimes across courses. The material stops feeling like a path and starts feeling like a space.
+
+I believe that reaching this stage is a strong marker of real understanding. A true expert does not hold a subject as a sequence, but as a richly interconnected graph of ideas. From that graph, one can see not only what is known, but also what is missing: gaps in understanding, weak connections, and unexplored paths. Questions arise naturally from the structure itself.
+
+Graph-based note-taking tools make this transition visible. They externalize a process that normally happens only in the mind: the gradual construction of a personal knowledge graph. The goal is not to match some canonical structure, but to build a coherent internal model that can be navigated flexibly.
+
+In that sense, the linear narrative of a course is a temporary scaffold. Mastery begins when students no longer rely on that scaffold, and can move freely within their own graph; seeing connections, noticing absences, and extending the structure as new ideas are encountered.
+
 ## My Teaching Goal
 
 I know that reference material exists, and I want students to be able to use it effectively. My focus, however, is different. I aim to provide core insights: the ideas that make everything else click once students encounter it again in a book or a paper. I want them to build mental images, intuitions, and internal structure.
