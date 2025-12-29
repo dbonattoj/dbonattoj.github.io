@@ -53,6 +53,26 @@ The third is the **forward-reference loop**. Chapters repeatedly refer to concep
 
 None of these approaches are wrong. But they require significant effort from the reader, and they are often difficult precisely because they expose the graph of knowledge directly. The strain on the student would be there anyway, just in a different form.
 
+## A Parallel with How Mathematics Is Often Taught
+
+This way of teaching is not as unusual as it may seem. In many universities, pure mathematics has long been taught in a similar spirit. A lecturer may enter the room without slides, start with a question or a mathematical object, and then proceed by exploring its properties, constraints, and consequences. The lecture unfolds as an investigation rather than as the execution of a prewritten script.
+
+In such settings, the direction of the lecture often depends on what students ask, what confuses them, and which paths seem worth following. The structure is not fully specified in advance. The implicit chapter might be "we should understand this object", but the exact route, and sometimes even the intermediate results, are not always known beforehand. What matters is that the object is explored thoroughly and meaningfully by the end.
+
+This style of teaching is inherently unstructured in appearance, yet deeply structured in intent. Its coherence does not come from a predefined list of topics, but from the internal logic of the mathematical object itself. The exploration continues until the object has been seen from enough angles to become stable in the students' minds.
+
+Once this global map has been built, later and more advanced lectures can afford to focus on specific parts of it. At that point, the teaching can become more technical, more specialized, and sometimes even drier. But this dryness is no longer a problem: the underlying structure is already understood, the key insights are in place, and new details have somewhere to attach. Precision can replace exploration precisely because exploration has already done its job.
+
+Another characteristic of this exploratory style is how prerequisites are handled. While investigating an object, it may become clear that students are missing some necessary background. Rather than treating this as a failure of preparation, the lecture naturally opens a parenthesis: the missing concept is introduced on the spot, just deeply enough to allow the exploration to continue. This detour is itself exploratory, motivated by an immediate need rather than by an abstract curriculum requirement.
+
+A good example of this approach can be seen in Po-Shen Loh's lectures (American IMO coach) on discrete mathematics, such as his [CMU course](https://www.youtube.com/watch?v=0K540qqyJJU&list=PLgTkKBA6LRqYuuQ-LboerRblBoD_q_eUM), Loh, an American IMO coach, regularly pauses the main line of exploration to develop just enough background for the argument to move forward. These moments are not digressions; they are integral to the process. The prerequisite is learned because it is needed, and its purpose becomes immediately clear. This style is one of the reasons his teaching, both in lectures and through platforms like Expii, is so widely appreciated by students.
+
+My own approach is strongly influenced by this tradition, even if the medium is different. I prefer using slides not because I want tighter control over content, but because I do not want students to spend their time transcribing what I say. Slides allow them to focus on the ideas as they unfold, while providing carefully designed figures and notation that would be cumbersome to recreate by hand.
+
+Despite the presence of slides, I try to teach as if the lecture were an exploration. The sequence is guided, but not rigid. The goal is not to cover a checklist of results, but to investigate an idea until it becomes clear. In that sense, the slides act less as a script and more as a shared workspace: a place where questions, visualizations, and partial insights can accumulate and connect.
+
+This is also why the content of a “chapter” is not always fully determined in advance. From time to time, I add verbal or blackboard explorations in response to students' questions. What must be explored is known; how that exploration unfolds depends on the students, the questions that arise, and the conceptual obstacles encountered along the way. As long as the object has been genuinely explored, the chapter has done its job.
+
 ## My Teaching Goal
 
 I know that reference material exists, and I want students to be able to use it effectively. My focus, however, is different. I aim to provide core insights: the ideas that make everything else click once students encounter it again in a book or a paper. I want them to build mental images, intuitions, and internal structure.
