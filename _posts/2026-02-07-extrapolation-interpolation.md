@@ -11,7 +11,7 @@ categories: teaching llm
 
 There's a distinction I keep returning to when I think about what exams measure and what research demands. The simplest way I've found to express it is this: most exams reward interpolation. Research, in contrast, is extrapolation.
 
-I realize this sounds like a neat formula, the kind that fits well in a tweet but collapses under scrutiny. And yet, the more I think about it - especially now, as large language models reshape how we write code, organize knowledge, and approach problems - the more this distinction feels very accurate.
+I realize this sounds like a neat formula, the kind that fits well in a tweet but collapses under scrutiny. And yet, the more I think about it, especially now, as large language models reshape how we write code, organize knowledge, and approach problems, the more this distinction feels very accurate.
 
 ## What Exams Actually Measure
 
