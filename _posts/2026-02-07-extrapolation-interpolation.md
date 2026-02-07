@@ -177,7 +177,7 @@ That's not a threat to education. It's a reminder of what education has always b
 References:
 
 1. Alpaydin, E. & Alimoglu, F. (1996). Pen-Based Recognition of Handwritten Digits [Dataset]. UCI Machine Learning Repository. [10.24432](https://doi.org/10.24432/C5MG6K).
-2. [strongDM] (https://factory.strongdm.ai/) [wayback](https://web.archive.org/web/20260207182116/https://factory.strongdm.ai/)
+2. [strongDM](https://factory.strongdm.ai/) [wayback](https://web.archive.org/web/20260207182116/https://factory.strongdm.ai/)
 3. [Simon Willison critic on StrongDM](https://simonwillison.net/2026/Feb/7/software-factory/) [Wayback](https://web.archive.org/web/20260207155128/https://simonwillison.net/2026/Feb/7/software-factory/)
 4. [Agents](https://www.anthropic.com/engineering/building-effective-agents) [Wayback](https://web.archive.org/web/20260122170652/https://www.anthropic.com/engineering/building-effective-agents)
 5. [Skills](https://code.claude.com/docs/en/skills). [wayback](https://web.archive.org/web/20260207050926/https://code.claude.com/docs/en/skills)
