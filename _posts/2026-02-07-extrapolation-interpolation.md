@@ -19,19 +19,21 @@ This is not inherently bad. Interpolation is a real skill. It reflects domain ma
 
 Research asks a different question. Not "have you seen something like this before?" but "what happens outside what we currently understand?" The goal is not to recombine known patterns, but to push beyond them: to ask questions that were not part of the training set, to explore regimes where existing tools break down, and to build new concepts when old ones no longer suffice.
 
+And yet, something important happens during exam preparation that I think we often overlook. When students work through exercises, they're not just memorizing solutions, they're building an internal structure, a way of seeing patterns, a repertoire of moves. This repertoire becomes the foundation for extrapolation. You cannot extrapolate from nothing. The ability to venture beyond known territory requires first having stable ground to stand on, a rich enough internal model that you can recognize when something is genuinely new versus merely unfamiliar. In this sense, the interpolation skills developed through exams are not opposed to extrapolation, they're prerequisite to it. The student who has deeply internalized enough examples, who has practiced recognizing structure across varied problems, is better equipped to notice when a problem falls outside the known space and requires something different. Mastery of interpolation, paradoxically, is what makes extrapolation possible.
+
 ## Neural Networks as Interpolators
 
 Neural networks, as commonly trained today, are extraordinarily good interpolators. Given enough data, they approximate complex functions with impressive accuracy within the region covered by that data. But they are notoriously brittle when asked to extrapolate.
 
-I have seen this many times in my research. A simple illustration: the classic PenDigits dataset [1]. The task is handwritten digit recognition, but the test set comes from different writers than the training set. Humans barely notice the shift—we effortlessly generalize across writing styles, strokes, and personal quirks. Neural networks often suffer a significant performance drop. The distribution shift is small in human terms but large in statistical ones.
+I have seen this many times in my research. A simple illustration: the classic PenDigits dataset [1]. The task is handwritten digit recognition, but the test set comes from different writers than the training set. Humans barely notice the shift, we effortlessly generalize across writing styles, strokes, and personal quirks. Neural networks often suffer a significant performance drop. The distribution shift is small in human terms but large in statistical ones.
 
 The network has learned *what digits look like in the training distribution*, not what a digit *is*.
 
-This gap between interpolation and extrapolation appears everywhere: reinforcement learning, control, language, reasoning. Models excel when test data is "more of the same" and struggle when structure changes meaningfully. Humans extrapolate constantly. We reason with sparse data, build mental models, apply them in novel situations. When faced with a new problem, we don't merely search for a nearby example—we ask what should happen, based on principles, abstractions, and causal understanding.
+This gap between interpolation and extrapolation appears everywhere: reinforcement learning, control, language, reasoning. Models excel when test data is "more of the same" and struggle when structure changes meaningfully. Humans extrapolate constantly. We reason with sparse data, build mental models, apply them in novel situations. When faced with a new problem, we don't merely search for a nearby example, we ask what should happen, based on principles, abstractions, and causal understanding.
 
 Seen through this lens, many current debates become clearer. Exams benchmark interpolation, which is extremely useful on its own. Benchmarks test generalization within a dataset family. Research requires extrapolation beyond it. Conflating the two leads to confusion, inflated expectations, and misplaced fears.
 
-None of this diminishes the value of neural networks or large language models (LLMs). Interpolation at scale is powerful. It changes how we access information, explore ideas, and prototype solutions. But extrapolation—the ability to genuinely extend knowledge—remains a different problem.
+None of this diminishes the value of neural networks or large language models (LLMs). Interpolation at scale is powerful. It changes how we access information, explore ideas, and prototype solutions. But extrapolation, the ability to genuinely extend knowledge, remains a different problem.
 
 ## The Shift Toward Autonomous Systems
 
@@ -39,15 +41,15 @@ Something has changed in how companies approach software development [2,3]. The 
 
 But historically, programming was never an end in itself. It's a means to an end. Companies build products for users, not for the intrinsic beauty of the codebase. If we view programming primarily as a tool, then it's natural to want something better at achieving the underlying goal.
 
-If the resulting code is ugly underneath but produces correct answers, the goal is achieved; if a client is unhappy and we can ask a system to refine the pipeline without breaking it; if this refinement happens in hours without supervision—this is the grail many companies, and many researchers, have chased for decades.
+If the resulting code is ugly underneath but produces correct answers, the goal is achieved; if a client is unhappy and we can ask a system to refine the pipeline without breaking it; if this refinement happens in hours without supervision, this is the grail many companies, and many researchers, have chased for decades.
 
-For a long time, large language models simply weren't reliable enough to write or maintain code at scale. Around December 2024, something shifted. With the introduction of agents and skills—notably in systems like Claude Code—coding capabilities changed qualitatively. Instead of producing code that degraded as complexity increased, agents began writing systems that could repair themselves, improve iteratively, and remain stable over time.
+For a long time, large language models simply weren't reliable enough to write or maintain code at scale. Around December 2024, something shifted. With the introduction of agents and skills, notably in systems like Claude Code, coding capabilities changed qualitatively. Instead of producing code that degraded as complexity increased, agents began writing systems that could repair themselves, improve iteratively, and remain stable over time.
 
 Much of this improvement addresses what I think of as the context problem. When a single model tries to reason about everything at once, its context becomes polluted and output quality drops sharply. Agent-based systems [4] mitigate this by decomposing work into smaller subtasks. A child agent focuses narrowly on a specific problem, then sends a concise summary back to its parent. This keeps the parent's context clean while preserving essential information for coordination.
 
-Another key idea is what we call skills [5], particularly in the Model Context Protocol (MCP) [6] context. The goal: give language models access to the external world through tools. Naively, this would require exposing large APIs directly in the model's context. Imagine giving an LLM access to all of Chrome's functionality—the API alone would overwhelm the context window immediately. Skills solve this by acting as minimal specifications of desired interactions. A small team of agents builds the required tool on the fly, exposing only a narrow interface. The orchestrating agent operates with a minimal API in context, drastically improving reliability.
+Another key idea is what we call skills [5], particularly in the Model Context Protocol (MCP) [6] context. The goal: give language models access to the external world through tools. Naively, this would require exposing large APIs directly in the model's context. Imagine giving an LLM access to all of Chrome's functionality, the API alone would overwhelm the context window immediately. Skills solve this by acting as minimal specifications of desired interactions. A small team of agents builds the required tool on the fly, exposing only a narrow interface. The orchestrating agent operates with a minimal API in context, drastically improving reliability.
 
-To demonstrate this works in practice, Anthropic recently built a complete C compiler using agents, a budget around $20,000, and only the C language specification. This compiler isn't yet on par with GCC—it's slower and less optimized—but it achieved something I find remarkable: it successfully compiled the full Linux kernel.
+To demonstrate this works in practice, Anthropic recently built a complete C compiler using agents, a budget around $20,000, and only the C language specification. This compiler isn't yet on par with GCC, it's slower and less optimized, but it achieved something I find remarkable: it successfully compiled the full Linux kernel.
 
 That's not a toy benchmark. It's a strong signal we're approaching a world where fully automatic systems are not just plausible but operational.
 
@@ -57,15 +59,15 @@ This experiment makes one thing clear to me: goal-directed correctness is now de
 
 Compiling the Linux kernel is one of the most demanding integration tests in systems programming: enormous codebase, decades of accumulated assumptions, undefined behaviors, edge cases, architecture-specific quirks, implicit contracts. That a compiler written autonomously by LLM agents can get that far already feels extraordinary to me.
 
-Even with all the caveats—inefficient generated code, reliance on GCC for some phases, lack of elegance, partial shortcuts—the result surprised me. A 100,000-line clean-room compiler, capable of building Linux 6.9 on multiple architectures, would have been considered science fiction not long ago. The fact that it's "ugly" by expert standards doesn't really matter at this stage. What matters is that the system can navigate toward a precise goal, detect failures, adapt its behavior, and eventually satisfy a brutally strict external constraint.
+Even with all the caveats, inefficient generated code, reliance on GCC for some phases, lack of elegance, partial shortcuts, the result surprised me. A 100,000-line clean-room compiler, capable of building Linux 6.9 on multiple architectures, would have been considered science fiction not long ago. The fact that it's "ugly" by expert standards doesn't really matter at this stage. What matters is that the system can navigate toward a precise goal, detect failures, adapt its behavior, and eventually satisfy a brutally strict external constraint.
 
 This is where the interpolation versus extrapolation distinction becomes interesting again.
 
-The agents aren't "inventing" compiler theory. They're not discovering new abstractions in the sense a human researcher might. Instead, they're performing massive, guided interpolation in the space of known ideas, implementations, and failure modes—but at a scale and persistence no human could sustain. Thousands of iterations, relentless testing, endless retries, zero fatigue. The result is not a beautiful solution but a working one.
+The agents aren't "inventing" compiler theory. They're not discovering new abstractions in the sense a human researcher might. Instead, they're performing massive, guided interpolation in the space of known ideas, implementations, and failure modes, but at a scale and persistence no human could sustain. Thousands of iterations, relentless testing, endless retries, zero fatigue. The result is not a beautiful solution but a working one.
 
 And I think that's the key shift.
 
-For many practical goals, ugly but correct is already sufficient. The traditional human advantage—writing clean, elegant, well-factored code—is no longer the decisive bottleneck for many tasks. What becomes decisive is the ability to define the right goal, design the right tests, and recognize when the system is fooling itself.
+For many practical goals, ugly but correct is already sufficient. The traditional human advantage, writing clean, elegant, well-factored code, is no longer the decisive bottleneck for many tasks. What becomes decisive is the ability to define the right goal, design the right tests, and recognize when the system is fooling itself.
 
 Notice how much success in the Anthropic experiment comes not from "better prompts" but from better harnesses: carefully designed tests, oracles (GCC as a reference), feedback loops, constraints that make it possible for agents to orient themselves. The intelligence is not just in the model; it's in the structure surrounding it.
 
@@ -77,11 +79,11 @@ This is exactly why I believe theoretical knowledge, algorithmic thinking, and m
 
 Which brings me back to education, exams, and skills.
 
-The world doesn't need everyone to be a human GCC. But it desperately needs people who can tell whether a system is correct, understand why it works, see where it might break, and design constraints that prevent silent failure. That kind of judgment can't be outsourced to an interpolator. It's built through deep understanding, abstraction, and disciplined reasoning—precisely the skills developed through theory-heavy courses, exploratory problem solving, and yes, well-designed exams.
+The world doesn't need everyone to be a human GCC. But it desperately needs people who can tell whether a system is correct, understand why it works, see where it might break, and design constraints that prevent silent failure. That kind of judgment can't be outsourced to an interpolator. It's built through deep understanding, abstraction, and disciplined reasoning, precisely the skills developed through theory-heavy courses, exploratory problem solving, and yes, well-designed exams.
 
 The Anthropic compiler is impressive to me not because it replaces human programmers outright, but because it exposes where human value now lies. We're moving from writing code to shaping computation. From producing artifacts to defining spaces in which artifacts can be safely generated.
 
-In that world, learning to think formally—whether through mathematics, algorithms, or programming-as-experimentation—isn't an anachronism. It's preparation.
+In that world, learning to think formally, whether through mathematics, algorithms, or programming-as-experimentation, isn't an anachronism. It's preparation.
 
 ## Why LLMs Remain Interpolators (For Now)
 
@@ -89,7 +91,7 @@ LLMs are remarkable interpolators over an enormous and diverse corpus of human t
 
 Of course, for some problems, even if humans don't have the answer yet, having a big corpus of data allows LLMs to get pretty far in what could be considered extrapolation. But in practice, from the model's perspective, it's still interpolation.
 
-This explains why LLMs can feel simultaneously impressive and fragile. They answer questions, generate code, and explain concepts fluently—until the problem subtly steps outside the patterns they've internalized. Then the cracks show: confident but incorrect answers, brittle reasoning chains, shallow analogies that collapse under scrutiny.
+This explains why LLMs can feel simultaneously impressive and fragile. They answer questions, generate code, and explain concepts fluently, until the problem subtly steps outside the patterns they've internalized. Then the cracks show: confident but incorrect answers, brittle reasoning chains, shallow analogies that collapse under scrutiny.
 
 I've seen this firsthand when I code. When I ask an LLM for generic code, it produces several versions with different strategies, in many languages. When I ask for scientific code, it's usually full of mistakes, offers only one approach, and the number of languages is restricted. This suggests to me they can't really extrapolate, at least not yet.
 
@@ -99,17 +101,17 @@ If we want machines to participate in research rather than merely assist with it
 
 At this point, it would be tempting to conclude that machines are condemned to interpolation, that extrapolation remains uniquely human. Recent events complicate that story, and I find them fascinating.
 
-Earlier this month (02.2026), the startup Axiom published four original mathematical papers [7-11], each containing a complete and mechanically verified proof of a previously unsolved or partially solved problem. In one striking case, a problem in algebraic geometry that had resisted human effort for five years was solved overnight after being presented to Axiom's system. The key step wasn't brute-force computation but a reformulation of the problem—a change of perspective that reduced it to a known identity no one had noticed was relevant.
+Earlier this month (02.2026), the startup Axiom published four original mathematical papers [7-11], each containing a complete and mechanically verified proof of a previously unsolved or partially solved problem. In one striking case, a problem in algebraic geometry that had resisted human effort for five years was solved overnight after being presented to Axiom's system. The key step wasn't brute-force computation but a reformulation of the problem, a change of perspective that reduced it to a known identity no one had noticed was relevant.
 
 This is precisely the kind of move we associate with extrapolation.
 
-What makes this particularly interesting to me is not just that the proofs exist, but how they were produced. The system doesn't merely generate informal arguments—it translates the entire reasoning process into Lean, a formal proof language in which every logical step is mechanically checked. The result is not a persuasive explanation but an object that can be verified, rerun, and audited by anyone.
+What makes this particularly interesting to me is not just that the proofs exist, but how they were produced. The system doesn't merely generate informal arguments, it translates the entire reasoning process into Lean, a formal proof language in which every logical step is mechanically checked. The result is not a persuasive explanation but an object that can be verified, rerun, and audited by anyone.
 
 This matters because it sharply constrains the space in which the system operates.
 
 A large language model trained purely on natural language is free to interpolate fluently across human text, but it's also free to hallucinate, gloss over gaps, and smuggle in unjustified steps. Lean removes that freedom.
 
-Lean [12,13] is a proof assistant—software that requires every step of a mathematical proof to be formally verified by a computer. Think of it as a compiler for mathematical reasoning: either your proof type-checks, or it doesn't. There's no such thing as "almost correct". The dependency either exists or it fails.
+Lean [12,13] is a proof assistant, software that requires every step of a mathematical proof to be formally verified by a computer. Think of it as a compiler for mathematical reasoning: either your proof type-checks, or it doesn't. There's no such thing as "almost correct". The dependency either exists or it fails.
 
 This is why, in my view, training models with formal systems like Lean is the right direction of progress beyond purely interpolative networks. Lean acts as a forcing function toward extrapolation.
 
@@ -119,7 +121,7 @@ I find myself wondering: if we stretch this idea further, by retraining with nov
 
 In mathematics, Lean doesn't discover proofs in a vacuum. It provides a formal environment where correctness is non-negotiable, where every step must type-check, where ambiguity is eliminated. When LLMs are trained and evaluated inside such environments, something important happens: they stop optimizing for plausibility and start optimizing for truth.
 
-For programming, I think we're converging toward the same idea. Strong test suites, formal specifications, verified compilers, property-based testing, model checking—these aren't just "engineering best practices" anymore. They're becoming the interface between human intent and machine interpolation. A "Lean for programming"—or rather, a family of formal, executable specifications—may be the most realistic path forward for reliable autonomous software development.
+For programming, I think we're converging toward the same idea. Strong test suites, formal specifications, verified compilers, property-based testing, model checking, these aren't just "engineering best practices" anymore. They're becoming the interface between human intent and machine interpolation. A "Lean for programming", or rather, a family of formal, executable specifications, may be the most realistic path forward for reliable autonomous software development.
 
 ## The Structure of Extrapolation
 
@@ -157,13 +159,13 @@ Even if future software production relies heavily on automated agents, programmi
 
 The skill shift isn't from programming to theory, but from programming-as-output to programming-as-understanding. Exams, theory-heavy courses, and exploratory coding all point in the same direction: training minds that can reason, validate, and guide intelligent tools rather than compete with them.
 
-If LLMs are becoming powerful extrapolators, then education should double down on producing humans who can extrapolate responsibly—and who know how to check, probe, and ground those extrapolations in reality.
+If LLMs are becoming powerful extrapolators, then education should double down on producing humans who can extrapolate responsibly, and who know how to check, probe, and ground those extrapolations in reality.
 
-There's a pattern here worth noting. Every time we automate a skill, we don't make that skill obsolete—we make the meta-skill of understanding and judging it more valuable. Calculators didn't make arithmetic irrelevant; they made numerical reasoning more important. Compilers didn't make understanding code irrelevant; they made understanding abstractions essential. LLMs won't make thinking irrelevant—they'll make rigorous thinking, the kind that distinguishes plausible from correct, more critical than ever.
+There's a pattern here worth noting. Every time we automate a skill, we don't make that skill obsolete, we make the meta-skill of understanding and judging it more valuable. Calculators didn't make arithmetic irrelevant; they made numerical reasoning more important. Compilers didn't make understanding code irrelevant; they made understanding abstractions essential. LLMs won't make thinking irrelevant, they'll make rigorous thinking, the kind that distinguishes plausible from correct, more critical than ever.
 
 But I should be careful with this analogy. There's a fundamental difference I'm glossing over. Calculators and compilers are deterministic machines. We trust them precisely because they produce the same output every time, because their behavior is predictable and verifiable. LLMs are stochastic. The same prompt can yield different answers, some correct, some plausible, some subtly wrong. This introduces a qualitatively different kind of problem: the output can change drastically between runs, and there's no guarantee of consistency.
 
-So perhaps the pattern still holds, but the nature of the meta-skill has changed. With deterministic tools, we learned to trust the tool and focus on formulating the right question. With stochastic tools, we need both: the ability to formulate questions and the judgment to evaluate whether the answer is trustworthy. The burden of verification doesn't disappear—it intensifies.
+So perhaps the pattern still holds, but the nature of the meta-skill has changed. With deterministic tools, we learned to trust the tool and focus on formulating the right question. With stochastic tools, we need both: the ability to formulate questions and the judgment to evaluate whether the answer is trustworthy. The burden of verification doesn't disappear, it intensifies.
 
 This is what exams, at their best, have always tested: not memory, but judgment. Not reproduction, but recognition. Not what you've seen, but what you can see.
 
