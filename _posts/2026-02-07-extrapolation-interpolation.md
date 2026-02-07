@@ -176,18 +176,17 @@ That's not a threat to education. It's a reminder of what education has always b
 
 References:
 
-
-[1] Alpaydin, E. & Alimoglu, F. (1996). Pen-Based Recognition of Handwritten Digits [Dataset]. UCI Machine Learning Repository. [10.24432](https://doi.org/10.24432/C5MG6K).
-[2] [strongDM] (https://factory.strongdm.ai/) [wayback](https://web.archive.org/web/20260207182116/https://factory.strongdm.ai/)
-[3] [Simon Willison critic on StrongDM](https://simonwillison.net/2026/Feb/7/software-factory/) [Wayback](https://web.archive.org/web/20260207155128/https://simonwillison.net/2026/Feb/7/software-factory/)
-[4] [Agents](https://www.anthropic.com/engineering/building-effective-agents) [Wayback](https://web.archive.org/web/20260122170652/https://www.anthropic.com/engineering/building-effective-agents)
-[5] [Skills](https://code.claude.com/docs/en/skills). [wayback](https://web.archive.org/web/20260207050926/https://code.claude.com/docs/en/skills)
-[6] [Model Context Protocol Specification](https://modelcontextprotocol.io/) [Wayback](https://archive.is/oT9GA)
-[7] [Axiom theorem proving (french)](https://www.lesnumeriques.com/intelligence-artificielle/une-ia-vient-de-resoudre-quatre-enigmes-mathematiques-complexes-que-personne-n-avait-denouees-n251153.html) [Wayback](https://web.archive.org/web/20260206182303/https://www.lesnumeriques.com/intelligence-artificielle/une-ia-vient-de-resoudre-quatre-enigmes-mathematiques-complexes-que-personne-n-avait-denouees-n251153.html)
-[8] [Parity of k-differentials in genus zero and one, 2602.03722](https://arxiv.org/pdf/2602.03722)
-[9] [Fel,s conjecture on syzygies of numerical semigroups, 2602.03716](https://arxiv.org/pdf/2602.03716)
-[10] [Dead ends in square-free digit walks ,2602.05095](https://arxiv.org/pdf/2602.05095)
-[11] [Almost all primes are partially regular ,2602.05090](https://arxiv.org/pdf/2602.05090)
-[12] Moura, L.d., Ullrich, S. (2021). The Lean 4 Theorem Prover and Programming Language. In: Platzer, A., Sutcliffe, G. (eds) Automated Deduction – CADE 28. CADE 2021. Lecture Notes in Computer Science(), vol 12699. Springer, Cham. [10.1007/978-3-030-79876-5_37](https://doi.org/10.1007/978-3-030-79876-5_37)
-[13] The Lean Theorem Prover: https://lean-lang.org/
-[14] [Continual Learning with RL](https://cameronrwolfe.substack.com/p/rl-continual-learning) [Wayback](https://web.archive.org/web/20260127125419/https://cameronrwolfe.substack.com/p/rl-continual-learning)
+1. Alpaydin, E. & Alimoglu, F. (1996). Pen-Based Recognition of Handwritten Digits [Dataset]. UCI Machine Learning Repository. [10.24432](https://doi.org/10.24432/C5MG6K).
+2. [strongDM] (https://factory.strongdm.ai/) [wayback](https://web.archive.org/web/20260207182116/https://factory.strongdm.ai/)
+3. [Simon Willison critic on StrongDM](https://simonwillison.net/2026/Feb/7/software-factory/) [Wayback](https://web.archive.org/web/20260207155128/https://simonwillison.net/2026/Feb/7/software-factory/)
+4. [Agents](https://www.anthropic.com/engineering/building-effective-agents) [Wayback](https://web.archive.org/web/20260122170652/https://www.anthropic.com/engineering/building-effective-agents)
+5. [Skills](https://code.claude.com/docs/en/skills). [wayback](https://web.archive.org/web/20260207050926/https://code.claude.com/docs/en/skills)
+6. [Model Context Protocol Specification](https://modelcontextprotocol.io/) [Wayback](https://archive.is/oT9GA)
+7. [Axiom theorem proving (french)](https://www.lesnumeriques.com/intelligence-artificielle/une-ia-vient-de-resoudre-quatre-enigmes-mathematiques-complexes-que-personne-n-avait-denouees-n251153.html) [Wayback](https://web.archive.org/web/20260206182303/https://www.lesnumeriques.com/intelligence-artificielle/une-ia-vient-de-resoudre-quatre-enigmes-mathematiques-complexes-que-personne-n-avait-denouees-n251153.html)
+8. [Parity of k-differentials in genus zero and one, 2602.03722](https://arxiv.org/pdf/2602.03722)
+9. [Fel,s conjecture on syzygies of numerical semigroups, 2602.03716](https://arxiv.org/pdf/2602.03716)
+10. [Dead ends in square-free digit walks ,2602.05095](https://arxiv.org/pdf/2602.05095)
+11. [Almost all primes are partially regular ,2602.05090](https://arxiv.org/pdf/2602.05090)
+12. Moura, L.d., Ullrich, S. (2021). The Lean 4 Theorem Prover and Programming Language. In: Platzer, A., Sutcliffe, G. (eds) Automated Deduction – CADE 28. CADE 2021. Lecture Notes in Computer Science(), vol 12699. Springer, Cham. [10.1007/978-3-030-79876-5_37](https://doi.org/10.1007/978-3-030-79876-5_37)
+13. The Lean Theorem Prover: https://lean-lang.org/
+14. [Continual Learning with RL](https://cameronrwolfe.substack.com/p/rl-continual-learning) [Wayback](https://web.archive.org/web/20260127125419/https://cameronrwolfe.substack.com/p/rl-continual-learning)
