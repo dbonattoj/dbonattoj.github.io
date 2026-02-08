@@ -45,7 +45,7 @@ Notice how much success in the Anthropic experiment comes not from "better promp
 
 This reframes human contribution. If LLM agents can already produce large, functional systems through persistent iteration and testing, human expertise shifts upward: toward theory, toward specification, toward reasoning about correctness, complexity, invariants, failure modes.  
 
-This is exactly why I believe theoretical knowledge, algorithmic thinking, and mathematical maturity matter more, not less, in the age of LLMs. These are the tools needed to design the harness, not just the code.
+This is exactly why I believe theoretical knowledge, algorithmic thinking, and mathematical maturity matter more, not less, in the age of LLMs. These are the tools needed to design the harness, not just the code (more on this in [Part 3]({% link _posts/2026-02-07-extrapolation-interpolation_p3.md %})).
 
 The world doesn't need everyone to be a human GCC. But it desperately needs people who can tell whether a system is correct, understand why it works, see where it might break, and design constraints that prevent silent failure. That kind of judgment can't be outsourced to automation. It's built through deep understanding, abstraction, and disciplined reasoning, precisely the skills developed through theory-heavy courses, exploratory problem solving.
 
