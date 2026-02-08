@@ -161,7 +161,9 @@ Even if future software production relies heavily on automated agents, programmi
 
 The skill shift isn't from programming to theory, but from programming-as-output to programming-as-understanding. Exams, theory-heavy courses, and exploratory coding all point in the same direction: training minds that can reason, validate, and guide intelligent tools rather than compete with them.
 
-If LLMs are becoming powerful extrapolators in constrained formal environments like Lean, then education must focus even more on something different but complementary: producing humans who can extrapolate in the messy, undefined spaces where formal systems don't yet exist, and who can design those formal systems in the first place. The ability to recognize which problems need formalization, to craft the right constraints, and to build the harnesses that make machine extrapolation possible, these are uniquely human contributions that require deep theoretical understanding.
+If LLMs are becoming powerful extrapolators in constrained formal environments like Lean, then education must focus even more on something different but complementary: producing humans who can extrapolate in messy, undefined spaces where formal systems don’t yet exist.
+
+That includes recognizing which problems need formalization, crafting the right constraints, and building the harnesses that make machine extrapolation possible. These are not mechanical tasks. They require judgment, taste, and deep theoretical understanding, qualities that cannot be outsourced to automation without first being supplied by humans.
 
 There's a pattern here worth noting. Every time we automate a skill, we don't make that skill obsolete, we make the meta-skill of understanding and judging it more valuable. Calculators didn't make arithmetic irrelevant; they made numerical reasoning more important. Compilers didn't make understanding code irrelevant; they made understanding abstractions essential.
 
@@ -171,7 +173,13 @@ So the pattern still holds, but the meta-skill has evolved. With deterministic t
 
 This is what exams, at their best, have always tested: not memory, but judgment. Not reproduction, but recognition. Not what you've seen, but what you can see.
 
-In a world where machines can interpolate at massive scale, and in special cases, extrapolate within formal constraints, exams and disciplined study matter more than ever. Not despite the fact that they primarily test interpolation, but because of it. The interpolative skills they build, recognizing structure, reasoning under constraints, building mental repertoires, are precisely what enable extrapolation. You cannot venture beyond the map without first learning to read it. The students who develop deep interpolative mastery, who internalize enough examples to see patterns across problems, are the ones who will recognize when they've stepped outside known territory and need to think differently. That recognition, that capacity to distinguish familiar from genuinely novel, is itself a form of extrapolation. And it begins with disciplined study, with well-designed exams, with the hard work of building internal structure.
+# Conclusion
+
+In a world where machines can interpolate at massive scale, and in special cases, extrapolate within formal constraints, exams and disciplined study matter more than ever. Not despite the fact that they primarily test interpolation, but because of it.
+
+The interpolative skills they build, recognizing structure, reasoning under constraints, building mental repertoires, are precisely what enable extrapolation. You cannot venture beyond the map without first learning to read it. The students who develop deep interpolative mastery, who internalize enough examples to see patterns across problems, are the ones who will recognize when they've stepped outside known territory and need to think differently.
+
+That recognition, that capacity to distinguish familiar from genuinely novel, is itself a form of extrapolation. And it begins with disciplined study, with well-designed exams, with the hard work of building internal structure.
 
 That's not a threat to education. It's a reminder of what education has always been for.
 
