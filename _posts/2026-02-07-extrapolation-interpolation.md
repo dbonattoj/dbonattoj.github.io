@@ -63,7 +63,7 @@ Much of this improvement addresses what I think of as the context problem. When 
 
 Another key idea is what we call skills [5], particularly in the Model Context Protocol (MCP) [6] context. The goal: give language models access to the external world through tools. Naively, this would require exposing large APIs directly in the model's context. Imagine giving an LLM access to all of Chrome's functionality, the API alone would overwhelm the context window immediately. Skills solve this by acting as minimal specifications of desired interactions. A small team of agents builds the required tool on the fly, exposing only a narrow interface. The orchestrating agent operates with a minimal API in context, drastically improving reliability.
 
-To demonstrate this works in practice, Anthropic recently built a complete C compiler using agents, a budget around $20,000, and only the C language specification. This compiler isn't yet on par with GCC, it's slower and less optimized, but it achieved something I find remarkable: it successfully compiled the full Linux kernel.
+To demonstrate this works in practice, Anthropic recently built a complete C compiler using agents, a budget around $20,000, and only the C language specification [7]. This compiler isn't yet on par with GCC, it's slower and less optimized, but it achieved something I find remarkable: it successfully compiled the full Linux kernel.
 
 That's not a toy benchmark. It's a strong signal we're approaching a world where fully automatic systems are not just plausible but operational.
 
@@ -103,7 +103,7 @@ In that world, learning to think formally, whether through mathematics, algorith
 
 At this point, it would be tempting to conclude that machines are condemned to interpolation, that extrapolation remains uniquely human. Recent events complicate that story, and I find them fascinating.
 
-Earlier this month (02.2026), the startup Axiom published four original mathematical papers [7-11], each containing a complete and mechanically verified proof of a previously unsolved or partially solved problem. In one striking case, a problem in algebraic geometry that had resisted human effort for five years was solved overnight after being presented to Axiom's system. The key step wasn't brute-force computation but a reformulation of the problem, a change of perspective that reduced it to a known identity no one had noticed was relevant.
+Earlier this month (02.2026), the startup Axiom published four original mathematical papers [8-12], each containing a complete and mechanically verified proof of a previously unsolved or partially solved problem. In one striking case, a problem in algebraic geometry that had resisted human effort for five years was solved overnight after being presented to Axiom's system. The key step wasn't brute-force computation but a reformulation of the problem, a change of perspective that reduced it to a known identity no one had noticed was relevant.
 
 This is precisely the kind of move we associate with extrapolation.
 
@@ -113,13 +113,13 @@ This matters because it sharply constrains the space in which the system operate
 
 A large language model trained purely on natural language is free to interpolate fluently across human text, but it's also free to hallucinate, gloss over gaps, and smuggle in unjustified steps. Lean removes that freedom.
 
-Lean [12,13] is a proof assistant, software that requires every step of a mathematical proof to be formally verified by a computer. Think of it as a compiler for mathematical reasoning: either your proof type-checks, or it doesn't. There's no such thing as "almost correct". The dependency either exists or it fails.
+Lean [13,14] is a proof assistant, software that requires every step of a mathematical proof to be formally verified by a computer. Think of it as a compiler for mathematical reasoning: either your proof type-checks, or it doesn't. There's no such thing as "almost correct". The dependency either exists or it fails.
 
 This is why, in my view, training models with formal systems like Lean is the right direction of progress beyond purely interpolative networks. Lean acts as a forcing function toward extrapolation.
 
 To succeed, the model must construct chains of reasoning that survive outside the statistical comfort zone of plausible text. It must discover structures that actually hold, not just ones that sound right. Reformulation becomes a necessity, not a stylistic flourish. The system is pushed away from surface-level interpolation toward something closer to genuine conceptual navigation.
 
-I find myself wondering: if we stretch this idea further, by retraining with novel discoveries, and if continual learning [14] one day succeeds, we could directly incorporate theorems that were previously unknown into the training set. This wouldn't be cheating with train/validation splits because they can be formally verified. Incorporating formal verification as part of the loss function means we can generate many new verifiable examples automatically. So, step by step, training by training, we might enable genuine extrapolation.
+I find myself wondering: if we stretch this idea further, by retraining with novel discoveries, and if continual learning [15] one day succeeds, we could directly incorporate theorems that were previously unknown into the training set. This wouldn't be cheating with train/validation splits because they can be formally verified. Incorporating formal verification as part of the loss function means we can generate many new verifiable examples automatically. So, step by step, training by training, we might enable genuine extrapolation.
 
 In mathematics, Lean doesn't discover proofs in a vacuum. It provides a formal environment where correctness is non-negotiable, where every step must type-check, where ambiguity is eliminated. When LLMs are trained and evaluated inside such environments, something important happens: they stop optimizing for plausibility and start optimizing for truth.
 
@@ -212,11 +212,12 @@ Ultimately, these notes reinforce the same conclusion: whether we are navigating
 4. [Agents](https://www.anthropic.com/engineering/building-effective-agents), [Wayback](https://web.archive.org/web/20260122170652/https://www.anthropic.com/engineering/building-effective-agents)
 5. [Skills](https://code.claude.com/docs/en/skills), [Wayback](https://web.archive.org/web/20260207050926/https://code.claude.com/docs/en/skills)
 6. [Model Context Protocol Specification](https://modelcontextprotocol.io/), [Wayback](https://archive.is/oT9GA)
-7. [Axiom theorem proving (french)](https://www.lesnumeriques.com/intelligence-artificielle/une-ia-vient-de-resoudre-quatre-enigmes-mathematiques-complexes-que-personne-n-avait-denouees-n251153.html), [Wayback](https://web.archive.org/web/20260206182303/https://www.lesnumeriques.com/intelligence-artificielle/une-ia-vient-de-resoudre-quatre-enigmes-mathematiques-complexes-que-personne-n-avait-denouees-n251153.html)
-8. [Parity of k-differentials in genus zero and one, 2602.03722](https://arxiv.org/pdf/2602.03722)
-9. [Fel's conjecture on syzygies of numerical semigroups, 2602.03716](https://arxiv.org/pdf/2602.03716)
-10. [Dead ends in square-free digit walks ,2602.05095](https://arxiv.org/pdf/2602.05095)
-11. [Almost all primes are partially regular ,2602.05090](https://arxiv.org/pdf/2602.05090)
-12. Moura, L.d., Ullrich, S. (2021). The Lean 4 Theorem Prover and Programming Language. In: Platzer, A., Sutcliffe, G. (eds) Automated Deduction – CADE 28. CADE 2021. Lecture Notes in Computer Science, vol 12699. Springer, Cham. [10.1007/978-3-030-79876-5_37](https://doi.org/10.1007/978-3-030-79876-5_37)
-13. [The Lean Theorem Prover](https://lean-lang.org/)
-14. [Continual Learning with RL](https://cameronrwolfe.substack.com/p/rl-continual-learning), [Wayback](https://web.archive.org/web/20260127125419/https://cameronrwolfe.substack.com/p/rl-continual-learning)
+7. [Anthropic C Compiler using Agents](https://www.anthropic.com/engineering/building-c-compiler), [Wayback](https://web.archive.org/web/20260207021716/https://www.anthropic.com/engineering/building-c-compiler)
+8. [Axiom theorem proving (french)](https://www.lesnumeriques.com/intelligence-artificielle/une-ia-vient-de-resoudre-quatre-enigmes-mathematiques-complexes-que-personne-n-avait-denouees-n251153.html), [Wayback](https://web.archive.org/web/20260206182303/https://www.lesnumeriques.com/intelligence-artificielle/une-ia-vient-de-resoudre-quatre-enigmes-mathematiques-complexes-que-personne-n-avait-denouees-n251153.html)
+9. [Parity of k-differentials in genus zero and one, 2602.03722](https://arxiv.org/pdf/2602.03722)
+10. [Fel's conjecture on syzygies of numerical semigroups, 2602.03716](https://arxiv.org/pdf/2602.03716)
+11. [Dead ends in square-free digit walks ,2602.05095](https://arxiv.org/pdf/2602.05095)
+12. [Almost all primes are partially regular ,2602.05090](https://arxiv.org/pdf/2602.05090)
+13. Moura, L.d., Ullrich, S. (2021). The Lean 4 Theorem Prover and Programming Language. In: Platzer, A., Sutcliffe, G. (eds) Automated Deduction – CADE 28. CADE 2021. Lecture Notes in Computer Science, vol 12699. Springer, Cham. [10.1007/978-3-030-79876-5_37](https://doi.org/10.1007/978-3-030-79876-5_37)
+14. [The Lean Theorem Prover](https://lean-lang.org/)
+15. [Continual Learning with RL](https://cameronrwolfe.substack.com/p/rl-continual-learning), [Wayback](https://web.archive.org/web/20260127125419/https://cameronrwolfe.substack.com/p/rl-continual-learning)
