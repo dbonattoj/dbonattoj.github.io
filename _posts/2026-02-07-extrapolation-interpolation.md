@@ -37,6 +37,18 @@ Seen through this lens, many current debates become clearer. Exams benchmark int
 
 None of this diminishes the value of neural networks or large language models (LLMs). Interpolation at scale is powerful. It changes how we access information, explore ideas, and prototype solutions. But extrapolation, the ability to genuinely extend knowledge, remains a different problem.
 
+### Why LLMs Remain Interpolators (For Now)
+
+LLMs are remarkable interpolators over an enormous and diverse corpus of human text. The interpolation space is vast, which makes their outputs appear surprisingly general. But vast interpolation is still interpolation. The fact that the space is high-dimensional and richly structured doesn't automatically grant extrapolative ability in the sense research demands.
+
+Of course, for some problems, even if humans don't have the answer yet, having a big corpus of data allows LLMs to get pretty far in what could be considered extrapolation. But in practice, from the model's perspective, it's still interpolation.
+
+This explains why LLMs can feel simultaneously impressive and fragile. They answer questions, generate code, and explain concepts fluently, until the problem subtly steps outside the patterns they've internalized. Then the cracks show: confident but incorrect answers, brittle reasoning chains, shallow analogies that collapse under scrutiny.
+
+I've seen this firsthand when I code. When I ask an LLM for generic code, it produces several versions with different strategies, in many languages. When I ask for scientific code, it's usually full of mistakes, offers only one approach, and the number of languages is restricted. This suggests to me they can't really extrapolate, at least not yet.
+
+If we want machines to participate in research rather than merely assist with it, we need to understand this gap clearly, not blur it with impressive demos. And if we want to educate students for research, we should be honest about what our exams actually measure. Because passing an exam means you can interpolate. Doing research means you can go where the map ends.
+
 ## The Shift Toward Autonomous Systems
 
 Something has changed in how companies approach software development [2,3]. The phrase "the art of programming" already hints at something important: programming has an artistic component. There's care in making code beautiful, readable, extensible, maintainable. That matters, especially to programmers themselves.
@@ -87,18 +99,6 @@ The Anthropic compiler is impressive to me not because it replaces human program
 
 In that world, learning to think formally, whether through mathematics, algorithms, or programming-as-experimentation, isn't an anachronism. It's preparation.
 
-## Why LLMs Remain Interpolators (For Now)
-
-LLMs are remarkable interpolators over an enormous and diverse corpus of human text. The interpolation space is vast, which makes their outputs appear surprisingly general. But vast interpolation is still interpolation. The fact that the space is high-dimensional and richly structured doesn't automatically grant extrapolative ability in the sense research demands.
-
-Of course, for some problems, even if humans don't have the answer yet, having a big corpus of data allows LLMs to get pretty far in what could be considered extrapolation. But in practice, from the model's perspective, it's still interpolation.
-
-This explains why LLMs can feel simultaneously impressive and fragile. They answer questions, generate code, and explain concepts fluently, until the problem subtly steps outside the patterns they've internalized. Then the cracks show: confident but incorrect answers, brittle reasoning chains, shallow analogies that collapse under scrutiny.
-
-I've seen this firsthand when I code. When I ask an LLM for generic code, it produces several versions with different strategies, in many languages. When I ask for scientific code, it's usually full of mistakes, offers only one approach, and the number of languages is restricted. This suggests to me they can't really extrapolate, at least not yet.
-
-If we want machines to participate in research rather than merely assist with it, we need to understand this gap clearly, not blur it with impressive demos. And if we want to educate students for research, we should be honest about what our exams actually measure. Because passing an exam means you can interpolate. Doing research means you can go where the map ends. Or so I thought, until recently.
-
 ## When Machines Do Extrapolate
 
 At this point, it would be tempting to conclude that machines are condemned to interpolation, that extrapolation remains uniquely human. Recent events complicate that story, and I find them fascinating.
@@ -125,7 +125,7 @@ In mathematics, Lean doesn't discover proofs in a vacuum. It provides a formal e
 
 For programming, I think we're converging toward the same idea. Strong test suites, formal specifications, verified compilers, property-based testing, model checking, these aren't just "engineering best practices" anymore. They're becoming the interface between human intent and machine interpolation. A "Lean for programming", or rather, a family of formal, executable specifications, may be the most realistic path forward for reliable autonomous software development.
 
-## The Structure of Extrapolation
+### The Structure of Extrapolation
 
 This reframes the earlier distinction. Perhaps the issue isn't that machines can't extrapolate, but that extrapolation requires a space where correctness is rigid, feedback is immediate, and structure can't be faked. Mathematics, when formalized, provides exactly that environment.
 
