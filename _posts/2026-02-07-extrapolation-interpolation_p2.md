@@ -8,7 +8,8 @@ categories: teaching llm
 ---
 
 *This is Part 2 of a series on AI, education, and expertise. See also: [Part 1: The Rise of Autonomous Systems]({% link _posts/2026-02-07-extrapolation-interpolation_p1.md %})*
-In the previous article, we saw how autonomous systems are decoupling correctness from code quality, producing functional but often "ugly" software through massive iteration. This raises a natural question: are machines fundamentally limited to recombining existing patterns (interpolation), or can they genuinely discover new knowledge (extrapolation)?
+
+In the previous article, we saw how autonomous systems are decoupling correctness from code quality, producing functional but often "ugly" software through massive iteration. But agents generate new software by leveraging existing theory, examples, and structures rather than reasoning from first principles alone. This raises a natural question: are machines fundamentally limited to recombining existing patterns (interpolation), or can they genuinely discover new knowledge (extrapolation)?
 
 # Neural Networks as Interpolators
 
@@ -20,7 +21,7 @@ The network has learned *what digits look like in the training distribution*, no
 
 This gap between interpolation and extrapolation appears everywhere: reinforcement learning, control, language, reasoning. Models excel when test data is "more of the same" and struggle when structure changes meaningfully. Humans extrapolate constantly. We reason with sparse data, build mental models, apply them in novel situations. When faced with a new problem, we don't merely search for a nearby example, we ask what should happen, based on principles, abstractions, and causal understanding.
 
-Seen through this lens, many current debates become clearer. Exams benchmark interpolation, which is extremely useful on its own. Benchmarks test generalization within a dataset family. Research requires extrapolation beyond it. Conflating the two leads to confusion, inflated expectations, and misplaced fears.
+Seen through this lens, many current debates become clearer. Existing benchmarks evaluate interpolation, which is extremely useful on its own, they test generalization within a dataset family. But for an LLM to be useful for research, we requires also extrapolation.
 
 None of this diminishes the value of neural networks or large language models (LLMs). Interpolation at scale is powerful. It changes how we access information, explore ideas, and prototype solutions. But extrapolation, the ability to genuinely extend knowledge, remains a different problem.
 
@@ -102,7 +103,6 @@ The recent breakthroughs from Axiom are promising, but we must remain cautious. 
 Until these results are fully integrated into the broader mathematical canon and the underlying training paradigms are transparently stress-tested by the research community, they remain "promising artifacts" rather than settled law. But they prove one thing: when we give an interpolator a formal cage to play in, it can occasionally find the key to the door leading outside.
 
 Ultimately, these notes reinforce the same conclusion: whether we are navigating an alien codebase or auditing a machine-generated proof, the burden of final judgment remains stubbornly human.
-
 
 These observations about formal systems, machine capabilities, and the importance of theoretical skills raise a deeper question: what fundamental distinction separates pattern recognition from genuine discovery? In the final part of this series, we'll explore this conceptual framework and what it means for how we think about learning, research, and the future of human expertise.
 

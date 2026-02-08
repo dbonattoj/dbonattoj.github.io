@@ -41,6 +41,8 @@ Skills such as: Algorithmic thinking, mathematical reasoning, abstraction, and t
 
 As this trend continues, the scarce skill won't be typing programs but deciding what should be built, why it should work, and how to tell whether it actually does.
 
+# Are Exams Efficients ?
+
 Exams are often criticized as artificial, stressful, or disconnected from real-world practice. Some of that criticism is justified. But exams do something I find extremely valuable: they build skills.
 
 A well-designed exam doesn't primarily test whether a student remembers a formula. It tests whether they can recognize structure, choose an approach, reason under constraints, and adapt known ideas to a new situation. In other words, it tests controlled extrapolation. Not full research-level discovery, but the ability to go beyond rote interpolation while remaining within a well-defined space.
@@ -55,7 +57,7 @@ That's not a threat to education. It's a reminder of what education has always b
 
 ## Should We Still Teach Programming?
 
-LLMs extrapolators do not mean programming becomes irrelevant. Quite the opposite.
+LLMs interpolators/extrapolators do not mean programming becomes irrelevant. Quite the opposite.
 
 Programming remains a crucial epistemic tool. When studying a theoretical concept, the ability to simulate it, plot it, stress-test it, or explore edge cases computationally is invaluable. Writing small programs forces precision. It exposes hidden assumptions. It turns vague understanding into something concrete and falsifiable.
 
@@ -67,7 +69,10 @@ If LLMs are becoming powerful extrapolators in constrained formal environments l
 
 That includes recognizing which problems need formalization, crafting the right constraints, and building the harnesses that make machine extrapolation possible. These are not mechanical tasks. They require judgment, taste, and deep theoretical understanding, qualities that cannot be outsourced to automation without first being supplied by humans.
 
-## The Paradox of Learning to Code in an Agentic World
+
+## Additional notes:
+
+### The Paradox of Learning to Code in an Agentic World
 
 I want to address something I find genuinely difficult about the world we're entering, something that affects students and newcomers more than experienced practitioners.
 
@@ -77,9 +82,9 @@ And yet, this framing misses what programming actually does for you as a learner
 
 When you write code to explore an idea, to test whether an algorithm behaves as you expect, to visualize a dataset, to simulate a system, you're not competing with agents. You're building the mental structures that make it possible to interrogate them effectively. Programming forces precision in a way that reading or watching cannot. It exposes the gap between "I understand this in principle" and "I can make this work in practice." It surfaces hidden assumptions, edge cases, and conceptual confusions that remain invisible otherwise.
 
-This is exactly the shift I described earlier: from programming-as-output to programming-as-understanding. The goal isn't to produce production code. The goal is to build enough internal structure that you can recognize what questions to ask, what tests to run, what failures to look for. An LLM can generate code, but it cannot tell you which idea is worth exploring. It cannot recognize which result is surprising. It cannot know what you're trying to understand.
+This is exactly the shift I described earlier: from programming-as-output to programming-as-understanding. The goal is no more to produce production code. The goal is to build enough internal structure that you can recognize what questions to ask, what tests to run, what failures to look for. An LLM can generate code, but it cannot tell you which idea is worth exploring. It cannot recognize which result is surprising. It cannot know what you're trying to understand.
 
-In Part 1, I argued that human value is moving upward, toward theory, specification, and reasoning about correctness. But you cannot reason about correctness without having struggled with incorrectness. You cannot design good specifications without having built broken systems. The process of learning to code, especially when it's hard, especially when you fail repeatedly, builds exactly the judgment needed to work effectively with autonomous systems.
+In [Part 1]({% link _posts/2026-02-07-extrapolation-interpolation_p1.md %}), I argued that human value is moving upward, toward theory, specification, and reasoning about correctness. But you cannot reason about correctness without having struggled with incorrectness. You cannot design good specifications without having built broken systems. The process of learning to code, especially when it's hard, especially when you fail repeatedly, builds exactly the judgment needed to work effectively with autonomous systems.
 
 This mirrors something I see in mathematics. Formal proof assistants like Lean can verify theorems, but mathematicians still work through proofs by hand, still struggle with examples, still build intuition through failure. Not because the manual work produces better proofs, but because the process of doing it builds the understanding needed to know what to prove and how to recognize when a result is meaningful.
 
@@ -87,17 +92,13 @@ So to newcomers facing this apparent paradox: yes, the machine codes better than
 
 That understanding cannot be outsourced. It has to be built, one failed program at a time.
 
-## The Evolution of Trust and Verification
+### The Use of LLMs as Calculators
 
-There's a pattern here worth noting. Every time we automate a skill, we don't make that skill obsolete, we make the meta-skill of understanding and judging it more valuable. Calculators didn't make arithmetic irrelevant; they made numerical reasoning more important. Compilers didn't make understanding code irrelevant; they made understanding abstractions essential.
+Every time we automate a skill, we don't make that skill obsolete, we make the meta-skill of understanding and judging it more valuable. Calculators didn't make arithmetic irrelevant; they made numerical reasoning more important. Compilers didn't make understanding code irrelevant; they made understanding abstractions essential.
 
 But there's a crucial difference with LLMs that changes the nature of this pattern. Calculators and compilers are deterministic machines. We trust them precisely because they produce the same output every time, because their behavior is predictable and verifiable. LLMs, even those enhanced with formal systems, remain fundamentally stochastic at their core. The same prompt can yield different answers, some correct, some plausible, some subtly wrong. This introduces a qualitatively different kind of problem: the output can shift between runs, and there's no guarantee of consistency even when formal verification catches logical errors.
 
 So the pattern still holds, but the meta-skill has evolved. With deterministic tools, we learned to trust the tool and focus on formulating the right question. With stochastic tools, even powerful ones, we need something more demanding: the ability to formulate questions, the judgment to evaluate whether the answer is trustworthy, and the theoretical grounding to verify the result independently. The burden of verification doesn't disappear, it intensifies. And this makes rigorous thinking, the kind that distinguishes plausible from correct, more critical than ever.
-
-## Conclusion: What Exams Test in the Age of LLMs
-
-This is what exams, at their best, have always tested: not memory, but judgment. Not reproduction, but recognition. Not what you've seen, but what you can see.
 
 ---
 
