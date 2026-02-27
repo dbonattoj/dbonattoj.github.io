@@ -57,7 +57,7 @@ If, instead, they build the map progressively during the year, every new chapter
 
 Either way, the graph grows denser, and insights are extracted.
 
-# Collective Understanding
+## Collective Understanding
 
 There is also a collective dimension. While each student constructs their own map, they can discuss arrows in small groups. Debating whether early stopping is a form of regularization, or whether cross-entropy is simply maximum likelihood in disguise, forces them to articulate mechanisms rather than recite definitions.
 
@@ -73,7 +73,7 @@ In such a context, the comparative advantage of human learners shifts. If proced
 
 Across all the courses I teach, my objective is therefore consistent: I want students to begin forming the internal graph characteristic of expertise. If that graph exists, computations follow as structured consequences. If it does not, computations remain disconnected maneuvers.
 
-# What I Hope Remains
+## What I Hope Remains
 
 Ultimately, what I want students to leave with is not a collection of formulas, but a structured internal graph. Five years from now, they may not remember the exact algebra behind a support vector machine. But if they understand that it is fundamentally about margin maximization in a high-dimensional feature space, they can reconstruct the details when needed.
 
@@ -85,7 +85,7 @@ I do not yet know whether this experiment will succeed. Evaluating insight is in
 
 If students leave not merely with formulas, but with a coherent and densely connected internal representation of the field, then the exam will have achieved its purpose. Computation will not disappear. It will simply be grounded in insight rather than memorization.
 
-## Additional notes:
+# Additional notes:
 
 ### Insight and Computation
 
