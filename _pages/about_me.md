@@ -18,6 +18,8 @@ profile:
 
 My research focuses on real-time 3D vision, computational imaging, and immersive media. I develop algorithms and software that enable photorealistic view synthesis, accurate depth estimation, and efficient scene representations for applications ranging from virtual and augmented reality to robotics and telepresence.
 
+I obtained a master's degree in Computational Intelligence and Robotics Engineering from Université libre de Bruxelles and completed a joint Ph.D. at Université libre de Bruxelles and Vrije Universiteit Brussel. My research combines computer vision, computer graphics, optimization, and high-performance computing to address the challenges of interactive 3D visual computing.
+
 The figure below summarizes the main research areas that shape my work.
 
 {% include figure.liquid
@@ -26,8 +28,6 @@ The figure below summarizes the main research areas that shape my work.
     width="100%"
     zoomable=true
 %}
-
-I obtained a master's degree in Computational Intelligence and Robotics Engineering from Université libre de Bruxelles and completed a joint Ph.D. at Université libre de Bruxelles and Vrije Universiteit Brussel. My research combines computer vision, computer graphics, optimization, and high-performance computing to address the challenges of interactive 3D visual computing.
 
 A central aspect of my work has been the development of reference software for the Moving Picture Experts Group (MPEG). Three of my software implementations have been adopted as MPEG reference software and are used by both academic and industrial participants in the standardization process. My research has also contributed to the European HoviTron project, where advanced view synthesis is integrated into CREAL's light-field display technology to enable immersive teleoperation of robotic systems.
 
