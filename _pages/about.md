@@ -18,12 +18,16 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
 
-Welcome to my journey in immersive content creation! Armed with a master's in computational intelligence and robotics engineering, I've earned a Ph.D. by pushing the real-time 3D computing boundaries through a collaborative effort between the Free University of Brussels and the Vrije Universiteit Brussel. My impactful contributions in the **MPEG** community and the **HoviTron** project showcase the fusion of academia and industry.
+Welcome to my research website.
 
-In view synthesis, I've pioneered the **Reference View Synthesizer (RVS)**, rivaling NeRF's quality with minimal GPU usage. Another milestone is the **Reference Depth Estimation software (RDE)**, ensuring high-quality rendering. I've explored **plenoptic cameras**, especially the plenoptic 2.0, for dynamic perspectives.
+My work focuses on real-time 3D vision and immersive media, with an emphasis on view synthesis, depth estimation, and computational imaging. I hold a master's degree in Computational Intelligence and Robotics Engineering from Université libre de Bruxelles and completed a joint Ph.D. between Université libre de Bruxelles and Vrije Universiteit Brussel. I am currently a professor at Université libre de Bruxelles, where I teach computer graphics, GPU acceleration, machine learning, and deep learning.
 
-Beyond, my ventures include a real-time point cloud viewer, Gaussian processes optimization, deep learning for view synthesis, robotic bench creation, and expertise in web technologies.
+My research bridges academia and industry. I have contributed reference software adopted by the MPEG community and developed technologies within the European HoviTron project, advancing the state of the art in immersive displays and remote interaction.
 
-For more details, please refer to my [About]({{ site.baseurl | prepend: site.url }}/about/) page. Stay tuned for more innovations shaping the future of immersive technologies!
+Among my main contributions are the Reference View Synthesizer (RVS), a real-time view synthesis framework capable of producing photorealistic novel views with a very small GPU footprint, and the Reference Depth Estimation (RDE) software, designed for accurate depth reconstruction as a foundation for high-quality rendering. My work has also explored plenoptic imaging, including calibration methods and sub-aperture image extraction for plenoptic 2.0 cameras.
 
-Please find a more comprehensive list of my papers in Google Scholar.
+Beyond these topics, I have worked on real-time point cloud rendering, Gaussian-process optimisation, deep learning for view synthesis, robotic acquisition platforms, and software engineering for high-performance imaging systems.
+
+The [About]({{ site.baseurl | prepend: site.url }}/about/) page provides additional background on my research, while Google Scholar contains a complete list of publications.
+
+
