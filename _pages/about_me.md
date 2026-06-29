@@ -20,7 +20,12 @@ My research focuses on real-time 3D vision, computational imaging, and immersive
 
 The figure below summarizes the main research areas that shape my work.
 
-{% include figure.liquid path="../assets/img/posts/labscope.png" class="img-fluid rounded z-depth-1" width="50%" %}
+{% include figure.liquid
+    path="../assets/img/posts/labscope.png"
+    class="img-fluid rounded z-depth-1"
+    width="100%"
+    zoomable=true
+%}
 
 I obtained a master's degree in Computational Intelligence and Robotics Engineering from Université libre de Bruxelles and completed a joint Ph.D. at Université libre de Bruxelles and Vrije Universiteit Brussel. My research combines computer vision, computer graphics, optimization, and high-performance computing to address the challenges of interactive 3D visual computing.
 
