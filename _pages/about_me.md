@@ -20,15 +20,6 @@ My research focuses on real-time 3D vision, computational imaging, and immersive
 
 I obtained a master's degree in Computational Intelligence and Robotics Engineering from Université libre de Bruxelles and completed a joint Ph.D. at Université libre de Bruxelles and Vrije Universiteit Brussel. My research combines computer vision, computer graphics, optimization, and high-performance computing to address the challenges of interactive 3D visual computing.
 
-The figure below summarizes the main research areas that shape my work.
-
-{% include figure.liquid
-    path="../assets/img/posts/labscope.png"
-    class="img-fluid rounded z-depth-1"
-    width="100%"
-    zoomable=true
-%}
-
 A central aspect of my work has been the development of reference software for the Moving Picture Experts Group (MPEG). Three of my software implementations have been adopted as MPEG reference software and are used by both academic and industrial participants in the standardization process. My research has also contributed to the European HoviTron project, where advanced view synthesis is integrated into CREAL's light-field display technology to enable immersive teleoperation of robotic systems.
 
 My principal research contribution is the **Reference View Synthesizer (RVS)**, a real-time view synthesis framework capable of producing photorealistic novel views while maintaining a remarkably small computational footprint. RVS demonstrates that high visual quality can be achieved without the heavy computational requirements typically associated with neural rendering methods, making it suitable for real-time applications and standardization activities.
