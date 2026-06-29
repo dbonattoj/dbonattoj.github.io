@@ -24,6 +24,15 @@ My work focuses on real-time 3D vision and immersive media, with an emphasis on 
 
 My research bridges academia and industry. I have contributed reference software adopted by the MPEG community and developed technologies within the European HoviTron project, advancing the state of the art in immersive displays and remote interaction.
 
+The figure below summarizes the main research areas that shape my work.
+
+{% include figure.liquid
+    path="../assets/img/posts/labscope.png"
+    class="img-fluid rounded z-depth-1"
+    width="100%"
+    zoomable=true
+%}
+
 Among my main contributions are the Reference View Synthesizer (RVS), a real-time view synthesis framework capable of producing photorealistic novel views with a very small GPU footprint, and the Reference Depth Estimation (RDE) software, designed for accurate depth reconstruction as a foundation for high-quality rendering. My work has also explored plenoptic imaging, including calibration methods and sub-aperture image extraction for plenoptic 2.0 cameras.
 
 Beyond these topics, I have worked on real-time point cloud rendering, Gaussian-process optimisation, deep learning for view synthesis, robotic acquisition platforms, and software engineering for high-performance imaging systems.
