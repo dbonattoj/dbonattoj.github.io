@@ -2,7 +2,7 @@
 layout: about
 title: Welcome
 permalink: /
-subtitle: Université Libre de Bruxelles.
+subtitle: 
 
 profile:
   align: right
