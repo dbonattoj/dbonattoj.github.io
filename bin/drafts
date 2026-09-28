@@ -6,10 +6,14 @@ editor opens). Their encrypted forms live in ./drafts/ (tracked, one
 <stem>.md.age file per working copy). Git hooks (installed by `drafts init`
 or `drafts hooks`) keep the two in sync:
 
-  pre-commit   -> `drafts lock`   (encrypt changed working copies, git add)
-  post-checkout -> `drafts unlock` (decrypt new/changed blobs)
-  post-merge   -> `drafts unlock`
-
+  Workflow: edit a file in .drafts/, then
+    git commit -m "..."            -> pre-commit locks + stages; if the
+                                      commit was otherwise empty, run it
+                                      again (see the printed note)
+  Hooks (installed by `drafts init` or `drafts hooks`):
+    pre-commit    -> `drafts pre-commit` (lock + stage backstop)
+    post-checkout -> `drafts unlock`
+    post-merge    -> `drafts unlock`
 Commands:
   init                first use: keypair, hooks, decrypt existing blobs
   list                show sync state of every draft
@@ -150,10 +154,11 @@ def all_stems() -> list[str]:
     return sorted(p.stem[:-3] for p in DRAFTS_DIR.glob("*.md.age"))
 
 
-def head_blob_text(stem: str) -> str | None:
-    """Decrypted content of the blob as it is at git HEAD (or None)."""
+def head_blob_text(stem: str, base_ref: str | None = None) -> str | None:
+    """Decrypted content of the blob at a git ref (default HEAD), or None."""
+    ref = base_ref or "HEAD"
     r = subprocess.run(
-        ["git", "-C", str(REPO), "show", f"HEAD:drafts/{stem}.md.age"],
+        ["git", "-C", str(REPO), "show", f"{ref}:drafts/{stem}.md.age"],
         capture_output=True,
     )
     if r.returncode != 0:
@@ -168,7 +173,7 @@ def head_blob_text(stem: str) -> str | None:
         tmp.unlink(missing_ok=True)
 
 
-def cmd_unlock() -> None:
+def cmd_unlock(base_ref: str | None = None) -> None:
     require_age()
     if not key_file().is_file():
         die(f"no age key at {key_file()} — run `bin/drafts init` (or restore the key)")
@@ -192,7 +197,7 @@ def cmd_unlock() -> None:
         current = work.read_text()
         if current == plain:
             continue
-        head_text = head_blob_text(stem)
+        head_text = head_blob_text(stem, base_ref)
         if head_text is not None and current == head_text:
             # local working copy matches HEAD blob; blob is newer -> overwrite
             work.write_text(plain)
@@ -211,6 +216,25 @@ def cmd_unlock() -> None:
     if actions == 0:
         print("drafts: all drafts already up to date")
 
+
+def cmd_pre_commit(before_empty: str) -> None:
+    """Backstop: lock any dirty working copies, stage the blobs.
+
+    Git decides a commit is empty BEFORE the hook runs, so a commit that
+    stages nothing on its own cannot be rescued from here. If the index was
+    empty before the hook and we had to stage drafts, abort with instructions
+    (re-run the commit); otherwise the commit proceeds with our staging.
+    """
+    cmd_lock()
+    if before_empty == "yes":
+        after = run(["git", "-C", str(REPO), "diff", "--cached", "--quiet"])
+        if after.returncode != 0:
+            print(
+                "drafts: staged encrypted drafts that were not in the commit. "
+                "Run the same `git commit` again to include them.",
+                file=sys.stderr,
+            )
+            sys.exit(1)
 
 def cmd_lock() -> None:
     require_age()
@@ -295,9 +319,15 @@ def install_hooks() -> None:
         die("not a git repository (no .git/hooks)")
     py = sys.executable or "python3"
     scripts = {
-        "pre-commit": f'#!/bin/sh\n{HOOK_MARKER}\ncd "$(git rev-parse --show-toplevel)" && exec {py} bin/drafts lock\n',
+        "pre-commit": (
+            "#!/bin/sh\n"
+            f"{HOOK_MARKER}\n"
+            'cd "$(git rev-parse --show-toplevel)" || exit 1\n'
+            f'before_empty=$(git diff --cached --quiet && echo yes || echo no)\n'
+            f'exec {py} bin/drafts pre-commit "$before_empty"\n'
+        ),
         "post-checkout": f'#!/bin/sh\n{HOOK_MARKER}\ncd "$(git rev-parse --show-toplevel)" && {py} bin/drafts unlock\n',
-        "post-merge": f'#!/bin/sh\n{HOOK_MARKER}\ncd "$(git rev-parse --show-toplevel)" && {py} bin/drafts unlock\n',
+        "post-merge": f'#!/bin/sh\n{HOOK_MARKER}\ncd "$(git rev-parse --show-toplevel)" && {py} bin/drafts unlock HEAD^1\n',
     }
     for name, body in scripts.items():
         p = hooks_dir / name
@@ -353,7 +383,9 @@ def cmd_merge(base: str, cur: str, other: str) -> None:
         tb.write_bytes(base_t)
         tc.write_bytes(cur_t)
         to.write_bytes(other_t)
-        r = subprocess.run(["git", "merge-file", "-p", str(tc), str(tb), str(to)])
+        r = subprocess.run(
+            ["git", "merge-file", "-p", str(tc), str(tb), str(to)], capture_output=True
+        )
         # exit: 0 clean, 1 conflicts, 2 error; merged text on stdout
         merged = r.stdout
     if r.returncode not in (0, 1):
@@ -422,7 +454,8 @@ def main() -> None:
     sub = ap.add_subparsers(dest="cmd", required=True)
     sub.add_parser("init")
     sub.add_parser("list")
-    sub.add_parser("unlock")
+    u = sub.add_parser("unlock")
+    u.add_argument("base_ref", nargs="?", default=None)
     sub.add_parser("lock")
     p = sub.add_parser("promote")
     p.add_argument("stem")
@@ -431,6 +464,8 @@ def main() -> None:
     m.add_argument("cur")
     m.add_argument("other")
     sub.add_parser("hooks")
+    pc = sub.add_parser("pre-commit")
+    pc.add_argument("before_empty")
     args = ap.parse_args()
 
     if args.cmd == "init":
@@ -438,7 +473,7 @@ def main() -> None:
     elif args.cmd == "list":
         cmd_list()
     elif args.cmd == "unlock":
-        cmd_unlock()
+        cmd_unlock(args.base_ref)
     elif args.cmd == "lock":
         cmd_lock()
     elif args.cmd == "hooks":
@@ -447,6 +482,8 @@ def main() -> None:
         cmd_promote(args.stem)
     elif args.cmd == "merge":
         cmd_merge(args.base, args.cur, args.other)
+    elif args.cmd == "pre-commit":
+        cmd_pre_commit(args.before_empty)
 
 
 if __name__ == "__main__":
