@@ -323,11 +323,22 @@ def install_hooks() -> None:
             "#!/bin/sh\n"
             f"{HOOK_MARKER}\n"
             'cd "$(git rev-parse --show-toplevel)" || exit 1\n'
+            '[ -f bin/drafts ] || exit 0\n'
             f'before_empty=$(git diff --cached --quiet && echo yes || echo no)\n'
             f'exec {py} bin/drafts pre-commit "$before_empty"\n'
         ),
-        "post-checkout": f'#!/bin/sh\n{HOOK_MARKER}\ncd "$(git rev-parse --show-toplevel)" && {py} bin/drafts unlock\n',
-        "post-merge": f'#!/bin/sh\n{HOOK_MARKER}\ncd "$(git rev-parse --show-toplevel)" && {py} bin/drafts unlock HEAD^1\n',
+        "post-checkout": (
+            f'#!/bin/sh\n{HOOK_MARKER}\n'
+            'cd "$(git rev-parse --show-toplevel)" || exit 0\n'
+            "[ -f bin/drafts ] || exit 0\n"
+            f"{py} bin/drafts unlock\n"
+        ),
+        "post-merge": (
+            f'#!/bin/sh\n{HOOK_MARKER}\n'
+            'cd "$(git rev-parse --show-toplevel)" || exit 0\n'
+            "[ -f bin/drafts ] || exit 0\n"
+            f"{py} bin/drafts unlock HEAD^1\n"
+        ),
     }
     for name, body in scripts.items():
         p = hooks_dir / name
