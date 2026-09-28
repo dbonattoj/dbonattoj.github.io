@@ -94,7 +94,7 @@ def encrypt(src: Path, dst: Path) -> None:
 
 
 def decrypt(blob: Path) -> str | None:
-    r = run(["age", "--decrypt", "--identity-file", str(key_file()), str(blob)])
+    r = run(["age", "--decrypt", "--identity", str(key_file()), str(blob)])
     if r.returncode != 0:
         print(
             f"drafts: warning: cannot decrypt {blob.relative_to(REPO)}: "
@@ -226,7 +226,7 @@ def cmd_lock() -> None:
             continue
         blob = blob_for_stem(work.stem)
         enc = run(
-            ["age", "--decrypt", "--identity-file", str(key_file()), str(blob)],
+            ["age", "--decrypt", "--identity", str(key_file()), str(blob)],
         ) if blob.is_file() else None
         if enc is not None and enc.returncode == 0 and enc.stdout == work.read_text():
             continue  # blob already matches
