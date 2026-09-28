@@ -1,2 +1,5 @@
 # Force LF line endings, needed for Docker to work on Windows
 *.sh text eol=lf
+
+# 3-way merge on the decrypted text for encrypted drafts (registered by bin/drafts init)
+*.md.age merge=drafts

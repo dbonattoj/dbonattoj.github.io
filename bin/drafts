@@ -305,8 +305,77 @@ def install_hooks() -> None:
             die(f".git/hooks/{name} exists and is not managed by bin/drafts — move it away first")
         p.write_text(body)
         os.chmod(p, 0o755)
+    for key, value in (
+        ("merge.drafts.name", "decrypted 3-way merge for encrypted drafts"),
+        (
+            "merge.drafts.driver",
+            f'"{py}" "{REPO / "bin" / "drafts"}" merge %O %A %B',
+        ),
+    ):
+        r = run(["git", "-C", str(REPO), "config", key, value])
+        if r.returncode != 0:
+            die(f"git config {key} failed: {r.stderr.strip()}")
     print("drafts: hooks installed (pre-commit, post-checkout, post-merge)")
+    print("drafts: merge driver registered (merge.drafts)")
 
+
+def cmd_merge(base: str, cur: str, other: str) -> None:
+    """git merge driver: 3-way merge on the decrypted text, re-encrypt result.
+
+    Exit codes follow git's merge-driver contract: 0 clean, 1 conflicts, 2 error.
+    On any outcome the merged text (possibly with conflict markers) is written
+    back to %A (cur) encrypted, so `bin/drafts unlock` always reflects %A.
+    """
+    require_age()
+    key = key_file()
+    if not key.is_file():
+        print(f"drafts: merge failed: no key at {key}", file=sys.stderr)
+        sys.exit(2)
+
+    def plain(path: str) -> bytes:
+        if not path or not Path(path).is_file():
+            return b""
+        r = subprocess.run(
+            ["age", "--decrypt", "--identity", str(key), path], capture_output=True
+        )
+        if r.returncode != 0:
+            raise RuntimeError(r.stderr.decode(errors="replace").strip())
+        return r.stdout
+
+    try:
+        base_t, cur_t, other_t = plain(base), plain(cur), plain(other)
+    except RuntimeError as e:
+        print(f"drafts: merge failed: cannot decrypt: {e}", file=sys.stderr)
+        sys.exit(2)
+
+    with tempfile.TemporaryDirectory() as td:
+        tb, tc, to = [Path(td) / n for n in ("base", "cur", "other")]
+        tb.write_bytes(base_t)
+        tc.write_bytes(cur_t)
+        to.write_bytes(other_t)
+        r = subprocess.run(["git", "merge-file", "-p", str(tc), str(tb), str(to)])
+        # exit: 0 clean, 1 conflicts, 2 error; merged text on stdout
+        merged = r.stdout
+    if r.returncode not in (0, 1):
+        print("drafts: merge failed: git merge-file error", file=sys.stderr)
+        sys.exit(2)
+    merged_path = Path(cur)
+    tmp_plain = merged_path.parent / (merged_path.name + ".plain.tmp")
+    tmp_plain.write_bytes(merged)
+    try:
+        encrypt(tmp_plain, merged_path)
+    except SystemExit:
+        print("drafts: merge failed: re-encryption failed", file=sys.stderr)
+        sys.exit(2)
+    finally:
+        tmp_plain.unlink(missing_ok=True)
+    if r.returncode == 1:
+        print(
+            f"drafts: merge conflict in {cur} — run `bin/drafts unlock` to view the "
+            "conflict markers, fix the working copy, then commit",
+            file=sys.stderr,
+        )
+    sys.exit(r.returncode)
 
 def cmd_promote(stem: str) -> None:
     work = work_for_stem(stem)
@@ -357,6 +426,10 @@ def main() -> None:
     sub.add_parser("lock")
     p = sub.add_parser("promote")
     p.add_argument("stem")
+    m = sub.add_parser("merge")
+    m.add_argument("base")
+    m.add_argument("cur")
+    m.add_argument("other")
     sub.add_parser("hooks")
     args = ap.parse_args()
 
@@ -372,6 +445,8 @@ def main() -> None:
         cmd_hooks()
     elif args.cmd == "promote":
         cmd_promote(args.stem)
+    elif args.cmd == "merge":
+        cmd_merge(args.base, args.cur, args.other)
 
 
 if __name__ == "__main__":
