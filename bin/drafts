@@ -1,0 +1,378 @@
+#!/usr/bin/env python3
+"""Encrypted drafts for this repository.
+
+Working copies live in ./.drafts/ (gitignored, plain markdown — what your
+editor opens). Their encrypted forms live in ./drafts/ (tracked, one
+<stem>.md.age file per working copy). Git hooks (installed by `drafts init`
+or `drafts hooks`) keep the two in sync:
+
+  pre-commit   -> `drafts lock`   (encrypt changed working copies, git add)
+  post-checkout -> `drafts unlock` (decrypt new/changed blobs)
+  post-merge   -> `drafts unlock`
+
+Commands:
+  init                first use: keypair, hooks, decrypt existing blobs
+  list                show sync state of every draft
+  unlock              decrypt blobs that are missing or newer than disk
+  lock                encrypt changed working copies, stage drafts/
+  promote <stem>      turn a draft into a real post/page at its draft_path
+  hooks               (re)install the git hooks
+
+The age key defaults to ./.drafts/key; override with DRAFTS_KEY_FILE.
+Back up that key file: losing it makes the encrypted blobs unreadable.
+"""
+
+from __future__ import annotations
+
+import argparse
+import os
+import shutil
+import stat
+import subprocess
+import sys
+import tempfile
+from datetime import date
+from pathlib import Path
+
+REPO = Path(__file__).resolve().parent.parent
+DRAFTS_DIR = REPO / "drafts"
+WORK_DIR = REPO / ".drafts"
+HOOK_MARKER = "# managed by bin/drafts"
+
+AGE_INSTALL_HINT = (
+    "age is not installed. Install it, e.g.:\n"
+    "  macOS:  brew install age\n"
+    "  Debian/Ubuntu:  apt install age\n"
+    "  Fedora:  dnf install age\n"
+    "  or download:  https://github.com/FiloSottile/age/releases"
+)
+
+
+def key_file() -> Path:
+    return Path(os.environ.get("DRAFTS_KEY_FILE", str(WORK_DIR / "key")))
+
+
+def run(cmd: list[str], **kw) -> subprocess.CompletedProcess:
+    return subprocess.run(cmd, capture_output=True, text=True, **kw)
+
+
+def require_age() -> None:
+    if shutil.which("age") is None or shutil.which("age-keygen") is None:
+        print(f"error: {AGE_INSTALL_HINT}", file=sys.stderr)
+        sys.exit(1)
+
+
+def die(msg: str, code: int = 1) -> None:
+    print(f"drafts: {msg}", file=sys.stderr)
+    sys.exit(code)
+
+
+# --- age primitives ---------------------------------------------------------
+
+
+def pub_key() -> str:
+    """Public key line for the private key (age1...)."""
+    r = run(["age-keygen", "-y", str(key_file())])
+    if r.returncode != 0:
+        die(f"cannot read age key at {key_file()}: {r.stderr.strip()}")
+    return r.stdout.strip()
+
+
+def encrypt(src: Path, dst: Path) -> None:
+    r = run(
+        [
+            "age",
+            "--recipient",
+            pub_key(),
+            "--output",
+            str(dst),
+            str(src),
+        ]
+    )
+    if r.returncode != 0:
+        die(f"encryption failed for {src.name}: {r.stderr.strip()}")
+
+
+def decrypt(blob: Path) -> str | None:
+    r = run(["age", "--decrypt", "--identity-file", str(key_file()), str(blob)])
+    if r.returncode != 0:
+        print(
+            f"drafts: warning: cannot decrypt {blob.relative_to(REPO)}: "
+            f"{r.stderr.strip()}",
+            file=sys.stderr,
+        )
+        return None
+    return r.stdout
+
+
+# --- front matter helpers ---------------------------------------------------
+
+
+def front_matter_value(text: str, field: str) -> str | None:
+    """Value of a top-level `field:` line in YAML front matter, if present."""
+    lines = text.splitlines()
+    if not lines or lines[0].strip() != "---":
+        return None
+    for line in lines[1:]:
+        if line.strip() == "---":
+            break
+        if line.startswith(f"{field}:"):
+            return line.split(":", 1)[1].strip().strip("'\"")
+    return None
+
+
+def ensure_front_matter_field(text: str, field: str, value: str) -> str:
+    """Insert `field: value` into front matter (adding the block if missing)."""
+    lines = text.splitlines()
+    if lines and lines[0].strip() == "---":
+        for i, line in enumerate(lines[1:], start=1):
+            if line.strip() == "---":
+                lines.insert(i, f"{field}: {value}")
+                return "\n".join(lines) + "\n"
+        die(f"unterminated front matter in a draft (looking for closing ---)")
+    return f"---\n{field}: {value}\n---\n\n{text}"
+
+
+# --- sync rules --------------------------------------------------------------
+
+
+def blob_for_stem(stem: str) -> Path:
+    return DRAFTS_DIR / f"{stem}.md.age"
+
+
+def work_for_stem(stem: str) -> Path:
+    return WORK_DIR / f"{stem}.md"
+
+
+def all_stems() -> list[str]:
+    if not DRAFTS_DIR.is_dir():
+        return []
+    return sorted(p.stem[:-3] for p in DRAFTS_DIR.glob("*.md.age"))
+
+
+def head_blob_text(stem: str) -> str | None:
+    """Decrypted content of the blob as it is at git HEAD (or None)."""
+    r = subprocess.run(
+        ["git", "-C", str(REPO), "show", f"HEAD:drafts/{stem}.md.age"],
+        capture_output=True,
+    )
+    if r.returncode != 0:
+        return None
+
+    with tempfile.NamedTemporaryFile(suffix=".age", delete=False) as t:
+        t.write(r.stdout)
+        tmp = Path(t.name)
+    try:
+        return decrypt(tmp)
+    finally:
+        tmp.unlink(missing_ok=True)
+
+
+def cmd_unlock() -> None:
+    require_age()
+    if not key_file().is_file():
+        die(f"no age key at {key_file()} — run `bin/drafts init` (or restore the key)")
+    WORK_DIR.mkdir(exist_ok=True)
+    stems = all_stems()
+    if not stems:
+        print("drafts: nothing to unlock (no drafts/ blobs)")
+        return
+    actions = 0
+    for stem in stems:
+        blob = blob_for_stem(stem)
+        plain = decrypt(blob)
+        if plain is None:
+            continue
+        work = work_for_stem(stem)
+        if not work.is_file():
+            work.write_text(plain)
+            print(f"drafts: unlocked {work.relative_to(REPO)}")
+            actions += 1
+            continue
+        current = work.read_text()
+        if current == plain:
+            continue
+        head_text = head_blob_text(stem)
+        if head_text is not None and current == head_text:
+            # local working copy matches HEAD blob; blob is newer -> overwrite
+            work.write_text(plain)
+            print(f"drafts: refreshed {work.relative_to(REPO)} from blob")
+            actions += 1
+            continue
+        # both sides changed: conflict
+        conflict = work.parent / (work.name + ".conflict")
+        conflict.write_text(plain)
+        print(
+            f"drafts: CONFLICT on {stem}: your {work.relative_to(REPO)} was kept; "
+            f"incoming version written to {conflict.relative_to(REPO)}",
+            file=sys.stderr,
+        )
+        actions += 1
+    if actions == 0:
+        print("drafts: all drafts already up to date")
+
+
+def cmd_lock() -> None:
+    require_age()
+    if not key_file().is_file():
+        die(f"no age key at {key_file()} — run `bin/drafts init`")
+    DRAFTS_DIR.mkdir(exist_ok=True)
+    if not WORK_DIR.is_dir():
+        print("drafts: nothing to lock (no .drafts/ working copies)")
+        return
+    changed = 0
+    for work in sorted(WORK_DIR.glob("*.md")):
+        if work.name.endswith(".conflict"):
+            continue
+        blob = blob_for_stem(work.stem)
+        enc = run(
+            ["age", "--decrypt", "--identity-file", str(key_file()), str(blob)],
+        ) if blob.is_file() else None
+        if enc is not None and enc.returncode == 0 and enc.stdout == work.read_text():
+            continue  # blob already matches
+        encrypt(work, blob)
+        changed += 1
+        print(f"drafts: locked {work.name} -> {blob.relative_to(REPO)}")
+    if changed:
+        run(["git", "-C", str(REPO), "add", "--", "drafts/"])
+    else:
+        print("drafts: nothing to lock")
+
+
+def cmd_list() -> None:
+    if not key_file().is_file():
+        die(f"no age key at {key_file()} — run `bin/drafts init` (or restore the key)")
+    stems = all_stems()
+    works = {p.stem for p in WORK_DIR.glob("*.md") if not p.name.endswith(".conflict")}
+    if not stems and not works:
+        print("drafts: no drafts")
+        return
+    for stem in sorted(set(stems) | works):
+        blob = blob_for_stem(stem)
+        work = work_for_stem(stem)
+        path = front_matter_value(work.read_text(), "draft_path") if work.is_file() else None
+        if blob.is_file() and work.is_file():
+            plain = decrypt(blob)
+            if plain is None:
+                state = "unreadable"
+            elif plain == work.read_text():
+                state = "synced"
+            else:
+                state = "dirty"
+        elif blob.is_file():
+            state = "encrypted-only"
+        else:
+            state = "unlocked-only"
+        target = f"  -> {path}" if path else ""
+        print(f"{stem:30} {state:15}{target}")
+
+
+def cmd_init() -> None:
+    require_age()
+    WORK_DIR.mkdir(exist_ok=True)
+    key = key_file()
+    if key.is_file():
+        print(f"drafts: using existing key {key.relative_to(REPO)}")
+    else:
+        r = run(["age-keygen", "-o", str(key)])
+        if r.returncode != 0:
+            die(f"age-keygen failed: {r.stderr.strip()}")
+        os.chmod(key, stat.S_IRUSR | stat.S_IWUSR)
+        (WORK_DIR / "key.pub").write_text(pub_key() + "\n")
+        print(f"drafts: created key {key.relative_to(REPO)} (chmod 600)")
+        print("drafts: back this file up — losing it makes drafts unreadable")
+    install_hooks()
+    cmd_unlock()
+
+
+def cmd_hooks() -> None:
+    install_hooks()
+
+
+def install_hooks() -> None:
+    hooks_dir = REPO / ".git" / "hooks"
+    if not hooks_dir.is_dir():
+        die("not a git repository (no .git/hooks)")
+    py = sys.executable or "python3"
+    scripts = {
+        "pre-commit": f'#!/bin/sh\n{HOOK_MARKER}\ncd "$(git rev-parse --show-toplevel)" && exec {py} bin/drafts lock\n',
+        "post-checkout": f'#!/bin/sh\n{HOOK_MARKER}\ncd "$(git rev-parse --show-toplevel)" && {py} bin/drafts unlock\n',
+        "post-merge": f'#!/bin/sh\n{HOOK_MARKER}\ncd "$(git rev-parse --show-toplevel)" && {py} bin/drafts unlock\n',
+    }
+    for name, body in scripts.items():
+        p = hooks_dir / name
+        if p.is_file() and HOOK_MARKER not in p.read_text():
+            die(f".git/hooks/{name} exists and is not managed by bin/drafts — move it away first")
+        p.write_text(body)
+        os.chmod(p, 0o755)
+    print("drafts: hooks installed (pre-commit, post-checkout, post-merge)")
+
+
+def cmd_promote(stem: str) -> None:
+    work = work_for_stem(stem)
+    if not work.is_file():
+        die(f"no working copy .drafts/{stem}.md (run `bin/drafts unlock`)")
+    text = work.read_text()
+    target = front_matter_value(text, "draft_path")
+    if not target:
+        die(f"{stem}.md has no `draft_path:` front matter field — add e.g.\n  draft_path: _posts/2026-10-01-{stem}.md")
+    dest = REPO / target
+    if dest.exists():
+        die(f"destination {target} already exists")
+    if front_matter_value(text, "date") is None:
+        text = ensure_front_matter_field(text, "date", date.today().isoformat())
+    # drop the draft bookkeeping field from the published post
+    lines = text.splitlines()
+    out = []
+    in_fm = False
+    seen_fm = False
+    for line in lines:
+        if line.strip() == "---":
+            if not seen_fm:
+                seen_fm = True
+                in_fm = True
+                out.append(line)
+                continue
+            in_fm = False
+        if in_fm and line.startswith("draft_path:"):
+            continue
+        out.append(line)
+    text = "\n".join(out) + ("\n" if not text.endswith("\n") else "")
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    dest.write_text(text)
+    work.unlink()
+    blob = blob_for_stem(stem)
+    if blob.is_file():
+        run(["git", "-C", str(REPO), "rm", "-q", "--", str(blob.relative_to(REPO))])
+    run(["git", "-C", str(REPO), "add", "--", str(dest.relative_to(REPO))])
+    print(f"drafts: promoted {stem} -> {dest.relative_to(REPO)} (staged; commit when ready)")
+
+
+def main() -> None:
+    ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    sub = ap.add_subparsers(dest="cmd", required=True)
+    sub.add_parser("init")
+    sub.add_parser("list")
+    sub.add_parser("unlock")
+    sub.add_parser("lock")
+    p = sub.add_parser("promote")
+    p.add_argument("stem")
+    sub.add_parser("hooks")
+    args = ap.parse_args()
+
+    if args.cmd == "init":
+        cmd_init()
+    elif args.cmd == "list":
+        cmd_list()
+    elif args.cmd == "unlock":
+        cmd_unlock()
+    elif args.cmd == "lock":
+        cmd_lock()
+    elif args.cmd == "hooks":
+        cmd_hooks()
+    elif args.cmd == "promote":
+        cmd_promote(args.stem)
+
+
+if __name__ == "__main__":
+    main()
