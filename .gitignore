@@ -22,3 +22,6 @@ __pycache__/
 
 # local decrypted draft working copies (bin/drafts); encrypted blobs live in drafts/
 .drafts/
+
+# local planning/spec notes — never commit (owner preference)
+docs/superpowers/
