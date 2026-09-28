@@ -3,7 +3,7 @@ layout: page
 title: projects
 permalink: /projects/
 description: Projects page - To be done
-nav: true
+nav: false # hidden until projects are ready (page still reachable at /projects/)
 nav_order: 4
 display_categories: [work, fun]
 horizontal: false

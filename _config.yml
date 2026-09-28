@@ -8,6 +8,7 @@ middle_name:
 last_name: Bonatto
 author: Daniele Bonatto
 email: daniele.bonatto@ulb.be
+scholar_userid: dx8LwRAAAAAJ # Google Scholar profile ID; used to look up publication citation counts in _data/citations.yml
 contact_note: >
   Please contact me through my email or subscribe to my mailing list for sparse news.
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
@@ -18,8 +19,8 @@ footer_text: >
   Photos from <a href="https://unsplash.com" target="_blank">Unsplash</a>.
 keywords: jekyll, jekyll-theme, academic-website, portfolio-website # add your own keywords or leave empty
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
-icon: ⚛️ # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
-apple_touch_icon: # image name in /assets/img/ (or a rooted path / absolute URL) used for iOS home-screen bookmarks; needs a real 180x180 PNG, since Safari ignores the emoji favicon above. Left empty, iOS falls back to a screenshot of the page.
+icon: favicon.svg # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
+apple_touch_icon: favicon-180.png # image name in /assets/img/ (or a rooted path / absolute URL) used for iOS home-screen bookmarks; needs a real 180x180 PNG, since Safari ignores the emoji favicon above. Left empty, iOS falls back to a screenshot of the page.
 
 url: https://dbonattoj.github.io # the base hostname & protocol for your site
 baseurl: # the subpath of your site, e.g. /blog/. Leave blank for root
@@ -211,6 +212,7 @@ collections:
 
 # Markdown and syntax highlight
 markdown: kramdown
+future: true # include future-dated posts in the build; GitHub Pages only rebuilds on push, so without this a post dated ahead of the server clock silently disappears until the next push
 highlighter: rouge
 kramdown:
   input: GFM

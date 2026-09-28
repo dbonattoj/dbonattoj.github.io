@@ -1,0 +1,46 @@
+name: Update publications from Google Scholar
+
+on:
+  schedule:
+    - cron: "0 6 * * 1" # Monday 06:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-publications:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run publications update
+        run: python bin/update_publications.py
+        # Fails if Google blocks the runner (CAPTCHA) or the profile layout
+        # changed; the previous papers.bib / citations.yml stay in place.
+
+      - name: Configure Git
+        if: github.event_name != 'pull_request'
+        run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions"
+
+      - name: Commit and push if changed
+        if: github.event_name != 'pull_request'
+        run: |
+          git add _bibliography/papers.bib _data/citations.yml
+          git diff --staged --quiet || (
+            echo "Committing publications update..."
+            git commit -m "Update publications from Google Scholar"
+            git push
+          )

@@ -1,0 +1,271 @@
+metadata:
+  last_updated: '2026-09-28'
+papers:
+  -f6ydRqryjwC:
+    citations: 0
+    title: Synchronization and Calibration of Video Sequences Acquired Using Multiple Plenoptic 2.0 Cameras
+    year: '2025'
+  0EnyYjriUFMC:
+    citations: 7
+    title: MPEG Immersive Video tools for Light Field Head Mounted Displays
+    year: '2021'
+  2osOgNQ5qMEC:
+    citations: 36
+    title: Understanding MPEG-I Coding Standardization in Immersive VR/AR Applications
+    year: '2019'
+  3fE2CSJIrl8C:
+    citations: 7
+    title: Performance analysis of DIBR-based view synthesis with kinect azure
+    year: '2021'
+  4DMP91E08xMC:
+    citations: 4
+    title: Transparent Magritte Test Sequence
+    year: '2021'
+  4JMBOYKVnBMC:
+    citations: 0
+    title: Light field rendering for non-lambertian objects
+    year: '2021'
+  4TOpqqG69KYC:
+    citations: 0
+    title: '3D Computer Graphics: View Synthesis Tool for VR Immersive Video'
+    year: '2022'
+  7PzlFSSx8tAC:
+    citations: 0
+    title: Study on Viewpoint-Dependent Time-Multiplexing for Weighted Optimization of 3D Layered Displays
+    year: '2023'
+  8k81kl-MbHgC:
+    citations: 45
+    title: Real-Time Depth Video-Based Rendering for 6-DoF HMD Navigation and Light Field Displays
+    year: '2021'
+  9ZlFYXVOiuMC:
+    citations: 7
+    title: Novel view synthesis in embedded virtual reality devices
+    year: '2022'
+  9yKSN-GCB0IC:
+    citations: 1
+    title: Rvs view synthesis with view-coherent depth maps and dibr
+    year: '2019'
+  HDshCWvjkbEC:
+    citations: 0
+    title: A Practical Approach to Depth-Aware Augmentation for Neural Radiance Fields
+    year: '2024'
+  IWHjjKOFINEC:
+    citations: 3
+    title: Pattern and Subaperture-free Calibration of Plenoptic 2.0 cameras
+    year: '2024'
+  IjCSPb-OGe4C:
+    citations: 0
+    title: Low-cost plenoptic camera with off-the-shelf components
+    year: '2017'
+  JV2RwH3_ST0C:
+    citations: 0
+    title: Micro-Image Domain View Synthesizer for Free Navigation with Focused Plenoptic Cameras:(Journal presentation)
+    year: '2026'
+  KlAtU1dfN6UC:
+    citations: 4
+    title: Reference View Synthesizer (RVS) 1.0. 2 manual
+    year: '2018'
+  L8Ckcad2t8MC:
+    citations: 0
+    title: 'Prototyping a Tensor Display: Master thesis'
+    year: '2022'
+  LkGwnXOMwfcC:
+    citations: 5
+    title: ULB High Density 2d/3d Camera Array data set version 2 [M41083]
+    year: '2017'
+  M3NEmzRMIkIC:
+    citations: 0
+    title: Large-size integral imaging display with depth image-based plenoptic rendering
+    year: '2026'
+  M3ejUd6NZC8C:
+    citations: 0
+    title: Novel view synthesis in embedded virtual reality devices
+    year: '2022'
+  MXK_kJrjxJIC:
+    citations: 16
+    title: Multiview from micro-lens image of multi-focused plenoptic camera
+    year: '2021'
+  QIV2ME_5wuYC:
+    citations: 9
+    title: Pattern-free Plenoptic 2.0 Camera Calibration
+    year: '2022'
+  R3hNpaxXUhUC:
+    citations: 0
+    title: Author Organization Paper
+    year: ''
+  RHpTSmoSYBkC:
+    citations: 3
+    title: Micro-Image Domain View Synthesizer for Free Navigation with Focused Plenoptic Cameras
+    year: '2025'
+  Se3iqnhoufwC:
+    citations: 2
+    title: 'View Synthesis: LiDAR Camera versus Depth Estimation'
+    year: '2021'
+  TFP_iSt0sucC:
+    citations: 0
+    title: 'MIST: Micro-Image Shuffling Tool for Codec-Agnostic Plenoptic Video Compression'
+    year: '2026'
+  TQgYirikUcIC:
+    citations: 0
+    title: 'From Point Cloud to 3D Gaussian Splatting: A Review of the State-of-the-art'
+    year: '2024'
+  Tyk-4Ss8FVUC:
+    citations: 15
+    title: 'Free Navigation in Natural Scenery With DIBR: RVS and VSRS in MPEG-I Standardization'
+    year: '2018'
+  ULOm3_A8WrAC:
+    citations: 0
+    title: Real-time View Synthesis for Virtual Reality and Light Field displays
+    year: '2019'
+  UeHWp8X0CEIC:
+    citations: 0
+    title: Consistent Long Sequences Deep Faces
+    year: '2019'
+  W7OEmFMy1HYC:
+    citations: 28
+    title: 'RaViS: Real-time accelerated view synthesizer for immersive video 6DoF VR'
+    year: '2020'
+  WF5omc3nYNoC:
+    citations: 22
+    title: High-quality holographic stereogram generation using four RGBD images
+    year: '2020'
+  Wp0gIr-vW9MC:
+    citations: 2
+    title: Towards non-Lambertian scenes for tensor displays
+    year: '2022'
+  Y0pCki6q_DkC:
+    citations: 64
+    title: Depth image based view synthesis with multiple reference views for virtual reality
+    year: '2018'
+  YOwf2qJgpHMC:
+    citations: 0
+    title: ULB ChocoFountainBxl
+    year: '2022'
+  YsMSGLbcyi4C:
+    citations: 16
+    title: ULB high density 2D/3D camera array data set version 2
+    year: '2017'
+  ZeXyd9-uunAC:
+    citations: 0
+    title: '3D Multi-view Displays for Autonomous Vehicles: From Acquisition to Displays'
+    year: '2024'
+  Zph67rFs4hoC:
+    citations: 7
+    title: Reference View Synthesizer (RVS) 2.0 manual, MPEG2018/N17759
+    year: '2018'
+  _FxGoFyzp5QC:
+    citations: 0
+    title: CALIBRATION OF AN INWARDS SPHERICAL LIGHT FIELD CAPTURING DEVICE
+    year: ''
+  _Qo2XoVZTnwC:
+    citations: 0
+    title: Pattern and Subaperture-free Calibration of Plenoptic 2.0 cameras
+    year: '2024'
+  _kc_bZDykSQC:
+    citations: 17
+    title: View Synthesis Tool for VR Immersive Video
+    year: '2022'
+  bEWYMUwI8FkC:
+    citations: 0
+    title: Pattern-free Plenoptic 2.0 Camera Calibration
+    year: '2022'
+  blknAaTinKkC:
+    citations: 0
+    title: "\u2202 DIBR: Differentiable Depth Image-based Rendering for Fast Novel View Synthesis"
+    year: '2026'
+  d1gkVwhDpl0C:
+    citations: 24
+    title: Natural Scenes Datasets for exploration in 6DoF Navigation
+    year: '2018'
+  dhFuZR0502QC:
+    citations: 4
+    title: 3D Tensor Display for Non-Lambertian Content
+    year: '2022'
+  e5wmG9Sq2KIC:
+    citations: 0
+    title: 2024 12th European Workshop on Visual Information Processing (EUVIP)
+    year: ''
+  eQOLeE2rZwMC:
+    citations: 11
+    title: Light field rendering for non-Lambertian objects
+    year: '2021'
+  hFOr9nPyWt4C:
+    citations: 3
+    title: '[DLF] Update for Reference Lenslet content Convertor (RLC)[M56418]'
+    year: '2021'
+  hMod-77fHWUC:
+    citations: 0
+    title: Depth Image-Based Rendering of non-Lambertian Content in MPEG Immersive Video
+    year: '2021'
+  hqOjcs7Dif8C:
+    citations: 7
+    title: Polynomial image-based rendering for non-Lambertian objects
+    year: '2021'
+  iH-uZ7U-co4C:
+    citations: 0
+    title: 'Free Navigation in Natural Scenery with DIBR: RVS and VSRS in MPEG-I standardization'
+    year: '2018'
+  isC4tDSrTZIC:
+    citations: 0
+    title: Depth Image-Based View Synthesis with Multiple Reference Views for Virtual Reality
+    year: '2018'
+  j3f4tGmQtD8C:
+    citations: 2
+    title: Structure-from-motion in micro-image domain for uncalibrated plenoptic 2.0 cameras
+    year: '2026'
+  kNdYIx-mwKoC:
+    citations: 7
+    title: Depth image-based rendering of non-Lambertian content in MPEG immersive video
+    year: '2021'
+  k_IJM867U9cC:
+    citations: 0
+    title: 'Failing to Reflect Reality: Gaussian Splatting''s Collapse on non-Lambertian Surfaces'
+    year: '2026'
+  mB3voiENLucC:
+    citations: 3
+    title: Rabbitstamp test sequence
+    year: '2021'
+  mVmsd5A6BfQC:
+    citations: 0
+    title: View Synthesis Tool for VR Immersive Video
+    year: ''
+  maZDTaKrznsC:
+    citations: 0
+    title: Polynomial Image-Based Rendering for non-Lambertian Objects
+    year: '2021'
+  qUcmZB5y_30C:
+    citations: 0
+    title: 'Plenoptic Camera for Virtual Reality-Insight to its Applications: Invited talk'
+    year: '2024'
+  qjMakFHDy7sC:
+    citations: 0
+    title: 'RaViS: Real-time Accelerated VIew Synthesis: Depth Image-Based Rendering (DIBR)'
+    year: '2019'
+  qxL8FJ1GzNcC:
+    citations: 27
+    title: 'Deep Learning for Reaction-Diffusion Glioma Growth Modeling: Towards a Fully Personalized Model?'
+    year: '2022'
+  r0BpntZqJG4C:
+    citations: 0
+    title: 'PaintUnicorn: Multi-view video datset'
+    year: '2025'
+  roLk4NBRz8UC:
+    citations: 2
+    title: A Device for Capturing Inward-Looking Spherical Light Fields
+    year: '2020'
+  u-x6o8ySG0sC:
+    citations: 2
+    title: 'RVS kickstart: example test sequences and config files'
+    year: '2019'
+  u5HHmVD_uO8C:
+    citations: 47
+    title: MPEG-I Depth Estimation Reference Software
+    year: '2019'
+  ufrVoPGSRksC:
+    citations: 0
+    title: Calibration of an inwards spherical light field capturing device:-Best Paper IC3D 2020
+    year: '2020'
+  zYLM7Y9cAGgC:
+    citations: 20
+    title: Explorations for real-time point cloud rendering of natural scenes in virtual reality
+    year: '2016'
