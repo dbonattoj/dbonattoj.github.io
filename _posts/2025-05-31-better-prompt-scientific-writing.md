@@ -28,9 +28,11 @@ It’s important to note that while adding “without fluff” effectively reduc
 **Bonus**: it removes excessive praise like “Great question!” or “Interesting point!”.
 
 ## Examples
+
 To demonstrate how much this changes the result, here are some side-by-side comparisons using a typical scientific writing prompt:
 
 ### Rewriting
+
 **Prompt**:
 But, I found a secret weapon to improve further my writing and I (secretly) hope that my students or other students around the world will find this post and use it.
 
@@ -41,6 +43,7 @@ But along the way, I stumbled upon a surprisingly powerful little secret that ha
 But I've found a small secret weapon to improve my writing - and I secretly hope my students, or others, will come across this post and use it too.
 
 ### Text summarization
+
 **Prompt**:
 "Summarize the contribution of the paper in one paragraph."
 

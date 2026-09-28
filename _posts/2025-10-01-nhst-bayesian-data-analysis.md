@@ -13,13 +13,12 @@ I’m by no means a statistician, and what follows reflects only my view. Still,
 
 Most of us were first introduced to NHST in our early stats classes. It goes something like this:
 
-* Assume a null hypothesis.
-* Compute a test statistic from your data.
-* Get a **p-value**, the probability of observing something as extreme as your result under the null.
-* If the p-value is below a magic threshold (often 0.05), you "reject" the null.
+- Assume a null hypothesis.
+- Compute a test statistic from your data.
+- Get a **p-value**, the probability of observing something as extreme as your result under the null.
+- If the p-value is below a magic threshold (often 0.05), you "reject" the null.
 
-It sounds neat and tidy, but the interpretation is tricky. A p-value is *not* the probability that your hypothesis is true. It is not the probability of being wrong. It’s only the probability of seeing your data (or something more extreme) if the null were correct - a subtlety that often leads to confusion.
-
+It sounds neat and tidy, but the interpretation is tricky. A p-value is _not_ the probability that your hypothesis is true. It is not the probability of being wrong. It’s only the probability of seeing your data (or something more extreme) if the null were correct - a subtlety that often leads to confusion.
 
 ---
 
@@ -27,12 +26,12 @@ It sounds neat and tidy, but the interpretation is tricky. A p-value is *not* th
 
 Choosing the "right" test is harder than it looks. Imagine the design space:
 
-* Sample size $$S$$
-* Parametric vs. non-parametric assumptions $$PNP$$
-* Distribution families and their parameters $$F_p$$
-* Single or multiple hypotheses $$H$$
-* Dependence structures $$D$$
-* And countless other details $$O$$
+- Sample size $$S$$
+- Parametric vs. non-parametric assumptions $$PNP$$
+- Distribution families and their parameters $$F_p$$
+- Single or multiple hypotheses $$H$$
+- Dependence structures $$D$$
+- And countless other details $$O$$
 
 This space
 
@@ -42,7 +41,7 @@ $$
 
 is effectively infinite.
 
-Throughout history, tests were developed as answers to very specific (often industrial) problems: Student’s *t*-test, Fisher’s exact test, Wilcoxon rank-sum, ANOVA... Each of them is just one **point in the infinite space of possible tests**. Some are more useful and general, so they make it into textbooks. The hope is: if you can correctly map your problem to one of these points, you can apply the corresponding test.
+Throughout history, tests were developed as answers to very specific (often industrial) problems: Student’s _t_-test, Fisher’s exact test, Wilcoxon rank-sum, ANOVA... Each of them is just one **point in the infinite space of possible tests**. Some are more useful and general, so they make it into textbooks. The hope is: if you can correctly map your problem to one of these points, you can apply the corresponding test.
 
 But navigating this space is not straightforward. Different textbooks, authors, or software packages organize it differently. One might start with the number of samples, another with distributional assumptions, another with independence. There is no universal decision tree that always lands you on the right test.
 
@@ -70,17 +69,17 @@ $$
 p(\theta \mid X) \propto p(X \mid \theta) \, p(\theta)
 $$
 
-* $$p(\theta)$$: your prior, the assumptions you bring.
-* $$p(X \mid \theta)$$: the likelihood, describing how data arise under the model
-* $$p(\theta \mid X)$$: the posterior, what you learn after seeing the data
+- $$p(\theta)$$: your prior, the assumptions you bring.
+- $$p(X \mid \theta)$$: the likelihood, describing how data arise under the model
+- $$p(\theta \mid X)$$: the posterior, what you learn after seeing the data
 
 From the posterior, you can compute directly:
 
-* $$\Pr(\theta > 0 \mid X)$$, the probability that an effect is positive
-* Credible intervals for parameters
-* Predictions for future data
+- $$\Pr(\theta > 0 \mid X)$$, the probability that an effect is positive
+- Credible intervals for parameters
+- Predictions for future data
 
-In this view, inference is not about finding the right test in $$\Omega$$. It’s about writing down a plausible model and letting Bayes’ theorem do the work. The model *is* the test.
+In this view, inference is not about finding the right test in $$\Omega$$. It’s about writing down a plausible model and letting Bayes’ theorem do the work. The model _is_ the test.
 
 This approach is more flexible. It’s essentially **test-free**. The model is the test. If you can specify it, you can run it. Instead of memorizing dozens of special-purpose procedures, you work in one unified framework. The quality of the results depends on the quality of the model - but at least the assumptions are visible, not hidden.
 
@@ -98,7 +97,7 @@ Bayesian analysis sits in a different niche: smaller datasets, richer models, an
 
 In some sense, ML lets the data find its own place in $$\Omega$$, but without making explicit which assumptions are being chosen. Bayesian modeling, by contrast, forces you to declare your assumptions and gives you transparent probabilities rather than opaque predictions.
 
-Do we still need to learn Bayesian Data Analysis, you might ask? My answer is yes - there is still value. If you don’t have enough data to apply machine learning, Bayesian analysis remains one of the most powerful ways to obtain a satisfying result. But even if you never directly apply it because you *do* have enough data, many of the methods that improved deep learning in recent years can be understood as essentially Bayesian ideas in disguise.
+Do we still need to learn Bayesian Data Analysis, you might ask? My answer is yes - there is still value. If you don’t have enough data to apply machine learning, Bayesian analysis remains one of the most powerful ways to obtain a satisfying result. But even if you never directly apply it because you _do_ have enough data, many of the methods that improved deep learning in recent years can be understood as essentially Bayesian ideas in disguise.
 
 Take **fine-tuning** for example: starting from a pre-trained model is nothing more than using a strong prior $$p(\theta)$$, and then updating it with new data $$X_{\text{new}}$$ via Bayes’ rule,
 
@@ -141,7 +140,6 @@ So, even in a world dominated by machine learning, Bayesian analysis has endurin
 NHST has given us a toolbox of powerful, historically useful procedures. But it’s a toolbox built from scattered points in an infinite design space. Bayesian data analysis offers a more direct route: start from your model, combine it with your data, and let inference follow naturally.
 
 It doesn’t eliminate the need for judgment, but it does make the process clearer, more flexible, and - in my view - closer to how science should reason under uncertainty.
-
 
 # References
 

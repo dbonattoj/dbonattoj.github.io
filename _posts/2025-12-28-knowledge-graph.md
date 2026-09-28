@@ -11,7 +11,7 @@ I have the chance to teach several courses: computer graphics, CUDA programming,
 
 This is especially true for machine learning. The field evolves quickly, new ideas appear constantly, and many concepts depend on each other in non-trivial ways. There is no obvious "Chapter 1 → Chapter 2 → Chapter 3" path that feels natural or complete. CUDA programming is no different: it assumes parallel thinking long before students have fully developed it. Computer graphics is no better, as it requires understanding the full pipeline that produces an image on a computer before knowing how and why each part works.
 
-And yet, teaching happens in time. Slides advance one after the other, and lectures unfold sequentially. Teaching is linear by necessity. This tension, between a graph of concepts and a linear presentation, is at the core of how I think about teaching. The question, then, is not *whether* we impose a linear order, but *how*.
+And yet, teaching happens in time. Slides advance one after the other, and lectures unfold sequentially. Teaching is linear by necessity. This tension, between a graph of concepts and a linear presentation, is at the core of how I think about teaching. The question, then, is not _whether_ we impose a linear order, but _how_.
 
 Modern technical education often assumes that knowledge can be cleanly reduced to outlines, tables of contents, and dependency trees. If the structure is correct, the thinking will follow, or so the assumption goes. This idea is not new. It can be traced back at least to Petrus Ramus, who believed that all knowledge should be reduced to orderly diagrams and linear schematics. His influence is still visible today: chapters, subsections, bullet points, and curricula that promise clarity through structure alone.
 
@@ -27,7 +27,7 @@ I do have chapters. I do have sections. But they are not the backbone of my cour
 
 In my slides, I focus on maintaining a clear linear path of understanding, without relying on future knowledge to make sense of the present. This warps the underlying graph in unexpected ways and can sometimes look like unstructured content. But make no mistake: this does not mean the material is unstructured.
 
-On the contrary, I put a great deal of effort into linearizing the concepts, arranging them in an order that makes the story feel coherent, causal, and logical, even if that order does not match the true structure of the conceptual graph. I prioritize insights over formal structure. The goal is that, at any given moment, students feel that what comes next makes sense given what they already know, and that at each step, they should understand *why* the next idea appears.
+On the contrary, I put a great deal of effort into linearizing the concepts, arranging them in an order that makes the story feel coherent, causal, and logical, even if that order does not match the true structure of the conceptual graph. I prioritize insights over formal structure. The goal is that, at any given moment, students feel that what comes next makes sense given what they already know, and that at each step, they should understand _why_ the next idea appears.
 
 This is where I consciously diverge from the Ramist impulse to reduce everything to schematic order. Structure matters, but it should serve understanding, not replace it.
 
@@ -50,7 +50,6 @@ My own approach is strongly influenced by this tradition, even if the medium is 
 Despite the presence of slides, I try to teach as if the lecture were an exploration. The sequence is guided, but not rigid. The goal is not to cover a checklist of results, but to investigate an idea until it becomes clear. In that sense, the slides act less as a script and more as a shared workspace: a place where questions, visualizations, and partial insights can accumulate and connect.
 
 This is also why the content of a “chapter” is not always fully determined in advance. From time to time, I add verbal or blackboard explorations in response to students' questions. What must be explored is known; how that exploration unfolds depends on the students, the questions that arise, and the conceptual obstacles encountered along the way. As long as the object has been genuinely explored, the chapter has done its job.
-
 
 ## The Necessary Strain of Learning
 
@@ -129,10 +128,8 @@ Teaching a graph of knowledge in linear time is inherently difficult. There is n
 
 And once they can think with the material, they can navigate the graph on their own.
 
-
-
 References:
 
 1. Meyer, J. H. F., & Land, R. (2005). Threshold Concepts and Troublesome Knowledge (2): Epistemological Considerations and a Conceptual Framework for Teaching and Learning. Higher Education, 49(3), 373–388. [25068074](http://www.jstor.org/stable/25068074)
-(pp. 412-424). Edinburgh: University of Edinburgh.
+   (pp. 412-424). Edinburgh: University of Edinburgh.
 2. Breen, S., & O'Shea, A. (2016). Threshold Concepts and Undergraduate Mathematics Teaching. PRIMUS, 26(9), 837–847. [10.1080/10511970.2016.1191573](https://doi.org/10.1080/10511970.2016.1191573)

@@ -27,7 +27,6 @@ Another aspect of scientific research is that a problem may gain prominence in a
 
 One successful and interesting field of science is Computer graphics. For a long time, computer graphics have revolved around the use of triangles as fundamental primitives, with significant research dedicated to manipulating these geometric shapes. GPUs were initially designed to handle triangles with maximum efficiency, inspiring the creation of algorithms to compute lighting on triangular meshes [1]. This foundation gave rise to modern computer graphics, where triangles dominated everything from game development [2] to rendering pipelines [3-5]. This focus also led to the development of discrete differential geometry [6], which studies continuous mathematical functions defined over discrete meshes. This field enabled more advanced manipulations of triangles, laying the groundwork for software like Blender [7], where users can paint, deform, and compute integrals and divergences on triangle-based meshes.
 
-
 However, triangles alone often fail to produce photorealistic results. While they can approximate reality in some cases, they frequently betray the artificial nature of a virtual scene. To address this, a parallel line of research emerged, focusing on ray tracing [8] - a method that still uses triangles to represent scenes but prioritizes simulating the behavior of light. Ray tracing involves tracing light rays from the screen, calculating their intersections with objects, and accounting for effects such as reflection and refraction. When a ray intersects with a light source, the light's influence is propagated backward along the ray’s path, following physics-based equations. This process, while producing highly realistic results, is computationally expensive, as every ray must be calculated individually, and each interaction with an object can spawn additional rays.
 
 One key advantage of triangle-based methods is their ability to associate materials with meshes. This allows ray tracing to simulate complex interactions, such as light refracting through glass. Rays passing through transparent materials interact with objects behind them, propagating color and light properties to the transparent surface, resulting in strikingly realistic visuals. Without ray tracing, such effects are nearly impossible to replicate accurately, which underscores why this method yields superior graphical results.
@@ -36,8 +35,8 @@ Fortunately, recent advancements in GPU technology have incorporated ray tracing
 
 While ray tracing promises highly realistic results, it remains constrained by a fundamental limitation: the scenes are designed by artists. An artist can invest an enormous amount of time meticulously crafting a scene to appear as realistic as possible, but ultimately, it remains a single, handcrafted and fixed in time scene. Alternatively, they might opt for a non-realistic approach, enabling the creation of stylized games or imaginative movie worlds. However, this reliance on artistic interpretation highlights a shortcoming: the inability to capture reality as it truly is. A more desirable solution would be to directly capture reality rather than approximating it through an artistic lens.
 
-
 # Point Clouds
+
 In parallel, point clouds emerged as a natural representation for real scenes due to their acquisition from scanners capable of capturing environments in tremendous detail. Other techniques, such as structure-from-motion, also generate point clouds using photography. However, point clouds have undergone an unfortunate evolution. While their use is widespread across various fields, particularly those requiring depth information, the data they provide is inherently limited. Sensors often produce point clouds as a collection of discrete points in space, lacking any inherent connectivity or topology.
 
 This absence of connectivity - no information about which points are linked - presents significant challenges for manipulating these primitives. Without this structure, rendering point clouds becomes impractical; points remain disjoint in space, making it impossible to compute light interactions between them. Consequently, a considerable effort has been devoted to solving this problem by reconstructing surfaces from point clouds, effectively adding the missing structure.
@@ -68,8 +67,8 @@ Nevertheless, point-based graphics still face significant hurdles. Scenes built 
 
 I am actively working on these challenges and am eager to witness how the field evolves in the coming years. Research progresses rapidly, yet it often feels frustratingly slow at the same time. Still, I find encouragement in the revival this field is experiencing, with novel ideas and perspectives that hold great promise for the future. Perhaps one day, this field will become mainstream—or it may fade into obscurity for another decade.
 
-
 References:
+
 1. Bui Tuong Phong, "Illumination for Computer Generated Pictures," Comm. ACM, Vol 18(6):311-317, June 1975.
 2. [Unreal Engine](https://www.unrealengine.com/en-US)
 3. [OpenGL](https://www.opengl.org/)
@@ -83,7 +82,7 @@ References:
 11. Kazhdan, M., Chuang, M., Rusinkiewicz, S. and Hoppe, H. (2020), Poisson Surface Reconstruction with Envelope Constraints. Computer Graphics Forum, 39: 173-182. https://doi.org/10.1111/cgf.14077
 12. Markus Gross and Hanspeter Pfister. 2007. Point-Based Graphics. Morgan Kaufmann Publishers Inc., San Francisco, CA, USA.
 13. Tim Weyrich, Simon Heinzle, Timo Aila, Daniel B. Fasnacht, Stephan Oetiker, Mario Botsch, Cyril Flaig, Simon Mall, Kaspar Rohrer, Norbert Felber, Hubert Kaeslin, and Markus Gross. 2007. A hardware architecture for surface splatting. ACM Trans. Graph. 26, 3 (July 2007), 90–es. https://doi.org/10.1145/1276377.1276490
-14. Authors	Ohji Nakagami, Sebastien Lasserre, Sugio Toshiyasu, Marius Preda, "White paper on G-PCC", ISO/IEC JTC 1/SC 29/AG 03, 2023
+14. Authors Ohji Nakagami, Sebastien Lasserre, Sugio Toshiyasu, Marius Preda, "White paper on G-PCC", ISO/IEC JTC 1/SC 29/AG 03, 2023
 15. Bernhard Kerbl, Georgios Kopanas, Thomas Leimkuehler, and George Drettakis. 2023. 3D Gaussian Splatting for Real-Time Radiance Field Rendering. ACM Trans. Graph. 42, 4, Article 139 (August 2023), 14 pages. https://doi.org/10.1145/3592433
 16. Xie, Tianyi, Zong, Zeshun, Qiu, Yuxing, Li, Xuan, Feng, Yutao, Yang, Yin, & Jiang, Chenfanfu. PhysGaussian: Physics-Integrated 3D Gaussians for Generative Dynamics. Retrieved from https://par.nsf.gov/biblio/10535780.
 17. [Siggraph Asia 2024](https://asia.siggraph.org/2024/)

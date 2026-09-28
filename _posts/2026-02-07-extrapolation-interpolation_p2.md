@@ -7,7 +7,7 @@ tags: teaching llm
 categories: teaching llm
 ---
 
-*This is Part 2 of a series on AI, education, and expertise. See also: [Part 1: The Rise of Autonomous Systems]({% link _posts/2026-02-07-extrapolation-interpolation_p1.md %})*
+_This is Part 2 of a series on AI, education, and expertise. See also: [Part 1: The Rise of Autonomous Systems]({% link _posts/2026-02-07-extrapolation-interpolation_p1.md %})_
 
 In the previous article, we saw how autonomous systems are decoupling correctness from code quality, producing functional but often "ugly" software through massive iteration. But agents generate new software by leveraging existing theory, examples, and structures rather than reasoning from first principles alone. This raises a natural question: are machines fundamentally limited to recombining existing patterns (interpolation), or can they genuinely discover new knowledge (extrapolation)?
 
@@ -17,7 +17,7 @@ Neural networks, as commonly trained today, are extraordinarily good interpolato
 
 I have seen this many times in my research. A simple illustration: the classic PenDigits dataset [1]. The task is handwritten digit recognition, but the test set comes from different writers than the training set. Humans barely notice the shift, we effortlessly generalize across writing styles, strokes, and personal quirks. Neural networks often suffer a significant performance drop. The distribution shift is small in human terms (extrapolation task) but large in statistical ones (interpolation task).
 
-The network has learned *what digits look like in the training distribution*, not what a digit *is*.
+The network has learned _what digits look like in the training distribution_, not what a digit _is_.
 
 This gap between interpolation and extrapolation appears everywhere: reinforcement learning, control, language, reasoning. Models excel when test data is "more of the same" and struggle when structure changes meaningfully. Humans extrapolate constantly. We reason with sparse data, build mental models, apply them in novel situations. When faced with a new problem, we don't merely search for a nearby example, we ask what should happen, based on principles, abstractions, and causal understanding.
 
@@ -57,11 +57,11 @@ Lean [7,8] is a proof assistant, software that requires every step of a mathemat
 
 This is why, in my view, training models with formal systems like Lean is the right direction of progress beyond purely interpolative networks. Lean acts as a forcing function toward extrapolation.
 
-What makes Axiom interesting as a case study isn't that we understand  its training methodology, we don't, and the papers are too recent for proper scrutiny. Rather, it's that Lean provides something the C compiler example lacked: **a mechanistic test for extrapolation**.
+What makes Axiom interesting as a case study isn't that we understand its training methodology, we don't, and the papers are too recent for proper scrutiny. Rather, it's that Lean provides something the C compiler example lacked: **a mechanistic test for extrapolation**.
 
 The C compiler could be evaluated on correctness (does it compile Linux?) but not on novelty (are the solutions new?). Axiom's proofs can be evaluated on both: Lean verifies correctness automatically, and the mathematical community can verify novelty by checking whether the theorems were previously proven.
 
-This is why formal systems like Lean matter for understanding the interpolation/extrapolation boundary: they don't just constrain hallucination, they make the distinction between recombination and discovery *mechanically checkable*.
+This is why formal systems like Lean matter for understanding the interpolation/extrapolation boundary: they don't just constrain hallucination, they make the distinction between recombination and discovery _mechanically checkable_.
 
 To succeed, the model must construct chains of reasoning that survive outside the statistical comfort zone of plausible text. It must discover structures that actually hold, not just ones that sound right. Reformulation becomes a necessity, not a stylistic flourish. The system is pushed away from surface-level interpolation toward something closer to genuine conceptual navigation.
 
@@ -98,6 +98,7 @@ This has implications beyond AI. If we care about extrapolation, in students or 
 ## Additional notes:
 
 ### Verification: The Case of Axiom
+
 The recent breakthroughs from Axiom are promising, but we must remain cautious. While the proofs themselves are mechanically verified by Lean, eliminating the standard concern of LLM hallucination, the "how" remains a black box. These are incredibly recent papers, and we do not yet fully understand the implications of the training methodology used to produce them. We don't know if this approach scales, if it relies on subtle data contamination, or if it represents a sustainable path toward general reasoning.
 
 Until these results are fully integrated into the broader mathematical canon and the underlying training paradigms are transparently stress-tested by the research community, they remain "promising artifacts" rather than settled law. But they prove one thing: when we give an interpolator a formal cage to play in, it can occasionally find the key to the door leading outside.
@@ -106,7 +107,7 @@ Ultimately, these notes reinforce the same conclusion: whether we are navigating
 
 These observations about formal systems, machine capabilities, and the importance of theoretical skills raise a deeper question: what fundamental distinction separates pattern recognition from genuine discovery? In the final part of this series, we'll explore this conceptual framework and what it means for how we think about learning, research, and the future of human expertise.
 
-*Continue reading: [Part 3: Interpolation, Extrapolation, and What Exams Really Measure]({% link _posts/2026-02-07-extrapolation-interpolation_p3.md %}) - the core conceptual framework underlying this series*
+_Continue reading: [Part 3: Interpolation, Extrapolation, and What Exams Really Measure]({% link _posts/2026-02-07-extrapolation-interpolation_p3.md %}) - the core conceptual framework underlying this series_
 
 # References:
 

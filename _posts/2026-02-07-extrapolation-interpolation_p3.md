@@ -7,9 +7,9 @@ tags: teaching llm
 categories: teaching llm
 ---
 
-*This is Part 3 of a series on AI, education, and expertise. See also: [Part 1: The Rise of Autonomous Systems]({% link _posts/2026-02-07-extrapolation-interpolation_p1.md %}) and [Part 2: Formal Verification and the Path to Machine Discovery]({% link _posts/2026-02-07-extrapolation-interpolation_p2.md %})*
+_This is Part 3 of a series on AI, education, and expertise. See also: [Part 1: The Rise of Autonomous Systems]({% link _posts/2026-02-07-extrapolation-interpolation_p1.md %}) and [Part 2: Formal Verification and the Path to Machine Discovery]({% link _posts/2026-02-07-extrapolation-interpolation_p2.md %})_
 
-There's a distinction I keep returning to when I think about what exams measure and what research demands. The simplest way I've found to express it is this: *most exams reward interpolation. Research, in contrast, is extrapolation*.
+There's a distinction I keep returning to when I think about what exams measure and what research demands. The simplest way I've found to express it is this: _most exams reward interpolation. Research, in contrast, is extrapolation_.
 
 I realize this sounds like a neat formula, the kind that fits well in a tweet but collapses under scrutiny. And yet, the more I think about it, especially now, as large language models reshape how we write code, organize knowledge, and approach problems, the more this distinction feels very accurate.
 
@@ -69,7 +69,6 @@ If LLMs are becoming powerful extrapolators in constrained formal environments l
 
 That includes recognizing which problems need formalization, crafting the right constraints, and building the harnesses that make machine extrapolation possible. These are not mechanical tasks. They require judgment, taste, and deep theoretical understanding, qualities that cannot be outsourced to automation without first being supplied by humans.
 
-
 ## Additional notes:
 
 ### The Paradox of Learning to Code in an Agentic World
@@ -102,4 +101,4 @@ So the pattern still holds, but the meta-skill has evolved. With deterministic t
 
 ---
 
-*This concludes the series. Return to [Part 1: The Rise of Autonomous Systems]({% link _posts/2026-02-07-extrapolation-interpolation_p1.md %}) or [Part 2: Formal Verification and the Path to Machine Discovery]({% link _posts/2026-02-07-extrapolation-interpolation_p2.md %})*
+_This concludes the series. Return to [Part 1: The Rise of Autonomous Systems]({% link _posts/2026-02-07-extrapolation-interpolation_p1.md %}) or [Part 2: Formal Verification and the Path to Machine Discovery]({% link _posts/2026-02-07-extrapolation-interpolation_p2.md %})_

@@ -2,7 +2,7 @@
 layout: about
 title: Welcome
 permalink: /
-subtitle: 
+subtitle:
 
 profile:
   align: right
@@ -38,5 +38,3 @@ Among my main contributions are the Reference View Synthesizer (RVS), a real-tim
 Beyond these topics, I have worked on real-time point cloud rendering, Gaussian-process optimisation, deep learning for view synthesis, robotic acquisition platforms, and software engineering for high-performance imaging systems.
 
 The [About]({{ site.baseurl | prepend: site.url }}/about/) page provides additional background on my research, while Google Scholar contains a complete list of publications.
-
-

@@ -9,7 +9,7 @@ categories: productivity, software-development, research
 
 ## Why I Use Rich Types in My Code — Even for Temperature
 
-I’ve seen many interesting posts online about programming with types, especially around the idea of avoiding *naked primitives* like `int`, `float`, or `size_t` for domain-specific values. Instead, we should define real types that carry meaning.
+I’ve seen many interesting posts online about programming with types, especially around the idea of avoiding _naked primitives_ like `int`, `float`, or `size_t` for domain-specific values. Instead, we should define real types that carry meaning.
 
 ### A Classic Problem
 
@@ -26,7 +26,7 @@ fn get_birthday(un: usize) -> Date {
     user.get_birthday()
 }
 
-let un: usize = 123456; // user number  
+let un: usize = 123456; // user number
 let an: usize = 147258; // account number
 
 get_money(un);    // no compile error!
@@ -120,7 +120,7 @@ Types help you write correct code. But they can also hide inefficient behavior i
 
 ### When Types Multiply
 
-There’s a subtle but dangerous pattern I’ve encountered in real systems — a kind of *diamond-shaped overload problem*, reminiscent of the classic multiple inheritance issue.
+There’s a subtle but dangerous pattern I’ve encountered in real systems — a kind of _diamond-shaped overload problem_, reminiscent of the classic multiple inheritance issue.
 
 It usually starts with good intentions: someone introduces a new type because it makes certain operations faster, cleaner, or more expressive. For example, a researcher working on large-scale graph computations might use **sparse matrices** — they're ideal for representing structures like adjacency graphs or document-term matrices, where most entries are zero. Later, another part of the codebase needs to feed that data into a deep learning model — which requires **dense tensors**, especially if it's running on a GPU where sparse operations aren’t well supported.
 
@@ -130,8 +130,7 @@ But then someone writes a tool that calls into both modules — maybe running in
 
 A common workaround is to **cache both formats**, converting once and storing the result. But this creates another problem: what if one version is updated? For instance, the dense tensor is normalized or augmented after a model pass — but now the sparse matrix is stale. Keeping both in sync becomes tricky, especially if multiple functions touch different representations in different orders. You can’t just “store both” unless you also **coordinate updates and ownership** — which is a major source of bugs and performance regressions in real-world systems.
 
-Even worse, these issues rarely show up as compiler errors. They creep in as *slowdowns*, inconsistent results, or strange numerical mismatches — and by the time you notice them, the conversion logic is buried under layers of calls.
-
+Even worse, these issues rarely show up as compiler errors. They creep in as _slowdowns_, inconsistent results, or strange numerical mismatches — and by the time you notice them, the conversion logic is buried under layers of calls.
 
 One might argue this whole problem could be avoided with a solid roadmap and better planning. And in principle, yes — if the software had clearly defined data flow boundaries and strict architectural guidelines, these type collisions wouldn’t occur.
 

@@ -47,7 +47,7 @@ As the lessons advanced, students began asking more insightful questions, partic
 
 This journey is still in its early stages, and there is much left to explore. I found that the most challenging aspect wasn’t delivering lectures or guiding students but creating high-quality materials that allow them to follow the ideas in a fast-paced and engaging way.
 
-The slides were designed so that every question presented was addressed during class, with those questions being pivotal to understanding the material. At the same time, the subsequent slides needed to align with the solutions proposed by the students. This implies two things: first, anticipating the directions students might take during discussions to ensure that the following slides reflected the mental models they developed, in particular with beautiful schematic summarizing the in-class discussion; second, subtly guiding them toward the solution presented in the slides. 
+The slides were designed so that every question presented was addressed during class, with those questions being pivotal to understanding the material. At the same time, the subsequent slides needed to align with the solutions proposed by the students. This implies two things: first, anticipating the directions students might take during discussions to ensure that the following slides reflected the mental models they developed, in particular with beautiful schematic summarizing the in-class discussion; second, subtly guiding them toward the solution presented in the slides.
 
 Dismissing incorrect ideas was relatively straightforward, as I could typically craft a counterexample and pose it to the class (sometimes even turning it into a vote on whether the idea holds and why). However, when students presented strong alternative solutions that didn’t align exactly with the slides, the discussions became particularly enriching, especially when mapping their ideas to the intended solution.
 
@@ -55,7 +55,8 @@ After each session, I revised the slides to incorporate these discussions and ad
 
 Creating this type of material is incredibly time-consuming. Fortunately, I’ve discovered other educators worldwide who produce similar high-quality slides on related topics (see Notes [1]). Their work has been an invaluable source of inspiration, whether they consciously follow the principles I describe here or simply intuit that this approach enhances teaching. Regardless, these resources contribute to exceptional material available online, and I hope promotes a new generation of students who truly master the material and develop a genuine passion for the presented material, and overall for learning.
 
-References: 
+References:
+
 1. Zitarelli, David, 2004. The Origin and Early Impact of the Moore Method, American Mathematical Monthly 111: 465–486.
 2. Jones, F. Burton, 1977, "The Moore method," American Mathematical Monthly 84: 273–77
 3. ["What is Inquiry-Based Learning (EBL)?"](http://www.ceebl.manchester.ac.uk/ebl/). Centre for Excellence in Enquiry-Based Learning. University of Manchester.
@@ -64,4 +65,5 @@ References:
 6. Francis Su's video lectures on real analysis: [YouTube Playlist](https://www.youtube.com/watch?v=sqEyWLGvvdw&list=PL0E754696F72137EC).
 
 Notes:
+
 1. Two universities where I encountered this style done exceptionally well in different lectures are Carnegie Mellon University and Stanford, both of which were significant sources of inspiration for me.

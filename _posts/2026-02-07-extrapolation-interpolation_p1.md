@@ -7,7 +7,7 @@ tags: teaching llm
 categories: teaching llm
 ---
 
-*This is Part 1 of a series on AI, education, and expertise.*
+_This is Part 1 of a series on AI, education, and expertise._
 
 Something has changed in how companies approach software development [1,2]. The phrase "the art of programming" already hints at something important: programming has an artistic component. There's care in making code beautiful, readable, extensible, maintainable. That matters, especially to programmers themselves.
 
@@ -43,7 +43,7 @@ Notice how much success in the Anthropic experiment comes not from "better promp
 
 ## What This Means for Human Expertise
 
-This reframes human contribution. If LLM agents can already produce large, functional systems through persistent iteration and testing, human expertise shifts upward: toward theory, toward specification, toward reasoning about correctness, complexity, invariants, failure modes.  
+This reframes human contribution. If LLM agents can already produce large, functional systems through persistent iteration and testing, human expertise shifts upward: toward theory, toward specification, toward reasoning about correctness, complexity, invariants, failure modes.
 
 This is exactly why I believe theoretical knowledge, algorithmic thinking, and mathematical maturity matter more, not less, in the age of LLMs. These are the tools needed to design the harness, not just the code (more on this in [Part 3]({% link _posts/2026-02-07-extrapolation-interpolation_p3.md %})).
 
@@ -56,18 +56,20 @@ In that world, learning to think formally, whether through mathematics, algorith
 ## Additional notes:
 
 ### The Debugging Nightmare and the "Complexity Wall"
+
 There is a profound difference between a codebase that is "ugly" because of human laziness and one that is "ugly" because it was synthesized through millions of stochastic iterations. Human-written mess usually follows some form of idiosyncratic logic—there is a "ghost in the machine" you can eventually reason with. Machine-generated mess is often structurally alien.
 
 As we move toward a world of "Post-Elegance Engineering," we face a terrifying debugging nightmare: the Complexity Wall. If a team of agents builds a 100,000-line system that functions today, what happens when it fails tomorrow in a way the agents cannot self-repair? We risk creating "digital black boxes", systems that are functionally correct but cognitively impenetrable. Humans generally dislike working in environments where they lack "conceptual ownership". If we cannot navigate the code, we cannot truly trust it. The psychological toll of maintaining a system one does not understand is a variable we haven't yet factored into the future of work. We don't yet know if the efficiency of automated generation will be eventually canceled out by the sheer cognitive load of human oversight.
 
 ### The Economics of the Agentic Employee
+
 To put the Anthropic experiment in a soustenability perspective, consider the cost [2]. Building a functional C compiler for $20,000 in two weeks is an incredible feat of efficiency when compared to traditional labor.
 
 In 2026, a mid-level software engineer carries a total compensation package of roughly $150,000 to $400,000 when factoring in benefits and corporate overhead. A junior engineer might cost $90,000. If an AI agent burns $1,000 a day in API credits, it is roughly equivalent to the gross salary of a single full-time employee, but with zero "hidden" costs like healthcare, office space, or management latency. Crucially, the agent doesn't sleep; it provides the output of an entire 16-person "team" for the price of one human specialist. We are no longer just buying a tool; we are leasing a workforce.
-*Continue reading:*
+_Continue reading:_
 
-- *Part 2: [Formal Verification and the Path to Machine Discovery]({% link _posts/2026-02-07-extrapolation-interpolation_p2.md %}) - examining mathematical proof systems and machine extrapolation*
-- *Part 3: [Interpolation, Extrapolation, and What Exams Really Measure]({% link _posts/2026-02-07-extrapolation-interpolation_p3.md %}) - the fundamental distinction and what it means for education*
+- _Part 2: [Formal Verification and the Path to Machine Discovery]({% link _posts/2026-02-07-extrapolation-interpolation_p2.md %}) - examining mathematical proof systems and machine extrapolation_
+- _Part 3: [Interpolation, Extrapolation, and What Exams Really Measure]({% link _posts/2026-02-07-extrapolation-interpolation_p3.md %}) - the fundamental distinction and what it means for education_
 
 # References:
 

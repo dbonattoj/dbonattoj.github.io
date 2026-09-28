@@ -105,13 +105,12 @@ Years ago, I also read Alain Thiry and Fanny Demeulder, who developed structured
 
 My approach builds on that tradition, but situates it within technical higher education.
 
-
 # References:
 
-1. Anderson, L. W., & Krathwohl, D. R. (2001). *A Taxonomy for Learning, Teaching, and Assessing: A Revision of Bloom’s Taxonomy of Educational Objectives.*
-2. Brookhart, S. M. (2010). *How to Assess Higher-Order Thinking Skills in Your Classroom.*
-3. Buzan, T. (1993). *The Mind Map Book.*
+1. Anderson, L. W., & Krathwohl, D. R. (2001). _A Taxonomy for Learning, Teaching, and Assessing: A Revision of Bloom’s Taxonomy of Educational Objectives._
+2. Brookhart, S. M. (2010). _How to Assess Higher-Order Thinking Skills in Your Classroom._
+3. Buzan, T. (1993). _The Mind Map Book._
 4. Thiry, A., Demeulder, F. (2012). "Ça y est, j'ai compris!".
-5. Ackoff, R. L. (1989). *From Data to Wisdom*. Journal of Applied Systems Analysis, 16, 3–9.
-6. Zins, C. (2007). *Conceptual Approaches for Defining Data, Information, and Knowledge.* Journal of the American Society for Information Science and Technology, 58(4), 479–493.
-7. Prince, M., & Felder, R. (2006). *Inductive Teaching and Learning Methods: Definitions, Comparisons, and Research Bases.* Journal of Engineering Education, 95(2), 123–138.
+5. Ackoff, R. L. (1989). _From Data to Wisdom_. Journal of Applied Systems Analysis, 16, 3–9.
+6. Zins, C. (2007). _Conceptual Approaches for Defining Data, Information, and Knowledge._ Journal of the American Society for Information Science and Technology, 58(4), 479–493.
+7. Prince, M., & Felder, R. (2006). _Inductive Teaching and Learning Methods: Definitions, Comparisons, and Research Bases._ Journal of Engineering Education, 95(2), 123–138.
