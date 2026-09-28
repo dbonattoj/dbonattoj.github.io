@@ -56,6 +56,7 @@ Want to learn more about Jekyll? Check out [this tutorial](https://www.taniarasc
   - [Table Of Contents](#table-of-contents)
   - [Installing and Deploying](#installing-and-deploying)
   - [Customizing](#customizing)
+  - [Encrypted drafts](#encrypted-drafts)
   - [Plugin Ecosystem](#plugin-ecosystem)
   - [Using AI Agents](#using-ai-agents)
     - [Codex](#codex)
@@ -84,6 +85,46 @@ Want to learn more about Jekyll? Check out [this tutorial](https://www.taniarasc
 ## Installing and Deploying
 
 For installation and deployment details please refer to [docs/INSTALL.md](docs/INSTALL.md).
+
+## Encrypted drafts
+
+Blog posts and pages can be written in this repository **encrypted at rest**:
+plaintext drafts live only in your local working tree, git stores
+`age`-encrypted blobs, and the two are kept in sync automatically.
+
+Requires the [`age`](https://github.com/FiloSottile/age) CLI
+(`brew install age` / `apt install age` / `dnf install age`).
+
+```sh
+# on a fresh clone (and after restoring a backed-up key):
+bin/drafts init     # generates .drafts/key (chmod 600) if none, installs
+                    # the git hooks, registers the merge driver, unlocks blobs
+
+# write a draft in .drafts/ (plain markdown, your editor's normal flow):
+#   .drafts/my-post.md  with front matter incl.
+#     draft_path: _posts/2026-10-01-my-post.md
+
+# commit — pre-commit locks the draft and stages drafts/my-post.md.age;
+# if the commit staged nothing else, run the same commit once more
+# (git cannot include changes staged by a pre-commit hook in an
+# otherwise-empty commit; the hook prints the reminder)
+git commit -m "wip: my post"
+
+# on another machine: git pull -> the hook decrypts (a 3-way merge on the
+# decrypted text auto-merges non-overlapping edits; overlapping edits
+# appear as normal conflict markers in .drafts/my-post.md)
+
+# publish: move the draft to its real location as a normal tracked post
+bin/drafts promote my-post
+git commit -m "post: my post"
+```
+
+- `bin/drafts list` shows each draft as `synced`, `dirty`,
+  `encrypted-only`, or `unlocked-only`.
+- `bin/drafts unlock` / `lock` do the same as the hooks, on demand.
+- The key is `.drafts/key` (gitignored). **Back it up** (password manager
+  or encrypted storage): if it is lost, the blobs in git are unreadable.
+  Images and other assets are not encrypted — commit them as usual.
 
 ## Customizing
 
