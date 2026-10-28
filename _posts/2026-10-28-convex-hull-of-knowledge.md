@@ -81,9 +81,11 @@ The boundary is not clean, though. Mathematicians often find the right question 
 
 I think mathematics is approaching a moment of uncertainty about its own future. LLM-based systems now produce proofs of open problems and challenge assumptions that people relied on for years. Some results come with a lot of human guidance, others are presented as more autonomous. Reliability and significance vary, but the pace forces mathematicians to ask what can be automated. I covered an early example in [Part 2]({% link _posts/2026-02-07-extrapolation-interpolation_p2.md %}) with the Lean proofs from Axiom.
 
-A more striking example appeared at the end of October 2026. OpenAI and Anthropic released separate manuscripts claiming subexponential-time algorithms for 3-SAT or related counting problems, which would contradict the Exponential Time Hypothesis (ETH) [7,8,9].
+A more striking example appeared at the end of October 2026. OpenAI and Anthropic released separate manuscripts claiming subexponential-time algorithms for 3-SAT or related counting problems, which would contradict the Exponential Time Hypothesis (ETH) [7,8,9]. According to OpenAI [14], its system found a natural-language disproof on October 16th, and the result was formalized in Lean the next day. Both the write-up and the Lean proof are public.
 
-ETH is the conjecture that 3-SAT cannot be solved in subexponential time in the number of variables [7]. It is **not** the same as $$\mathrm{P}=\mathrm{NP}$$. A subexponential algorithm can still be superpolynomial. What would give $$\mathrm{P}=\mathrm{NP}$$ is a polynomial-time algorithm for 3-SAT: since 3-SAT is NP-complete [10], every problem in NP reduces to it with polynomial overhead. The claims do not provide such an algorithm. They attack a different assumption, but an important one, as many algorithms and lower bounds in theoretical computer science rely on assumptions about the hardness of SAT.
+What I find as interesting as the result is how it is handled. The verification is led by a group around Impagliazzo, Paturi and Williams, that is, by the people who proposed ETH and who have spent 30 years working with it or against it. All the raw data is to be public, and OpenAI committed to funding a conference to understand the implications. The announcement explicitly asks the community to discuss "verification, access, credit, and the future of research" [14]. These are the same questions I come back to below.
+
+ETH is the conjecture, proposed by Impagliazzo, Paturi and Zane [7], that 3-SAT cannot be solved in subexponential time in the number of variables. It has been used in hundreds of papers to derive conditional hardness results, in graph theory, databases, computational geometry and more [14]. It is **not** the same as $$\mathrm{P}=\mathrm{NP}$$. A subexponential algorithm can still be superpolynomial. What would give $$\mathrm{P}=\mathrm{NP}$$ is a polynomial-time algorithm for 3-SAT: since 3-SAT is NP-complete [10], every problem in NP reduces to it with polynomial overhead. The claims do not provide such an algorithm. They attack a different assumption, but an important one, as many algorithms and lower bounds in theoretical computer science rely on assumptions about the hardness of SAT.
 
 These are extraordinary claims, and not a reason to consider every consequence settled. A formalization in a proof assistant is strong evidence that a formal argument is valid, but the formal statement, its encoding and its relation to the intended problem still have to be checked by people. What matters here is that systems now produce arguments that researchers must take seriously enough to inspect, verify and possibly build upon.
 
@@ -159,7 +161,7 @@ The question is not whether humans or machines are more creative. It is how disc
 
 ### On the claims about ETH
 
-I could only cite the two manuscripts as released [8,9]; I have not verified the arguments, and I do not have the expertise to do so for such a result. Everything I wrote about them is conditional on them holding up. Until independent checking, including of the formal statements if the proofs are formalized, they are claims, not established results.
+I have not verified the arguments in the manuscripts [8,9], and I do not have the expertise to do so. The OpenAI announcement [14] says the result was checked in Lean, but as discussed above, a Lean proof only shows that the formal statement is proved, not that it says what we intend. That is precisely what the group led by Impagliazzo, Paturi and Williams is meant to examine. I could only read the OpenAI announcement, not the Anthropic manuscript, so what I say about that one rests on its description. Until independent checking is done, everything about ETH here is conditional: these are claims, not established results.
 
 ---
 
@@ -173,10 +175,11 @@ _Related articles in this series: [Part 1: The Rise of Autonomous Systems]({% li
 4. de Moura, L., & Bjørner, N. (2008). Z3: An Efficient SMT Solver. In TACAS 2008, LNCS 4963, 337–340. [10.1007/978-3-540-78800-3_24](https://doi.org/10.1007/978-3-540-78800-3_24)
 5. Claessen, K., & Hughes, J. (2000). QuickCheck: A Lightweight Tool for Random Testing of Haskell Programs. ICFP 2000, 268–279. [10.1145/351240.351266](https://doi.org/10.1145/351240.351266)
 6. Solar-Lezama, A., Tancau, L., Bodík, R., Seshia, S., & Saraswat, V. (2006). Combinatorial Sketching for Finite Programs. ASPLOS 2006, 404–415. [10.1145/1168857.1168907](https://doi.org/10.1145/1168857.1168907)
-7. Impagliazzo, R., & Paturi, R. (2001). On the Complexity of k-SAT. Journal of Computer and System Sciences, 62(2), 367–375. [10.1006/jcss.2000.1727](https://doi.org/10.1006/jcss.2000.1727)
+7. Impagliazzo, R., Paturi, R., & Zane, F. (2001). Which Problems Have Strongly Exponential Complexity? Journal of Computer and System Sciences, 63(4), 512–530. [10.1006/jcss.2001.1774](https://doi.org/10.1006/jcss.2001.1774)
 8. [OpenAI manuscript, The Exponential Time Hypothesis is False (October 25, 2026)](https://mathcommunity.github.io/oai-math-revised/papers/The-Exponential-Time-Hypothesis-is-False-October-25-2026/)
 9. [Anthropic manuscript, 2610.00577v1](https://hexagonmath.org/2610.00577v1)
 10. Cook, S. A. (1971). The Complexity of Theorem-Proving Procedures. STOC 1971, 151–158. [10.1145/800157.805047](https://doi.org/10.1145/800157.805047)
 11. Kirkpatrick, J., et al. (2017). Overcoming catastrophic forgetting in neural networks. PNAS, 114(13), 3521–3526. [10.1073/pnas.1611835114](https://doi.org/10.1073/pnas.1611835114)
 12. [Continual Learning with RL](https://cameronrwolfe.substack.com/p/rl-continual-learning), [Wayback](https://web.archive.org/web/20260127125419/https://cameronrwolfe.substack.com/p/rl-continual-learning)
 13. Merton, R. K. (1968). The Matthew Effect in Science. Science, 159(3810), 56–63. [10.1126/science.159.3810.56](https://doi.org/10.1126/science.159.3810.56)
+14. [OpenAI, The Exponential Time Hypothesis is false](https://openai.com/index/building-scientific-understanding-with-academic-communities/)
