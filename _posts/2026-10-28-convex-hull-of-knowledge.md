@@ -81,7 +81,7 @@ The boundary is not clean, though. Mathematicians often find the right question 
 
 I think mathematics is approaching a moment of uncertainty about its own future. LLM-based systems now produce proofs of open problems and challenge assumptions that people relied on for years. Some results come with a lot of human guidance, others are presented as more autonomous. Reliability and significance vary, but the pace forces mathematicians to ask what can be automated. I covered an early example in [Part 2]({% link _posts/2026-02-07-extrapolation-interpolation_p2.md %}) with the Lean proofs from Axiom.
 
-A more striking example appeared at the end of October 2026. OpenAI announced that its system disproved the Exponential Time Hypothesis (ETH), by finding a subexponential-time algorithm for 3-SAT [8]. According to them, the disproof was found on October 16th and formalized in Lean the next day [12].
+A more striking example appeared at the end of October 2026. OpenAI announced that its system disproved the Exponential Time Hypothesis (ETH), by finding a subexponential-time algorithm for 3-SAT [8]. According to them, the disproof was found on October 16th and formalized in Lean the next day [13].
 
 ETH is the conjecture that 3-SAT cannot be solved in subexponential time in the number of variables [7]. It is widely believed, and used in hundreds of papers to derive conditional hardness results in graph theory, databases, computational geometry and more [13]. If it falls, all these results need to be reconsidered.
 
