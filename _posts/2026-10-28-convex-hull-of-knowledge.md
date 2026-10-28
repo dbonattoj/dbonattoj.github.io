@@ -105,7 +105,7 @@ For a mathematician, proving a theorem can be the achievement. But choosing defi
 
 For a physicist, a correct derivation is not a discovery. A model can be elegant and consistent and still not describe the world, or rely on an approximation that is wrong for the phenomenon. The hard questions are which degrees of freedom matter, which idealizations are justified, which observations would separate two models, and which mathematical structure corresponds to something real. None of this reduces to the internal correctness of a derivation.
 
-Neither discipline is immune, both involve conceptual innovation. But the same proof can be the main result in one setting, a tool in another, and a minor step toward a larger discovery in a third. This is also why benchmarks that only measure correct answers are not enough: they say little about identifying significant problems or changing the framework in which they are posed.
+Neither discipline is immune, both involve conceptual innovation. But the same proof can be the main result in one setting, a tool in another, and a minor step toward a larger discovery in a third. This is also why benchmarks that only measure correct answers are not enough, they say little about identifying significant problems.
 
 ## The economics of scientific work
 
@@ -117,7 +117,7 @@ I see three shifts:
 2. **Evaluation becomes more important.** Many generated results require detecting errors and hidden assumptions, and separating discoveries from correct but unimportant outputs.
 3. **Direction becomes more valuable.** Someone has to decide which problems matter and which results justify changing course.
 
-If six months of formalization shrink to a day, the grant does not get shorter, the months go to other work. If a promising software idea costs hours, more ideas become worth trying. And the bottleneck moves: from hundreds of candidate proofs to choosing conjectures, from candidate physical models to designing the experiment that separates them, from cheap scientific software to knowing what it should measure and how to interpret it.
+The bottleneck moves accordingly: from hundreds of candidate proofs to choosing conjectures, from candidate physical models to designing the experiment that separates them, from cheap scientific software to knowing what it should measure and how to interpret it.
 
 None of this is guaranteed. If AI systems become able to identify important questions, judge their significance and design the next experiments, the boundary moves again. Nothing says problem formulation will stay human. The question is not whether humans keep a monopoly on creativity, but which contributions remain scarce as automation advances. I expect expertise to mean navigating the whole process: recognizing meaningful problems, using automated systems well, judging their output, and knowing when a result changes how a field should think. It is the same argument as in [Part 1]({% link _posts/2026-02-07-extrapolation-interpolation_p1.md %}) about designing the harness, and it echoes the idea in [the exam article]({% link _posts/2026-02-27-mindmap_exam.md %}) that computation is derivative of insight. When computation gets cheap, identifying the structure of the problem is worth more.
 
@@ -151,15 +151,13 @@ Education should also go beyond reproducing methods. In the [knowledge graph]({%
 
 ## Beyond the convex hull
 
-The convex hull hypothesis is a useful starting point for thinking about LLM creativity. A model produces surprising and useful ideas because it has access to far more knowledge than any individual, but combining existing ideas does not show an ability to see the limits of the frameworks they come from. Current models can be very capable and still need guidance to leave familiar approaches, while the practical effect is already large: an implementation becomes feasible in hours, a formalism that should take months gets its foundations in a day. Making an idea easier to realize does not make it easier to find.
+A model produces surprising and useful ideas because it has access to far more knowledge than any individual, but combining existing ideas does not show an ability to see the limits of the frameworks they come from. Making an idea easier to realize does not make it easier to find.
 
-I do not think the limits are permanent, nor that every impressive demonstration is a lasting breakthrough. We need to separate what models do today, what has been independently verified, and what may come as reliability improves. Mathematics may feel it first. And the most interesting development may not be a model that proves harder theorems alone, but a scientific system that improves through the work of its users, learning not only results but better ways to approach problems. It would make exploring established directions cheaper and spread methods across the community, and would force us to rethink attribution, incentives, validation and the risk of conformity.
-
-The question is not whether humans or machines are more creative. It is how discovery changes when answers are cheap, when capabilities can be shared through an evolving model, and when the line between individual contribution and collective capability gets hard to draw. Some of the most important contributions may not be the theorems or the models, but the ideas that change what a whole community is able to discover.
+I do not think these limits are permanent, nor that every impressive demonstration is a lasting breakthrough. The question is not whether humans or machines are more creative. It is how discovery changes when answers are cheap, when capabilities can be shared through an evolving model, and when the line between individual contribution and collective capability gets hard to draw. Some of the most important contributions may not be the theorems or the models, but the ideas that change what a whole community is able to discover.
 
 ---
 
-_Related articles in this series: [Part 1: The Rise of Autonomous Systems]({% link _posts/2026-02-07-extrapolation-interpolation_p1.md %}), [Part 2: Formal Verification and the Path to Machine Discovery]({% link _posts/2026-02-07-extrapolation-interpolation_p2.md %}), [Part 3: Interpolation, Extrapolation, and What Exams Really Measure]({% link _posts/2026-02-07-extrapolation-interpolation_p3.md %})_
+_Related articles: [Part 1: The Rise of Autonomous Systems]({% link _posts/2026-02-07-extrapolation-interpolation_p1.md %}), [Part 2: Formal Verification and the Path to Machine Discovery]({% link _posts/2026-02-07-extrapolation-interpolation_p2.md %}), [Part 3: Interpolation, Extrapolation, and What Exams Really Measure]({% link _posts/2026-02-07-extrapolation-interpolation_p3.md %})_
 
 # References:
 
